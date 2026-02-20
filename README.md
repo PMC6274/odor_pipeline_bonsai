@@ -2,9 +2,8 @@
 
 Bonsai workflows to run an **8-odor shuffled-block** odor delivery experiment using the **Harp Olfactometer**.
 
-Repo: https://github.com/PMC6274/odor_pipeline_bonsai/tree/main :contentReference[oaicite:0]{index=0}  
-Harp Olfactometer docs: https://fchampalimaud.github.io/olfactometer-docs/docs/overview :contentReference[oaicite:1]{index=1}
-
+Repo: https://github.com/PMC6274/odor_pipeline_bonsai/tree/main
+Harp Olfactometer docs: https://fchampalimaud.github.io/olfactometer-docs/docs/overview
 ---
 
 ## Protocol implemented
