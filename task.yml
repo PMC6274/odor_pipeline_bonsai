@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=task.json
+name: OdorTask
+logging_path: Data
+odor_loop:
+  check_valve_delay: 25
+  end_valve0_delay: 4
+  isi_upper_bound: 45
+  isi_lower_bound: 25
+  time_before_odor: 1
+  trial_csv_path: 25random_blocks_1to8.csv
+hardware:
+  olfactometer1_port: COM3
+  olfactometer2_port: COM4
+  white_rabbit_port: COM9
+trials:
+  - parameters: x
+    result: "y"
+  - parameters: z
+    result: "w"

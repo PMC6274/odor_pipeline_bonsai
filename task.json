@@ -1,0 +1,124 @@
+{
+  "$defs": {
+    "OdorLoop": {
+      "description": "Parameters for the odor loop. These are used to generate the Bonsai workflow.",
+      "properties": {
+        "check_valve_delay": {
+          "description": "Delay after the check valve is opened before the odor is delivered, in seconds.",
+          "title": "Check Valve Delay",
+          "type": "number"
+        },
+        "end_valve0_delay": {
+          "title": "End Valve0 Delay",
+          "type": "number"
+        },
+        "isi_upper_bound": {
+          "title": "Isi Upper Bound",
+          "type": "number"
+        },
+        "isi_lower_bound": {
+          "title": "Isi Lower Bound",
+          "type": "number"
+        },
+        "time_before_odor": {
+          "title": "Time Before Odor",
+          "type": "number"
+        },
+        "trial_csv_path": {
+          "title": "Trial Csv Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "check_valve_delay",
+        "end_valve0_delay",
+        "isi_upper_bound",
+        "isi_lower_bound",
+        "time_before_odor",
+        "trial_csv_path"
+      ],
+      "title": "OdorLoop",
+      "type": "object"
+    },
+    "TaskHardware": {
+      "properties": {
+        "olfactometer1_port": {
+          "title": "Olfactometer1 Port",
+          "type": "string"
+        },
+        "olfactometer2_port": {
+          "title": "Olfactometer2 Port",
+          "type": "string"
+        },
+        "white_rabbit_port": {
+          "title": "White Rabbit Port",
+          "type": "string"
+        }
+      },
+      "required": [
+        "olfactometer1_port",
+        "olfactometer2_port",
+        "white_rabbit_port"
+      ],
+      "title": "TaskHardware",
+      "type": "object"
+    },
+    "Trial": {
+      "properties": {
+        "parameters": {
+          "title": "Parameters",
+          "type": "string"
+        },
+        "result": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Result"
+        }
+      },
+      "required": [
+        "parameters"
+      ],
+      "title": "Trial",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "logging_path": {
+      "title": "Logging Path",
+      "type": "string"
+    },
+    "hardware": {
+      "$ref": "#/$defs/TaskHardware"
+    },
+    "odor_loop": {
+      "$ref": "#/$defs/OdorLoop"
+    },
+    "trials": {
+      "items": {
+        "$ref": "#/$defs/Trial"
+      },
+      "title": "Trials",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "logging_path",
+    "hardware",
+    "odor_loop",
+    "trials"
+  ],
+  "title": "Task",
+  "type": "object"
+}

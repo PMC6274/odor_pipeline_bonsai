@@ -1,2 +1,6 @@
+# Python cache files
+__pycache__/
+
+# Bonsai environment files
 **/.bonsai/*
 !**/.bonsai/Bonsai.config
