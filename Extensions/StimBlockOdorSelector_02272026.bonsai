@@ -54,7 +54,7 @@
                         </Expression>
                         <Expression xsi:type="p1:Format">
                           <harp:MessageType>Write</harp:MessageType>
-                          <harp:Register xsi:type="p1:ValveSet" />
+                          <harp:Register xsi:type="p1:OdorValveState" />
                         </Expression>
                         <Expression xsi:type="ExternalizedMapping">
                           <Property Name="Name" />
@@ -160,7 +160,7 @@
                         </Expression>
                         <Expression xsi:type="p1:Format">
                           <harp:MessageType>Write</harp:MessageType>
-                          <harp:Register xsi:type="p1:ValveSet" />
+                          <harp:Register xsi:type="p1:CheckValveState" />
                         </Expression>
                         <Expression xsi:type="ExternalizedMapping">
                           <Property Name="Name" />
@@ -687,8 +687,8 @@
                         </Expression>
                         <Expression xsi:type="p1:CreateMessage">
                           <harp:MessageType>Write</harp:MessageType>
-                          <harp:Payload xsi:type="p1:CreateEndValveStatePayload">
-                            <p1:EndValveState>EndValve0</p1:EndValveState>
+                          <harp:Payload xsi:type="p1:CreateValveSetPayload">
+                            <p1:ValveSet>EndValve0</p1:ValveSet>
                           </harp:Payload>
                         </Expression>
                         <Expression xsi:type="ExternalizedMapping">
