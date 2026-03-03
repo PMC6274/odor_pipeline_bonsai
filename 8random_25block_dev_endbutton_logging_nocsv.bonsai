@@ -602,7 +602,7 @@ it == 200  ? "D1:5" :
                           <Property Name="CheckDelay" />
                           <Property Name="EndV0Delay" />
                         </Expression>
-                        <Expression xsi:type="IncludeWorkflow" Path="Extensions\StimBlockOdorSelector_021926.bonsai">
+                        <Expression xsi:type="IncludeWorkflow" Path="Extensions\StimBlockOdorSelector_clean_030326.bonsai">
                           <CheckDelay>PT25S</CheckDelay>
                           <EndV0Delay>PT4S</EndV0Delay>
                         </Expression>
