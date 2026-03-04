@@ -13,14 +13,14 @@ Bonsai workflows to run an **8-odor shuffled-block** odor delivery experiment us
 - **Per-trial timing:**
   - Charge: 25 s  
   - Deliver: 4 s  
-  - ISI / ITI: 25–45 s (uniform random)  
-  - Total: ~50–70 s per trial  
+  - ITI: 25 ~ 45 s (uniform random)  
+  - Total: ~50 ~ 70 s per trial  
 
 Total: **200 trials** (8 odors × 25 blocks) with randomized odor order within each block.
 
 ## How to generate stim list
 
-1. **Run the Python script to create the sequence**  
+1. **Run the Python script to generate the sequence**  
    From the repository root:
 
    ```bash
@@ -28,7 +28,7 @@ Total: **200 trials** (8 odors × 25 blocks) with randomized odor order within e
    python gen_trials_d1.py
    ```
 
-   This will create two files in `generate_stim_list/`:
+   This will use current time as random seed to generate two files in `generate_stim_list/`:
    - `odor_sequence_numbers.csv`  
    - `odor_sequence_D1_format.txt`  
 
