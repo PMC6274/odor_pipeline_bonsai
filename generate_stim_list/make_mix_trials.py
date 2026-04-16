@@ -2,104 +2,41 @@ from pathlib import Path
 import random
 import csv
 
-# 6 odors: A, B, C, D, E, F
-# Each block includes all 64 conditions: 0~63
-# Bonsai payload format:
-#   device1_odor | device1_check | device2_odor | device2_check | flow
-# Empty fields are written as "None" so you can branch/skip in Bonsai.
+# A B C D E F 开启时对应输出值
+ODOR_VALUES = [1, 2, 3, 5, 6, 7]
 
-def code_to_binary_states(code: int):
+
+def code_to_row(code: int):
     """
-    Convert 0~63 code into six binary states [A,B,C,D,E,F].
+    把 0~63 的 code 转成:
+    A, B, C, D, E, F, flow
+    code=0 时表示全关，对应 flow=900
     """
-    return [1 if (code & (1 << bit)) else 0 for bit in range(6)]
+    outputs = []
+    on_count = 0
 
+    for bit, val in enumerate(ODOR_VALUES):
+        if code & (1 << bit):
+            outputs.append(val)
+            on_count += 1
+        else:
+            outputs.append(0)
 
-def states_to_flow(states):
-    """
-    Flow rule:
-      carrier = 900 - 100 * number_of_active_odors
-    """
-    return 900 - 100 * sum(states)
-
-
-def nz(s: str) -> str:
-    """
-    Replace empty string with 'None' for easier Bonsai condition checks.
-    """
-    return s if s else "None"
-
-
-def make_device_strings(states):
-    """
-    Input: [A,B,C,D,E,F] as 0/1
-
-    Device 1 uses A,B,C -> Valve0, Valve1, Valve2
-    Device 2 uses D,E,F -> Valve0, Valve1, Valve2
-
-    Returns:
-      d1_odor_str, d1_check_str, d2_odor_str, d2_check_str
-    """
-    a, b, c, d, e, f = states
-
-    d1_odor = []
-    d1_check = []
-    if a:
-        d1_odor.append("Valve0")
-        d1_check.append("CheckValve0")
-    if b:
-        d1_odor.append("Valve1")
-        d1_check.append("CheckValve1")
-    if c:
-        d1_odor.append("Valve2")
-        d1_check.append("CheckValve2")
-
-    d2_odor = []
-    d2_check = []
-    if d:
-        d2_odor.append("Valve0")
-        d2_check.append("CheckValve0")
-    if e:
-        d2_odor.append("Valve1")
-        d2_check.append("CheckValve1")
-    if f:
-        d2_odor.append("Valve2")
-        d2_check.append("CheckValve2")
-
-    return (
-        nz("-".join(d1_odor)),
-        nz("-".join(d1_check)),
-        nz("-".join(d2_odor)),
-        nz("-".join(d2_check)),
-    )
-
-
-def code_to_bonsai_payload(code: int):
-    """
-    Final Bonsai payload:
-      d1_odor|d1_check|d2_odor|d2_check|flow
-    Example:
-      Valve0,Valve1|CheckValve0,CheckValve1|Valve1|CheckValve1|600
-    """
-    states = code_to_binary_states(code)
-    flow = states_to_flow(states)
-    d1_odor, d1_check, d2_odor, d2_check = make_device_strings(states)
-    return f"{d1_odor},{d1_check},{d2_odor},{d2_check},{flow}"
+    flow = 900 - 100 * on_count
+    return outputs + [flow]
 
 
 def make_trial_list(block_num: int, seed=None):
     """
-    Create shuffled trial list.
-    Each block contains all 64 conditions: 0~63, shuffled within block.
-
-    Returns:
-      [(block_index, code), ...]
+    生成 trial 顺序。
+    每个 block 都是 0~63，block 内随机打乱。
+    返回 [(block, code), ...]
     """
     rng = random.Random(seed)
     trials = []
 
     for block_idx in range(1, block_num + 1):
-        block_codes = list(range(0, 64))
+        block_codes = list(range(0, 64))   # 改成包含 0
         rng.shuffle(block_codes)
         for code in block_codes:
             trials.append((block_idx, code))
@@ -109,7 +46,7 @@ def make_trial_list(block_num: int, seed=None):
 
 def save_bonsai_and_csv(
     block_num=3,
-    seed=None,
+    seed=123,
     txt_file="bonsai_conditions_shuffled.txt",
     csv_file="trial_table.csv"
 ):
@@ -119,30 +56,24 @@ def save_bonsai_and_csv(
     csv_rows = []
 
     for trial_idx, (block_idx, code) in enumerate(trials, start=1):
-        states = code_to_binary_states(code)
-        flow = states_to_flow(states)
-        payload = code_to_bonsai_payload(code)
+        row = code_to_row(code)
+        a, b, c, d, e, f, flow = row
 
         if trial_idx < 10:
-            txt_line = f'it == {trial_idx}  ? "{payload}" :'
+            txt_line = f'it == {trial_idx}  ? "{a},{b},{c},{d},{e},{f},{flow}" :'
         else:
-            txt_line = f'it == {trial_idx} ? "{payload}" :'
+            txt_line = f'it == {trial_idx} ? "{a},{b},{c},{d},{e},{f},{flow}" :'
         txt_lines.append(txt_line)
 
         csv_rows.append([
             trial_idx,
             block_idx,
             code,
-            states[0],  # A
-            states[1],  # B
-            states[2],  # C
-            states[3],  # D
-            states[4],  # E
-            states[5],  # F
+            a, b, c, d, e, f,
             flow
         ])
 
-    txt_lines.append('"None, None, None, None, 0"')
+    txt_lines.append('"0,0,0,0,0,0,0"')
 
     Path(txt_file).write_text("\n".join(txt_lines), encoding="utf-8")
 
@@ -162,7 +93,7 @@ def save_bonsai_and_csv(
 
 if __name__ == "__main__":
     BLOCK_NUM = 10
-    SEED = None   # None = different random order each run; integer = reproducible
+    SEED = None   # 固定数字则可复现；None 则每次都重新随机
 
     save_bonsai_and_csv(
         block_num=BLOCK_NUM,

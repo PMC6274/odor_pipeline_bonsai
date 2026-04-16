@@ -468,650 +468,650 @@
                         </Expression>
                         <Expression xsi:type="scr:ExpressionTransform">
                           <scr:Name>6odor_block</scr:Name>
-                          <scr:Expression>it == 1  ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 2  ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 3  ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 4  ? "Valve2,CheckValve2,None,None,800" :
-it == 5  ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 6  ? "None,None,None,None,900" :
-it == 7  ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 8  ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 9  ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 10 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 11 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 12 ? "Valve1,CheckValve1,None,None,800" :
-it == 13 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 14 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 15 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 16 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 17 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 18 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 19 ? "None,None,Valve0,CheckValve0,800" :
-it == 20 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 21 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 22 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 23 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 24 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 25 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 26 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 27 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 28 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 29 ? "None,None,Valve2,CheckValve2,800" :
-it == 30 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 31 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 32 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 33 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 34 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 35 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 36 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 37 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 38 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 39 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 40 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 41 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 42 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 43 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 44 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 45 ? "None,None,Valve1,CheckValve1,800" :
-it == 46 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 47 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 48 ? "Valve0,CheckValve0,None,None,800" :
-it == 49 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 50 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 51 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 52 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 53 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 54 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 55 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 56 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 57 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 58 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 59 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 60 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 61 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 62 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 63 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 64 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 65 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 66 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 67 ? "None,None,None,None,900" :
-it == 68 ? "Valve2,CheckValve2,None,None,800" :
-it == 69 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 70 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 71 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 72 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 73 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 74 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 75 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 76 ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 77 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 78 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 79 ? "Valve1,CheckValve1,None,None,800" :
-it == 80 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 81 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 82 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 83 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 84 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 85 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 86 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 87 ? "None,None,Valve1,CheckValve1,800" :
-it == 88 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 89 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 90 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 91 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 92 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 93 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 94 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 95 ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 96 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 97 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 98 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 99 ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 100 ? "Valve0,CheckValve0,None,None,800" :
-it == 101 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 102 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 103 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 104 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 105 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 106 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 107 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 108 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 109 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 110 ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 111 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 112 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 113 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 114 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 115 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 116 ? "None,None,Valve0,CheckValve0,800" :
-it == 117 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 118 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 119 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 120 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 121 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 122 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 123 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 124 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 125 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 126 ? "None,None,Valve2,CheckValve2,800" :
-it == 127 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 128 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 129 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 130 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 131 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 132 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 133 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 134 ? "Valve2,CheckValve2,None,None,800" :
-it == 135 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 136 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 137 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 138 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 139 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 140 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 141 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 142 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 143 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 144 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 145 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 146 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 147 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 148 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 149 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 150 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 151 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 152 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 153 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 154 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 155 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 156 ? "None,None,None,None,900" :
-it == 157 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 158 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 159 ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 160 ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 161 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 162 ? "Valve0,CheckValve0,None,None,800" :
-it == 163 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 164 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 165 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 166 ? "None,None,Valve0,CheckValve0,800" :
-it == 167 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 168 ? "Valve1,CheckValve1,None,None,800" :
-it == 169 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 170 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 171 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 172 ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 173 ? "None,None,Valve2,CheckValve2,800" :
-it == 174 ? "None,None,Valve1,CheckValve1,800" :
-it == 175 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 176 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 177 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 178 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 179 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 180 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 181 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 182 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 183 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 184 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 185 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 186 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 187 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 188 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 189 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 190 ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 191 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 192 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 193 ? "Valve2,CheckValve2,None,None,800" :
-it == 194 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 195 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 196 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 197 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 198 ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 199 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 200 ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 201 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 202 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 203 ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 204 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 205 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 206 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 207 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 208 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 209 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 210 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 211 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 212 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 213 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 214 ? "Valve1,CheckValve1,None,None,800" :
-it == 215 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 216 ? "None,None,None,None,900" :
-it == 217 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 218 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 219 ? "Valve0,CheckValve0,None,None,800" :
-it == 220 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 221 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 222 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 223 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 224 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 225 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 226 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 227 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 228 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 229 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 230 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 231 ? "None,None,Valve0,CheckValve0,800" :
-it == 232 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 233 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 234 ? "None,None,Valve1,CheckValve1,800" :
-it == 235 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 236 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 237 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 238 ? "None,None,Valve2,CheckValve2,800" :
-it == 239 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 240 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 241 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 242 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 243 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 244 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 245 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 246 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 247 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 248 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 249 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 250 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 251 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 252 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 253 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 254 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 255 ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 256 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 257 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 258 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 259 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 260 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 261 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 262 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 263 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 264 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 265 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 266 ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 267 ? "Valve1,CheckValve1,None,None,800" :
-it == 268 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 269 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 270 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 271 ? "None,None,None,None,900" :
-it == 272 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 273 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 274 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 275 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 276 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 277 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 278 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 279 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 280 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 281 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 282 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 283 ? "Valve2,CheckValve2,None,None,800" :
-it == 284 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 285 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 286 ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 287 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 288 ? "None,None,Valve0,CheckValve0,800" :
-it == 289 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 290 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 291 ? "Valve0,CheckValve0,None,None,800" :
-it == 292 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 293 ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 294 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 295 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 296 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 297 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 298 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 299 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 300 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 301 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 302 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 303 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 304 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 305 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 306 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 307 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 308 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 309 ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 310 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 311 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 312 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 313 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 314 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 315 ? "None,None,Valve2,CheckValve2,800" :
-it == 316 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 317 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 318 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 319 ? "None,None,Valve1,CheckValve1,800" :
-it == 320 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 321 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 322 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 323 ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 324 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 325 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 326 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 327 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 328 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 329 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 330 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 331 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 332 ? "Valve1,CheckValve1,None,None,800" :
-it == 333 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 334 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 335 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 336 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 337 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 338 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 339 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 340 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 341 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 342 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 343 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 344 ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 345 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 346 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 347 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 348 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 349 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 350 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 351 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 352 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 353 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 354 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 355 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 356 ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 357 ? "None,None,Valve1,CheckValve1,800" :
-it == 358 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 359 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 360 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 361 ? "None,None,Valve0,CheckValve0,800" :
-it == 362 ? "Valve0,CheckValve0,None,None,800" :
-it == 363 ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 364 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 365 ? "Valve2,CheckValve2,None,None,800" :
-it == 366 ? "None,None,None,None,900" :
-it == 367 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 368 ? "None,None,Valve2,CheckValve2,800" :
-it == 369 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 370 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 371 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 372 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 373 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 374 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 375 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 376 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 377 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 378 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 379 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 380 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 381 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 382 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 383 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 384 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 385 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 386 ? "None,None,Valve2,CheckValve2,800" :
-it == 387 ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 388 ? "None,None,None,None,900" :
-it == 389 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 390 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 391 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 392 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 393 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 394 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 395 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 396 ? "None,None,Valve0,CheckValve0,800" :
-it == 397 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 398 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 399 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 400 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 401 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 402 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 403 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 404 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 405 ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 406 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 407 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 408 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 409 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 410 ? "None,None,Valve1,CheckValve1,800" :
-it == 411 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 412 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 413 ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 414 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 415 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 416 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 417 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 418 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 419 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 420 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 421 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 422 ? "Valve0,CheckValve0,None,None,800" :
-it == 423 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 424 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 425 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 426 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 427 ? "Valve1,CheckValve1,None,None,800" :
-it == 428 ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 429 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 430 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 431 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 432 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 433 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 434 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 435 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 436 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 437 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 438 ? "Valve2,CheckValve2,None,None,800" :
-it == 439 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 440 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 441 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 442 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 443 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 444 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 445 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 446 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 447 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 448 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 449 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 450 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 451 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 452 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 453 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 454 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 455 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 456 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 457 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 458 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 459 ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 460 ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 461 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 462 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 463 ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 464 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 465 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 466 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 467 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 468 ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 469 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 470 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 471 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 472 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 473 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 474 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 475 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 476 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 477 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 478 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 479 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 480 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 481 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 482 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 483 ? "None,None,Valve2,CheckValve2,800" :
-it == 484 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 485 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 486 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 487 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 488 ? "Valve0,CheckValve0,None,None,800" :
-it == 489 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 490 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 491 ? "Valve1,CheckValve1,None,None,800" :
-it == 492 ? "None,None,None,None,900" :
-it == 493 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 494 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 495 ? "None,None,Valve0,CheckValve0,800" :
-it == 496 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 497 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 498 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 499 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 500 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 501 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 502 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 503 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 504 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 505 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 506 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 507 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 508 ? "None,None,Valve1,CheckValve1,800" :
-it == 509 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 510 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 511 ? "Valve2,CheckValve2,None,None,800" :
-it == 512 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 513 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 514 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 515 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 516 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 517 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 518 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 519 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 520 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 521 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 522 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 523 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 524 ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 525 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 526 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 527 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 528 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 529 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 530 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 531 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 532 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 533 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 534 ? "None,None,Valve0,CheckValve0,800" :
-it == 535 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 536 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 537 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 538 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 539 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 540 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 541 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 542 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 543 ? "Valve0,CheckValve0,None,None,800" :
-it == 544 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 545 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 546 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 547 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 548 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 549 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 550 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 551 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 552 ? "Valve2,CheckValve2,None,None,800" :
-it == 553 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 554 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 555 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 556 ? "None,None,Valve1,CheckValve1,800" :
-it == 557 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 558 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 559 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 560 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 561 ? "None,None,None,None,900" :
-it == 562 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 563 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 564 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 565 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 566 ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 567 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 568 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 569 ? "None,None,Valve2,CheckValve2,800" :
-it == 570 ? "Valve1,CheckValve1,None,None,800" :
-it == 571 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 572 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 573 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 574 ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 575 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 576 ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 577 ? "Valve0-Valve1,CheckValve0-CheckValve1,None,None,700" :
-it == 578 ? "Valve0,CheckValve0,Valve1,CheckValve1,700" :
-it == 579 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1,CheckValve1,600" :
-it == 580 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 581 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 582 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve2,CheckValve2,600" :
-it == 583 ? "None,None,Valve0-Valve1,CheckValve0-CheckValve1,700" :
-it == 584 ? "Valve1,CheckValve1,Valve0,CheckValve0,700" :
-it == 585 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,None,None,600" :
-it == 586 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0,CheckValve0,600" :
-it == 587 ? "Valve2,CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 588 ? "None,None,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,600" :
-it == 589 ? "Valve2,CheckValve2,Valve1,CheckValve1,700" :
-it == 590 ? "Valve0,CheckValve0,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 591 ? "Valve1,CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 592 ? "Valve1-Valve2,CheckValve1-CheckValve2,None,None,700" :
-it == 593 ? "Valve0,CheckValve0,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 594 ? "None,None,Valve0,CheckValve0,800" :
-it == 595 ? "Valve0,CheckValve0,None,None,800" :
-it == 596 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 597 ? "Valve1,CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 598 ? "None,None,Valve0-Valve2,CheckValve0-CheckValve2,700" :
-it == 599 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 600 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0,CheckValve0,500" :
-it == 601 ? "Valve2,CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-it == 602 ? "None,None,None,None,900" :
-it == 603 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 604 ? "Valve0,CheckValve0,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 605 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve2,CheckValve2,600" :
-it == 606 ? "Valve0,CheckValve0,Valve2,CheckValve2,700" :
-it == 607 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 608 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 609 ? "Valve2,CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 610 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,300" :
-it == 611 ? "Valve2,CheckValve2,Valve0,CheckValve0,700" :
-it == 612 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0-Valve1,CheckValve0-CheckValve1,500" :
-it == 613 ? "Valve1,CheckValve1,Valve1-Valve2,CheckValve1-CheckValve2,600" :
-it == 614 ? "Valve2,CheckValve2,None,None,800" :
-it == 615 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve2,CheckValve2,600" :
-it == 616 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve2,CheckValve2,500" :
-it == 617 ? "Valve0,CheckValve0,Valve0,CheckValve0,700" :
-it == 618 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve1,CheckValve1,600" :
-it == 619 ? "None,None,Valve1,CheckValve1,800" :
-it == 620 ? "None,None,Valve2,CheckValve2,800" :
-it == 621 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 622 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve1,CheckValve0-CheckValve1,400" :
-it == 623 ? "Valve2,CheckValve2,Valve2,CheckValve2,700" :
-it == 624 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,400" :
-it == 625 ? "None,None,Valve1-Valve2,CheckValve1-CheckValve2,700" :
-it == 626 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve1,CheckValve1,600" :
-it == 627 ? "Valve0-Valve2,CheckValve0-CheckValve2,None,None,700" :
-it == 628 ? "Valve0-Valve1,CheckValve0-CheckValve1,Valve0,CheckValve0,600" :
-it == 629 ? "Valve0,CheckValve0,Valve0-Valve1,CheckValve0-CheckValve1,600" :
-it == 630 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,500" :
-it == 631 ? "Valve1,CheckValve1,Valve1,CheckValve1,700" :
-it == 632 ? "Valve0-Valve2,CheckValve0-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,500" :
-it == 633 ? "Valve1-Valve2,CheckValve1-CheckValve2,Valve0,CheckValve0,600" :
-it == 634 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1-Valve2,CheckValve1-CheckValve2,400" :
-it == 635 ? "Valve1,CheckValve1,Valve2,CheckValve2,700" :
-it == 636 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve1,CheckValve1,500" :
-it == 637 ? "Valve2,CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,600" :
-it == 638 ? "Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,Valve0-Valve2,CheckValve0-CheckValve2,400" :
-it == 639 ? "Valve1,CheckValve1,None,None,800" :
-it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-CheckValve2,500" :
-"None, None, None, None, 0"</scr:Expression>
+                          <scr:Expression>it == 1  ? "1,2,0,0,6,0,600" :
+it == 2  ? "1,2,3,5,0,7,400" :
+it == 3  ? "1,0,0,5,6,7,500" :
+it == 4  ? "1,0,0,0,0,7,700" :
+it == 5  ? "0,2,3,5,0,0,600" :
+it == 6  ? "0,0,3,5,6,7,500" :
+it == 7  ? "0,0,0,0,6,0,800" :
+it == 8  ? "1,2,0,0,0,7,600" :
+it == 9  ? "1,0,3,5,0,7,500" :
+it == 10 ? "1,0,0,0,6,0,700" :
+it == 11 ? "0,2,0,5,0,0,700" :
+it == 12 ? "1,2,0,0,0,0,700" :
+it == 13 ? "1,2,3,0,6,0,500" :
+it == 14 ? "1,2,0,5,0,0,600" :
+it == 15 ? "0,0,0,5,6,0,700" :
+it == 16 ? "1,0,0,0,6,7,600" :
+it == 17 ? "1,2,0,5,0,7,500" :
+it == 18 ? "1,2,3,5,0,0,500" :
+it == 19 ? "0,0,0,0,0,0,900" :
+it == 20 ? "0,0,0,0,6,7,700" :
+it == 21 ? "1,2,0,5,6,0,500" :
+it == 22 ? "0,2,0,5,6,0,600" :
+it == 23 ? "0,2,3,0,0,0,700" :
+it == 24 ? "0,0,3,5,0,7,600" :
+it == 25 ? "0,2,3,5,6,7,400" :
+it == 26 ? "0,2,0,0,6,0,700" :
+it == 27 ? "0,2,3,5,0,7,500" :
+it == 28 ? "0,0,3,0,0,7,700" :
+it == 29 ? "1,0,0,5,0,0,700" :
+it == 30 ? "0,0,3,0,0,0,800" :
+it == 31 ? "0,0,3,5,0,0,700" :
+it == 32 ? "0,0,3,5,6,0,600" :
+it == 33 ? "1,0,3,0,6,7,500" :
+it == 34 ? "0,2,0,0,0,7,700" :
+it == 35 ? "0,2,3,0,0,7,600" :
+it == 36 ? "0,0,3,0,6,0,700" :
+it == 37 ? "1,0,3,5,6,0,500" :
+it == 38 ? "1,2,3,0,0,0,600" :
+it == 39 ? "1,0,3,0,0,7,600" :
+it == 40 ? "1,0,3,5,6,7,400" :
+it == 41 ? "1,0,3,0,6,0,600" :
+it == 42 ? "0,0,0,5,0,7,700" :
+it == 43 ? "0,2,0,5,0,7,600" :
+it == 44 ? "0,0,0,0,0,7,800" :
+it == 45 ? "0,2,3,0,6,7,500" :
+it == 46 ? "1,0,0,5,0,7,600" :
+it == 47 ? "1,2,3,5,6,0,400" :
+it == 48 ? "0,2,0,0,6,7,600" :
+it == 49 ? "1,2,3,0,0,7,500" :
+it == 50 ? "1,0,0,5,6,0,600" :
+it == 51 ? "0,2,0,0,0,0,800" :
+it == 52 ? "1,0,3,0,0,0,700" :
+it == 53 ? "0,0,0,5,6,7,600" :
+it == 54 ? "0,2,3,5,6,0,500" :
+it == 55 ? "0,0,3,0,6,7,600" :
+it == 56 ? "0,2,0,5,6,7,500" :
+it == 57 ? "1,0,0,0,0,0,800" :
+it == 58 ? "1,2,0,5,6,7,400" :
+it == 59 ? "1,2,3,0,6,7,400" :
+it == 60 ? "0,2,3,0,6,0,600" :
+it == 61 ? "1,2,0,0,6,7,500" :
+it == 62 ? "1,2,3,5,6,7,300" :
+it == 63 ? "1,0,3,5,0,0,600" :
+it == 64 ? "0,0,0,5,0,0,800" :
+it == 65 ? "1,0,0,5,0,0,700" :
+it == 66 ? "1,2,0,0,0,0,700" :
+it == 67 ? "1,0,0,0,6,0,700" :
+it == 68 ? "0,0,3,0,6,0,700" :
+it == 69 ? "0,2,3,5,6,7,400" :
+it == 70 ? "0,2,0,0,0,7,700" :
+it == 71 ? "0,0,3,5,6,7,500" :
+it == 72 ? "0,2,3,5,0,0,600" :
+it == 73 ? "1,0,0,5,6,0,600" :
+it == 74 ? "1,0,0,0,0,0,800" :
+it == 75 ? "1,0,3,0,6,7,500" :
+it == 76 ? "0,2,3,0,6,0,600" :
+it == 77 ? "1,2,0,0,0,7,600" :
+it == 78 ? "0,0,3,5,0,7,600" :
+it == 79 ? "1,2,0,5,0,7,500" :
+it == 80 ? "0,0,3,0,0,7,700" :
+it == 81 ? "1,2,3,5,0,0,500" :
+it == 82 ? "0,2,0,5,6,7,500" :
+it == 83 ? "1,2,0,5,6,0,500" :
+it == 84 ? "0,0,3,0,6,7,600" :
+it == 85 ? "0,0,0,0,0,0,900" :
+it == 86 ? "1,2,3,0,6,0,500" :
+it == 87 ? "0,0,3,0,0,0,800" :
+it == 88 ? "1,0,3,0,6,0,600" :
+it == 89 ? "0,2,0,5,0,7,600" :
+it == 90 ? "0,2,3,0,0,0,700" :
+it == 91 ? "0,0,0,5,6,7,600" :
+it == 92 ? "1,2,0,0,6,7,500" :
+it == 93 ? "1,0,0,0,6,7,600" :
+it == 94 ? "1,0,3,0,0,7,600" :
+it == 95 ? "0,0,3,5,0,0,700" :
+it == 96 ? "1,2,3,0,0,7,500" :
+it == 97 ? "0,2,0,0,6,7,600" :
+it == 98 ? "1,2,0,5,0,0,600" :
+it == 99 ? "1,0,0,5,0,7,600" :
+it == 100 ? "1,2,3,0,0,0,600" :
+it == 101 ? "1,2,3,5,6,0,400" :
+it == 102 ? "1,2,3,0,6,7,400" :
+it == 103 ? "1,0,3,5,0,0,600" :
+it == 104 ? "0,0,0,0,6,0,800" :
+it == 105 ? "1,0,3,5,6,7,400" :
+it == 106 ? "1,0,0,5,6,7,500" :
+it == 107 ? "1,2,0,0,6,0,600" :
+it == 108 ? "0,2,3,5,6,0,500" :
+it == 109 ? "0,2,3,0,6,7,500" :
+it == 110 ? "0,2,0,5,6,0,600" :
+it == 111 ? "1,2,3,5,6,7,300" :
+it == 112 ? "0,0,0,0,6,7,700" :
+it == 113 ? "0,0,3,5,6,0,600" :
+it == 114 ? "0,2,0,0,0,0,800" :
+it == 115 ? "0,2,0,5,0,0,700" :
+it == 116 ? "1,0,3,5,6,0,500" :
+it == 117 ? "1,2,3,5,0,7,400" :
+it == 118 ? "1,0,0,0,0,7,700" :
+it == 119 ? "0,2,3,5,0,7,500" :
+it == 120 ? "0,0,0,5,0,7,700" :
+it == 121 ? "0,2,3,0,0,7,600" :
+it == 122 ? "0,0,0,5,6,0,700" :
+it == 123 ? "0,0,0,5,0,0,800" :
+it == 124 ? "1,0,3,0,0,0,700" :
+it == 125 ? "1,2,0,5,6,7,400" :
+it == 126 ? "0,2,0,0,6,0,700" :
+it == 127 ? "1,0,3,5,0,7,500" :
+it == 128 ? "0,0,0,0,0,7,800" :
+it == 129 ? "0,0,0,0,6,0,800" :
+it == 130 ? "1,2,0,5,0,7,500" :
+it == 131 ? "0,2,3,5,6,0,500" :
+it == 132 ? "1,0,0,5,6,0,600" :
+it == 133 ? "0,2,3,0,6,0,600" :
+it == 134 ? "0,0,0,5,6,7,600" :
+it == 135 ? "1,2,3,5,0,7,400" :
+it == 136 ? "0,2,0,0,6,7,600" :
+it == 137 ? "1,0,3,5,0,0,600" :
+it == 138 ? "0,0,0,5,0,7,700" :
+it == 139 ? "1,2,3,0,6,7,400" :
+it == 140 ? "1,0,0,0,0,0,800" :
+it == 141 ? "0,0,3,0,0,0,800" :
+it == 142 ? "1,2,3,5,6,0,400" :
+it == 143 ? "1,2,0,0,0,7,600" :
+it == 144 ? "0,2,0,5,6,0,600" :
+it == 145 ? "1,2,3,0,6,0,500" :
+it == 146 ? "1,0,0,0,0,7,700" :
+it == 147 ? "1,2,0,0,6,0,600" :
+it == 148 ? "1,0,3,0,6,7,500" :
+it == 149 ? "0,0,0,0,0,0,900" :
+it == 150 ? "0,0,3,5,6,0,600" :
+it == 151 ? "1,2,0,5,0,0,600" :
+it == 152 ? "0,2,3,5,0,0,600" :
+it == 153 ? "1,2,3,0,0,0,600" :
+it == 154 ? "0,0,0,5,0,0,800" :
+it == 155 ? "0,0,3,5,0,7,600" :
+it == 156 ? "1,0,0,0,6,7,600" :
+it == 157 ? "0,0,0,5,6,0,700" :
+it == 158 ? "1,2,3,5,0,0,500" :
+it == 159 ? "1,0,0,5,0,0,700" :
+it == 160 ? "0,2,3,0,0,0,700" :
+it == 161 ? "1,0,3,5,0,7,500" :
+it == 162 ? "0,0,3,0,6,7,600" :
+it == 163 ? "1,0,0,5,6,7,500" :
+it == 164 ? "0,2,3,0,0,7,600" :
+it == 165 ? "0,0,0,0,6,7,700" :
+it == 166 ? "0,2,3,5,6,7,400" :
+it == 167 ? "0,0,3,5,0,0,700" :
+it == 168 ? "0,0,0,0,0,7,800" :
+it == 169 ? "1,2,0,5,6,7,400" :
+it == 170 ? "1,0,0,5,0,7,600" :
+it == 171 ? "0,2,0,5,0,7,600" :
+it == 172 ? "1,2,0,5,6,0,500" :
+it == 173 ? "1,0,3,5,6,7,400" :
+it == 174 ? "1,2,0,0,6,7,500" :
+it == 175 ? "0,2,3,0,6,7,500" :
+it == 176 ? "1,0,3,0,0,0,700" :
+it == 177 ? "1,0,3,0,0,7,600" :
+it == 178 ? "0,0,3,0,6,0,700" :
+it == 179 ? "0,2,3,5,0,7,500" :
+it == 180 ? "0,2,0,0,6,0,700" :
+it == 181 ? "0,2,0,5,0,0,700" :
+it == 182 ? "1,2,3,0,0,7,500" :
+it == 183 ? "0,2,0,0,0,7,700" :
+it == 184 ? "0,0,3,0,0,7,700" :
+it == 185 ? "1,0,0,0,6,0,700" :
+it == 186 ? "1,2,3,5,6,7,300" :
+it == 187 ? "0,2,0,5,6,7,500" :
+it == 188 ? "1,0,3,0,6,0,600" :
+it == 189 ? "1,2,0,0,0,0,700" :
+it == 190 ? "0,2,0,0,0,0,800" :
+it == 191 ? "0,0,3,5,6,7,500" :
+it == 192 ? "1,0,3,5,6,0,500" :
+it == 193 ? "1,0,0,5,6,7,500" :
+it == 194 ? "0,2,0,0,6,0,700" :
+it == 195 ? "1,2,0,5,6,7,400" :
+it == 196 ? "0,2,3,0,0,0,700" :
+it == 197 ? "1,0,3,0,6,7,500" :
+it == 198 ? "1,0,3,0,0,0,700" :
+it == 199 ? "1,2,0,0,6,7,500" :
+it == 200 ? "0,2,3,5,0,0,600" :
+it == 201 ? "0,2,0,0,0,0,800" :
+it == 202 ? "0,2,0,5,6,0,600" :
+it == 203 ? "0,0,0,0,0,7,800" :
+it == 204 ? "0,0,0,5,6,7,600" :
+it == 205 ? "1,0,0,0,6,0,700" :
+it == 206 ? "0,2,3,5,0,7,500" :
+it == 207 ? "0,0,0,0,0,0,900" :
+it == 208 ? "0,0,3,0,0,0,800" :
+it == 209 ? "1,2,0,0,0,0,700" :
+it == 210 ? "0,2,0,5,0,0,700" :
+it == 211 ? "0,0,0,5,6,0,700" :
+it == 212 ? "0,0,3,5,6,0,600" :
+it == 213 ? "1,2,3,5,0,0,500" :
+it == 214 ? "1,0,0,0,6,7,600" :
+it == 215 ? "1,2,3,5,6,0,400" :
+it == 216 ? "0,2,3,5,6,0,500" :
+it == 217 ? "0,0,3,0,0,7,700" :
+it == 218 ? "0,2,3,5,6,7,400" :
+it == 219 ? "1,2,0,5,0,0,600" :
+it == 220 ? "1,2,3,0,6,0,500" :
+it == 221 ? "1,2,0,0,0,7,600" :
+it == 222 ? "0,2,3,0,6,0,600" :
+it == 223 ? "0,2,0,0,0,7,700" :
+it == 224 ? "0,0,0,0,6,0,800" :
+it == 225 ? "0,2,0,0,6,7,600" :
+it == 226 ? "0,0,3,0,6,0,700" :
+it == 227 ? "1,0,3,0,6,0,600" :
+it == 228 ? "0,0,0,0,6,7,700" :
+it == 229 ? "1,0,0,5,0,0,700" :
+it == 230 ? "1,2,3,0,0,0,600" :
+it == 231 ? "1,2,3,5,6,7,300" :
+it == 232 ? "0,0,0,5,0,7,700" :
+it == 233 ? "1,0,0,0,0,7,700" :
+it == 234 ? "0,2,3,0,0,7,600" :
+it == 235 ? "1,2,3,0,0,7,500" :
+it == 236 ? "1,0,3,5,6,0,500" :
+it == 237 ? "0,0,3,0,6,7,600" :
+it == 238 ? "1,0,0,0,0,0,800" :
+it == 239 ? "0,2,3,0,6,7,500" :
+it == 240 ? "1,0,3,5,0,0,600" :
+it == 241 ? "1,2,0,5,6,0,500" :
+it == 242 ? "1,2,3,5,0,7,400" :
+it == 243 ? "0,2,0,5,6,7,500" :
+it == 244 ? "0,0,3,5,6,7,500" :
+it == 245 ? "1,0,0,5,0,7,600" :
+it == 246 ? "0,0,3,5,0,0,700" :
+it == 247 ? "1,0,3,5,6,7,400" :
+it == 248 ? "0,0,3,5,0,7,600" :
+it == 249 ? "1,0,0,5,6,0,600" :
+it == 250 ? "0,2,0,5,0,7,600" :
+it == 251 ? "0,0,0,5,0,0,800" :
+it == 252 ? "1,0,3,5,0,7,500" :
+it == 253 ? "1,0,3,0,0,7,600" :
+it == 254 ? "1,2,3,0,6,7,400" :
+it == 255 ? "1,2,0,5,0,7,500" :
+it == 256 ? "1,2,0,0,6,0,600" :
+it == 257 ? "1,0,0,5,6,0,600" :
+it == 258 ? "1,0,3,5,0,7,500" :
+it == 259 ? "1,2,3,0,0,0,600" :
+it == 260 ? "1,2,3,0,6,0,500" :
+it == 261 ? "0,0,0,0,0,7,800" :
+it == 262 ? "0,0,0,5,0,0,800" :
+it == 263 ? "0,0,0,0,6,0,800" :
+it == 264 ? "0,2,0,5,6,0,600" :
+it == 265 ? "1,0,3,5,0,0,600" :
+it == 266 ? "0,0,3,0,6,0,700" :
+it == 267 ? "0,2,0,0,6,7,600" :
+it == 268 ? "0,0,3,0,6,7,600" :
+it == 269 ? "0,2,3,5,0,7,500" :
+it == 270 ? "1,0,0,0,0,7,700" :
+it == 271 ? "0,0,0,0,0,0,900" :
+it == 272 ? "0,2,3,5,6,0,500" :
+it == 273 ? "1,2,3,0,0,7,500" :
+it == 274 ? "0,2,0,5,6,7,500" :
+it == 275 ? "0,0,3,5,0,0,700" :
+it == 276 ? "1,2,0,0,0,7,600" :
+it == 277 ? "1,0,3,0,6,0,600" :
+it == 278 ? "0,0,0,5,6,0,700" :
+it == 279 ? "1,0,3,5,6,0,500" :
+it == 280 ? "1,2,3,5,6,7,300" :
+it == 281 ? "1,0,0,5,0,7,600" :
+it == 282 ? "1,0,3,0,6,7,500" :
+it == 283 ? "0,2,0,0,0,0,800" :
+it == 284 ? "1,0,0,0,6,0,700" :
+it == 285 ? "1,0,3,0,0,7,600" :
+it == 286 ? "1,0,3,5,6,7,400" :
+it == 287 ? "0,0,3,5,0,7,600" :
+it == 288 ? "1,2,3,5,6,0,400" :
+it == 289 ? "1,2,0,0,6,0,600" :
+it == 290 ? "0,2,3,0,6,0,600" :
+it == 291 ? "0,2,0,0,6,0,700" :
+it == 292 ? "1,2,0,5,6,7,400" :
+it == 293 ? "1,2,0,0,6,7,500" :
+it == 294 ? "1,2,0,0,0,0,700" :
+it == 295 ? "0,2,0,5,0,0,700" :
+it == 296 ? "0,2,3,0,6,7,500" :
+it == 297 ? "0,0,3,5,6,0,600" :
+it == 298 ? "0,2,3,5,6,7,400" :
+it == 299 ? "0,0,0,5,6,7,600" :
+it == 300 ? "0,2,0,5,0,7,600" :
+it == 301 ? "1,2,0,5,0,0,600" :
+it == 302 ? "1,2,3,5,0,7,400" :
+it == 303 ? "1,2,3,5,0,0,500" :
+it == 304 ? "1,0,0,0,6,7,600" :
+it == 305 ? "0,0,0,0,6,7,700" :
+it == 306 ? "0,2,3,0,0,0,700" :
+it == 307 ? "0,2,3,5,0,0,600" :
+it == 308 ? "1,2,3,0,6,7,400" :
+it == 309 ? "1,0,0,5,0,0,700" :
+it == 310 ? "1,2,0,5,0,7,500" :
+it == 311 ? "1,0,3,0,0,0,700" :
+it == 312 ? "1,0,0,0,0,0,800" :
+it == 313 ? "0,2,0,0,0,7,700" :
+it == 314 ? "0,0,3,5,6,7,500" :
+it == 315 ? "0,2,3,0,0,7,600" :
+it == 316 ? "0,0,3,0,0,7,700" :
+it == 317 ? "1,0,0,5,6,7,500" :
+it == 318 ? "1,2,0,5,6,0,500" :
+it == 319 ? "0,0,3,0,0,0,800" :
+it == 320 ? "0,0,0,5,0,7,700" :
+it == 321 ? "1,0,0,0,6,7,600" :
+it == 322 ? "0,2,0,0,6,7,600" :
+it == 323 ? "0,0,3,5,6,0,600" :
+it == 324 ? "1,0,0,0,0,7,700" :
+it == 325 ? "0,0,3,5,0,7,600" :
+it == 326 ? "1,0,0,5,6,7,500" :
+it == 327 ? "1,0,3,0,6,0,600" :
+it == 328 ? "1,2,3,0,0,0,600" :
+it == 329 ? "1,2,3,5,6,0,400" :
+it == 330 ? "0,0,0,5,0,0,800" :
+it == 331 ? "1,0,0,5,0,7,600" :
+it == 332 ? "0,2,3,5,6,0,500" :
+it == 333 ? "1,0,0,0,6,0,700" :
+it == 334 ? "0,2,3,0,0,0,700" :
+it == 335 ? "0,0,0,0,6,0,800" :
+it == 336 ? "1,0,0,0,0,0,800" :
+it == 337 ? "0,2,0,5,0,0,700" :
+it == 338 ? "0,0,0,5,6,7,600" :
+it == 339 ? "1,0,3,5,0,7,500" :
+it == 340 ? "1,0,3,5,0,0,600" :
+it == 341 ? "0,0,3,0,6,7,600" :
+it == 342 ? "1,0,3,0,6,7,500" :
+it == 343 ? "1,2,3,5,0,7,400" :
+it == 344 ? "1,2,0,5,6,7,400" :
+it == 345 ? "0,2,0,5,0,7,600" :
+it == 346 ? "0,2,3,5,6,7,400" :
+it == 347 ? "0,0,3,5,6,7,500" :
+it == 348 ? "1,0,3,5,6,0,500" :
+it == 349 ? "0,0,0,0,0,7,800" :
+it == 350 ? "0,0,3,0,6,0,700" :
+it == 351 ? "1,0,0,5,6,0,600" :
+it == 352 ? "0,0,0,0,6,7,700" :
+it == 353 ? "0,0,3,0,0,0,800" :
+it == 354 ? "0,0,0,0,0,0,900" :
+it == 355 ? "1,2,3,0,0,7,500" :
+it == 356 ? "0,2,0,5,6,0,600" :
+it == 357 ? "1,2,0,5,6,0,500" :
+it == 358 ? "1,2,0,0,0,7,600" :
+it == 359 ? "0,2,3,0,6,7,500" :
+it == 360 ? "0,0,3,5,0,0,700" :
+it == 361 ? "1,2,3,5,0,0,500" :
+it == 362 ? "1,2,3,0,6,7,400" :
+it == 363 ? "1,0,3,0,0,7,600" :
+it == 364 ? "0,2,0,0,0,0,800" :
+it == 365 ? "1,2,0,0,0,0,700" :
+it == 366 ? "1,2,0,5,0,0,600" :
+it == 367 ? "0,2,3,5,0,0,600" :
+it == 368 ? "1,2,0,5,0,7,500" :
+it == 369 ? "1,2,3,5,6,7,300" :
+it == 370 ? "0,2,3,0,0,7,600" :
+it == 371 ? "1,2,3,0,6,0,500" :
+it == 372 ? "0,2,3,0,6,0,600" :
+it == 373 ? "1,2,0,0,6,0,600" :
+it == 374 ? "0,2,0,0,0,7,700" :
+it == 375 ? "0,0,0,5,6,0,700" :
+it == 376 ? "0,0,3,0,0,7,700" :
+it == 377 ? "1,0,3,5,6,7,400" :
+it == 378 ? "0,0,0,5,0,7,700" :
+it == 379 ? "1,0,0,5,0,0,700" :
+it == 380 ? "1,2,0,0,6,7,500" :
+it == 381 ? "1,0,3,0,0,0,700" :
+it == 382 ? "0,2,0,0,6,0,700" :
+it == 383 ? "0,2,3,5,0,7,500" :
+it == 384 ? "0,2,0,5,6,7,500" :
+it == 385 ? "0,2,0,5,0,0,700" :
+it == 386 ? "1,0,3,5,0,7,500" :
+it == 387 ? "0,2,0,0,6,7,600" :
+it == 388 ? "1,0,0,5,0,0,700" :
+it == 389 ? "0,2,0,5,0,7,600" :
+it == 390 ? "0,2,3,0,0,0,700" :
+it == 391 ? "0,0,0,5,0,7,700" :
+it == 392 ? "0,0,3,0,0,0,800" :
+it == 393 ? "1,2,3,0,0,0,600" :
+it == 394 ? "1,0,3,5,6,7,400" :
+it == 395 ? "1,2,0,5,6,7,400" :
+it == 396 ? "1,0,0,0,6,0,700" :
+it == 397 ? "1,2,3,5,0,7,400" :
+it == 398 ? "0,2,3,0,6,7,500" :
+it == 399 ? "1,2,3,0,6,7,400" :
+it == 400 ? "1,2,0,0,6,0,600" :
+it == 401 ? "0,0,0,5,6,0,700" :
+it == 402 ? "1,0,0,0,6,7,600" :
+it == 403 ? "1,0,0,5,6,7,500" :
+it == 404 ? "1,0,0,0,0,0,800" :
+it == 405 ? "0,0,0,0,0,7,800" :
+it == 406 ? "0,2,0,0,0,0,800" :
+it == 407 ? "0,2,0,5,6,7,500" :
+it == 408 ? "0,2,3,5,6,0,500" :
+it == 409 ? "0,2,3,5,0,0,600" :
+it == 410 ? "0,2,0,0,6,0,700" :
+it == 411 ? "1,0,3,0,0,7,600" :
+it == 412 ? "1,2,0,0,0,0,700" :
+it == 413 ? "0,2,0,5,6,0,600" :
+it == 414 ? "1,2,0,0,6,7,500" :
+it == 415 ? "0,2,3,5,0,7,500" :
+it == 416 ? "1,0,3,5,6,0,500" :
+it == 417 ? "1,2,0,0,0,7,600" :
+it == 418 ? "0,2,0,0,0,7,700" :
+it == 419 ? "1,0,3,5,0,0,600" :
+it == 420 ? "1,2,0,5,0,7,500" :
+it == 421 ? "0,0,3,5,6,7,500" :
+it == 422 ? "0,0,3,5,6,0,600" :
+it == 423 ? "0,2,3,0,0,7,600" :
+it == 424 ? "1,2,3,0,0,7,500" :
+it == 425 ? "1,2,0,5,0,0,600" :
+it == 426 ? "1,2,3,5,6,7,300" :
+it == 427 ? "0,0,0,5,0,0,800" :
+it == 428 ? "0,0,3,0,6,7,600" :
+it == 429 ? "1,0,0,5,6,0,600" :
+it == 430 ? "1,0,0,0,0,7,700" :
+it == 431 ? "1,0,3,0,0,0,700" :
+it == 432 ? "1,2,0,5,6,0,500" :
+it == 433 ? "0,0,0,5,6,7,600" :
+it == 434 ? "0,0,3,0,6,0,700" :
+it == 435 ? "1,2,3,0,6,0,500" :
+it == 436 ? "0,0,0,0,6,0,800" :
+it == 437 ? "0,2,3,5,6,7,400" :
+it == 438 ? "0,0,0,0,0,0,900" :
+it == 439 ? "0,2,3,0,6,0,600" :
+it == 440 ? "0,0,0,0,6,7,700" :
+it == 441 ? "1,0,3,0,6,7,500" :
+it == 442 ? "0,0,3,5,0,0,700" :
+it == 443 ? "0,0,3,0,0,7,700" :
+it == 444 ? "1,0,3,0,6,0,600" :
+it == 445 ? "1,2,3,5,0,0,500" :
+it == 446 ? "1,0,0,5,0,7,600" :
+it == 447 ? "1,2,3,5,6,0,400" :
+it == 448 ? "0,0,3,5,0,7,600" :
+it == 449 ? "0,0,0,0,6,0,800" :
+it == 450 ? "1,0,3,5,6,7,400" :
+it == 451 ? "0,2,0,0,0,7,700" :
+it == 452 ? "1,2,0,5,6,0,500" :
+it == 453 ? "0,2,0,0,6,7,600" :
+it == 454 ? "1,2,0,5,0,0,600" :
+it == 455 ? "0,0,0,0,0,0,900" :
+it == 456 ? "0,0,0,5,6,7,600" :
+it == 457 ? "1,2,3,5,6,0,400" :
+it == 458 ? "1,2,3,0,6,7,400" :
+it == 459 ? "1,0,0,5,6,7,500" :
+it == 460 ? "1,0,0,5,0,7,600" :
+it == 461 ? "1,2,3,5,6,7,300" :
+it == 462 ? "0,2,3,0,0,0,700" :
+it == 463 ? "0,0,3,5,6,7,500" :
+it == 464 ? "0,0,3,0,0,0,800" :
+it == 465 ? "0,0,0,5,6,0,700" :
+it == 466 ? "0,2,0,0,0,0,800" :
+it == 467 ? "1,0,0,0,0,7,700" :
+it == 468 ? "1,2,3,0,6,0,500" :
+it == 469 ? "1,2,0,0,0,0,700" :
+it == 470 ? "0,0,0,5,0,0,800" :
+it == 471 ? "1,0,3,0,6,0,600" :
+it == 472 ? "1,2,0,5,0,7,500" :
+it == 473 ? "1,2,0,0,0,7,600" :
+it == 474 ? "1,0,0,0,6,0,700" :
+it == 475 ? "1,0,0,5,6,0,600" :
+it == 476 ? "1,2,3,5,0,0,500" :
+it == 477 ? "1,0,0,5,0,0,700" :
+it == 478 ? "0,2,3,5,6,7,400" :
+it == 479 ? "1,0,3,0,6,7,500" :
+it == 480 ? "1,0,3,5,6,0,500" :
+it == 481 ? "1,2,3,0,0,7,500" :
+it == 482 ? "0,0,3,5,0,7,600" :
+it == 483 ? "1,0,3,5,0,7,500" :
+it == 484 ? "1,2,3,0,0,0,600" :
+it == 485 ? "0,0,0,5,0,7,700" :
+it == 486 ? "0,0,3,5,0,0,700" :
+it == 487 ? "0,0,0,0,0,7,800" :
+it == 488 ? "1,0,3,0,0,7,600" :
+it == 489 ? "1,2,0,0,6,0,600" :
+it == 490 ? "0,2,3,5,0,0,600" :
+it == 491 ? "0,2,0,5,0,0,700" :
+it == 492 ? "0,2,0,0,6,0,700" :
+it == 493 ? "1,0,3,0,0,0,700" :
+it == 494 ? "0,2,3,0,6,7,500" :
+it == 495 ? "0,0,3,5,6,0,600" :
+it == 496 ? "0,2,3,5,0,7,500" :
+it == 497 ? "1,0,0,0,6,7,600" :
+it == 498 ? "0,0,3,0,6,7,600" :
+it == 499 ? "0,0,3,0,6,0,700" :
+it == 500 ? "1,2,0,5,6,7,400" :
+it == 501 ? "0,2,0,5,0,7,600" :
+it == 502 ? "0,0,0,0,6,7,700" :
+it == 503 ? "0,2,0,5,6,0,600" :
+it == 504 ? "0,2,3,0,6,0,600" :
+it == 505 ? "0,2,0,5,6,7,500" :
+it == 506 ? "0,2,3,5,6,0,500" :
+it == 507 ? "0,2,3,0,0,7,600" :
+it == 508 ? "1,2,0,0,6,7,500" :
+it == 509 ? "1,0,3,5,0,0,600" :
+it == 510 ? "1,0,0,0,0,0,800" :
+it == 511 ? "1,2,3,5,0,7,400" :
+it == 512 ? "0,0,3,0,0,7,700" :
+it == 513 ? "0,0,0,0,6,0,800" :
+it == 514 ? "0,2,0,5,0,0,700" :
+it == 515 ? "0,0,3,0,6,7,600" :
+it == 516 ? "1,2,0,0,6,7,500" :
+it == 517 ? "1,2,3,5,6,7,300" :
+it == 518 ? "0,0,0,0,0,7,800" :
+it == 519 ? "0,0,3,0,6,0,700" :
+it == 520 ? "1,0,3,0,0,7,600" :
+it == 521 ? "1,0,0,0,6,7,600" :
+it == 522 ? "0,0,3,0,0,7,700" :
+it == 523 ? "1,2,3,0,6,0,500" :
+it == 524 ? "1,2,0,5,0,7,500" :
+it == 525 ? "1,2,3,0,0,0,600" :
+it == 526 ? "1,0,3,5,6,0,500" :
+it == 527 ? "1,0,3,5,0,7,500" :
+it == 528 ? "1,0,3,0,0,0,700" :
+it == 529 ? "1,0,0,5,0,7,600" :
+it == 530 ? "1,0,0,5,6,7,500" :
+it == 531 ? "0,0,3,5,0,0,700" :
+it == 532 ? "1,2,0,5,6,7,400" :
+it == 533 ? "0,2,0,0,6,0,700" :
+it == 534 ? "1,2,0,5,6,0,500" :
+it == 535 ? "1,2,0,5,0,0,600" :
+it == 536 ? "1,2,3,0,6,7,400" :
+it == 537 ? "1,2,3,5,0,7,400" :
+it == 538 ? "0,2,0,5,0,7,600" :
+it == 539 ? "1,0,0,0,0,7,700" :
+it == 540 ? "1,0,0,0,0,0,800" :
+it == 541 ? "0,0,0,0,6,7,700" :
+it == 542 ? "1,2,0,0,0,0,700" :
+it == 543 ? "0,2,3,5,0,0,600" :
+it == 544 ? "1,0,3,5,6,7,400" :
+it == 545 ? "0,2,3,0,0,0,700" :
+it == 546 ? "1,2,3,5,6,0,400" :
+it == 547 ? "1,0,3,5,0,0,600" :
+it == 548 ? "1,0,0,0,6,0,700" :
+it == 549 ? "0,0,3,0,0,0,800" :
+it == 550 ? "0,2,3,5,0,7,500" :
+it == 551 ? "0,0,0,0,0,0,900" :
+it == 552 ? "1,2,3,5,0,0,500" :
+it == 553 ? "0,2,3,0,0,7,600" :
+it == 554 ? "0,0,0,5,6,7,600" :
+it == 555 ? "0,2,0,5,6,0,600" :
+it == 556 ? "0,2,0,5,6,7,500" :
+it == 557 ? "0,2,3,0,6,0,600" :
+it == 558 ? "1,0,3,0,6,7,500" :
+it == 559 ? "1,2,0,0,6,0,600" :
+it == 560 ? "0,0,0,5,6,0,700" :
+it == 561 ? "1,0,0,5,6,0,600" :
+it == 562 ? "0,2,3,5,6,0,500" :
+it == 563 ? "0,0,3,5,6,7,500" :
+it == 564 ? "0,0,0,5,0,7,700" :
+it == 565 ? "0,0,0,5,0,0,800" :
+it == 566 ? "0,2,0,0,6,7,600" :
+it == 567 ? "0,0,3,5,0,7,600" :
+it == 568 ? "0,2,3,5,6,7,400" :
+it == 569 ? "0,0,3,5,6,0,600" :
+it == 570 ? "1,2,3,0,0,7,500" :
+it == 571 ? "1,0,0,5,0,0,700" :
+it == 572 ? "0,2,3,0,6,7,500" :
+it == 573 ? "0,2,0,0,0,0,800" :
+it == 574 ? "0,2,0,0,0,7,700" :
+it == 575 ? "1,2,0,0,0,7,600" :
+it == 576 ? "1,0,3,0,6,0,600" :
+it == 577 ? "1,2,0,0,6,7,500" :
+it == 578 ? "0,2,0,5,0,0,700" :
+it == 579 ? "1,0,3,0,6,7,500" :
+it == 580 ? "0,2,3,0,0,7,600" :
+it == 581 ? "0,0,0,5,6,0,700" :
+it == 582 ? "1,2,3,0,6,7,400" :
+it == 583 ? "0,2,3,5,0,0,600" :
+it == 584 ? "1,0,3,5,0,7,500" :
+it == 585 ? "1,0,0,5,0,0,700" :
+it == 586 ? "1,0,3,5,6,7,400" :
+it == 587 ? "0,2,3,0,6,7,500" :
+it == 588 ? "1,0,0,5,6,0,600" :
+it == 589 ? "1,2,3,5,6,7,300" :
+it == 590 ? "0,0,0,5,0,7,700" :
+it == 591 ? "0,2,3,5,0,7,500" :
+it == 592 ? "1,2,0,0,0,7,600" :
+it == 593 ? "1,2,0,5,6,0,500" :
+it == 594 ? "1,0,3,0,0,7,600" :
+it == 595 ? "0,2,3,0,6,0,600" :
+it == 596 ? "1,2,0,5,0,7,500" :
+it == 597 ? "0,2,0,0,6,0,700" :
+it == 598 ? "1,2,3,0,0,7,500" :
+it == 599 ? "1,0,0,5,6,7,500" :
+it == 600 ? "0,2,0,5,6,7,500" :
+it == 601 ? "1,2,3,0,0,0,600" :
+it == 602 ? "0,2,0,0,6,7,600" :
+it == 603 ? "1,0,0,0,6,7,600" :
+it == 604 ? "0,2,3,0,0,0,700" :
+it == 605 ? "0,0,3,0,6,7,600" :
+it == 606 ? "1,0,3,0,6,0,600" :
+it == 607 ? "1,2,0,0,6,0,600" :
+it == 608 ? "0,2,0,0,0,7,700" :
+it == 609 ? "1,2,3,5,0,0,500" :
+it == 610 ? "1,0,0,5,0,7,600" :
+it == 611 ? "0,0,3,0,6,0,700" :
+it == 612 ? "0,0,3,5,0,7,600" :
+it == 613 ? "1,0,3,0,0,0,700" :
+it == 614 ? "0,0,0,0,6,0,800" :
+it == 615 ? "1,0,3,5,6,0,500" :
+it == 616 ? "0,0,3,5,6,0,600" :
+it == 617 ? "0,0,0,0,0,7,800" :
+it == 618 ? "0,2,3,5,6,0,500" :
+it == 619 ? "0,2,0,5,0,7,600" :
+it == 620 ? "1,0,0,0,6,0,700" :
+it == 621 ? "0,2,0,0,0,0,800" :
+it == 622 ? "0,2,3,5,6,7,400" :
+it == 623 ? "0,0,0,0,6,7,700" :
+it == 624 ? "1,2,3,5,0,7,400" :
+it == 625 ? "0,0,0,5,6,7,600" :
+it == 626 ? "1,2,3,5,6,0,400" :
+it == 627 ? "1,2,0,5,6,7,400" :
+it == 628 ? "0,0,0,5,0,0,800" :
+it == 629 ? "1,2,0,0,0,0,700" :
+it == 630 ? "1,2,3,0,6,0,500" :
+it == 631 ? "1,2,0,5,0,0,600" :
+it == 632 ? "1,0,0,0,0,7,700" :
+it == 633 ? "0,0,3,5,0,0,700" :
+it == 634 ? "0,0,3,0,0,0,800" :
+it == 635 ? "0,0,0,0,0,0,900" :
+it == 636 ? "1,0,3,5,0,0,600" :
+it == 637 ? "0,0,3,0,0,7,700" :
+it == 638 ? "0,0,3,5,6,7,500" :
+it == 639 ? "0,2,0,5,6,0,600" :
+it == 640 ? "1,0,0,0,0,0,800" :
+"0,0,0,0,0,0,0"</scr:Expression>
                         </Expression>
                         <Expression xsi:type="Parse">
-                          <Pattern>%s,%s,%s,%s,%i</Pattern>
+                          <Pattern>%i,%i,%i,%i,%i,%i,%i</Pattern>
                           <Separator />
                         </Expression>
                         <Expression xsi:type="ExternalizedMapping">
@@ -1137,7 +1137,7 @@ it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-Che
                                       <Name>Source1</Name>
                                     </Expression>
                                     <Expression xsi:type="MemberSelector">
-                                      <Selector>Item5</Selector>
+                                      <Selector>Item7</Selector>
                                     </Expression>
                                     <Expression xsi:type="p1:CreateMessage">
                                       <harp:MessageType>Write</harp:MessageType>
@@ -1164,58 +1164,87 @@ it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-Che
                                                 <Expression xsi:type="WorkflowInput">
                                                   <Name>Source1</Name>
                                                 </Expression>
-                                                <Expression xsi:type="MemberSelector">
-                                                  <Selector>Item2</Selector>
-                                                </Expression>
-                                                <Expression xsi:type="scr:ExpressionTransform">
-                                                  <scr:Expression>it.Replace("-", ",")</scr:Expression>
-                                                </Expression>
-                                                <Expression xsi:type="rx:SelectMany">
-                                                  <Name>OpenCheckValve</Name>
-                                                  <Workflow>
-                                                    <Nodes>
-                                                      <Expression xsi:type="WorkflowInput">
-                                                        <Name>Source1</Name>
-                                                      </Expression>
-                                                      <Expression xsi:type="p1:CreateMessage">
-                                                        <harp:MessageType>Write</harp:MessageType>
-                                                        <harp:Payload xsi:type="p1:CreateCheckValveStatePayload">
-                                                          <p1:CheckValveState>None</p1:CheckValveState>
-                                                        </harp:Payload>
-                                                      </Expression>
-                                                      <Expression xsi:type="MulticastSubject">
-                                                        <Name>Olfactometer1Commands</Name>
-                                                      </Expression>
-                                                      <Expression xsi:type="WorkflowOutput" />
-                                                    </Nodes>
-                                                    <Edges>
-                                                      <Edge From="0" To="1" Label="Source1" />
-                                                      <Edge From="1" To="2" Label="Source1" />
-                                                      <Edge From="2" To="3" Label="Source1" />
-                                                    </Edges>
-                                                  </Workflow>
+                                                <Expression xsi:type="ExternalizedMapping">
+                                                  <Property Name="Selector" />
                                                 </Expression>
                                                 <Expression xsi:type="MemberSelector">
                                                   <Selector>Item1</Selector>
                                                 </Expression>
                                                 <Expression xsi:type="scr:ExpressionTransform">
-                                                  <scr:Expression>it.Replace("-", ",")</scr:Expression>
+                                                  <scr:Expression>int32(Math.Pow(2,it-1))</scr:Expression>
                                                 </Expression>
-                                                <Expression xsi:type="rx:SelectMany">
-                                                  <Name>OpenOdorValve</Name>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="RightShift">
+                                                  <Value>4</Value>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock2</Name>
                                                   <Workflow>
                                                     <Nodes>
                                                       <Expression xsi:type="WorkflowInput">
                                                         <Name>Source1</Name>
                                                       </Expression>
-                                                      <Expression xsi:type="p1:CreateMessage">
-                                                        <harp:MessageType>Write</harp:MessageType>
-                                                        <harp:Payload xsi:type="p1:CreateOdorValveStatePayload">
-                                                          <p1:OdorValveState>None</p1:OdorValveState>
-                                                        </harp:Payload>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
                                                       </Expression>
-                                                      <Expression xsi:type="MulticastSubject">
-                                                        <Name>Olfactometer1Commands</Name>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
                                                       </Expression>
                                                       <Expression xsi:type="WorkflowOutput" />
                                                     </Nodes>
@@ -1225,6 +1254,88 @@ it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-Che
                                                       <Edge From="2" To="3" Label="Source1" />
                                                     </Edges>
                                                   </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 0 &amp;&amp; it &lt;= 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock1</Name>
+                                                  <Workflow>
+                                                    <Nodes>
+                                                      <Expression xsi:type="WorkflowInput">
+                                                        <Name>Source1</Name>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="WorkflowOutput" />
+                                                    </Nodes>
+                                                    <Edges>
+                                                      <Edge From="0" To="1" Label="Source1" />
+                                                      <Edge From="1" To="2" Label="Source1" />
+                                                      <Edge From="2" To="3" Label="Source1" />
+                                                    </Edges>
+                                                  </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it == 0</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="rx:Merge" />
@@ -1235,17 +1346,21 @@ it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-Che
                                                 <Expression xsi:type="WorkflowOutput" />
                                               </Nodes>
                                               <Edges>
-                                                <Edge From="0" To="1" Label="Source1" />
-                                                <Edge From="0" To="4" Label="Source1" />
-                                                <Edge From="0" To="8" Label="Source1" />
-                                                <Edge From="1" To="2" Label="Source1" />
+                                                <Edge From="0" To="2" Label="Source1" />
+                                                <Edge From="0" To="11" Label="Source1" />
+                                                <Edge From="1" To="2" Label="Source2" />
                                                 <Edge From="2" To="3" Label="Source1" />
+                                                <Edge From="3" To="4" Label="Source1" />
                                                 <Edge From="3" To="7" Label="Source1" />
+                                                <Edge From="3" To="9" Label="Source1" />
                                                 <Edge From="4" To="5" Label="Source1" />
                                                 <Edge From="5" To="6" Label="Source1" />
-                                                <Edge From="6" To="7" Label="Source2" />
-                                                <Edge From="7" To="8" Label="Source2" />
-                                                <Edge From="8" To="9" Label="Source1" />
+                                                <Edge From="6" To="10" Label="Source1" />
+                                                <Edge From="7" To="8" Label="Source1" />
+                                                <Edge From="8" To="10" Label="Source2" />
+                                                <Edge From="9" To="10" Label="Source3" />
+                                                <Edge From="10" To="11" Label="Source2" />
+                                                <Edge From="11" To="12" Label="Source1" />
                                               </Edges>
                                             </Workflow>
                                           </Expression>
@@ -1255,27 +1370,87 @@ it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-Che
                                                 <Expression xsi:type="WorkflowInput">
                                                   <Name>Source1</Name>
                                                 </Expression>
+                                                <Expression xsi:type="ExternalizedMapping">
+                                                  <Property Name="Selector" />
+                                                </Expression>
                                                 <Expression xsi:type="MemberSelector">
-                                                  <Selector>Item4</Selector>
+                                                  <Selector>Item2</Selector>
                                                 </Expression>
                                                 <Expression xsi:type="scr:ExpressionTransform">
-                                                  <scr:Expression>it.Replace("-", ",")</scr:Expression>
+                                                  <scr:Expression>int32(Math.Pow(2,it-1))</scr:Expression>
                                                 </Expression>
-                                                <Expression xsi:type="rx:SelectMany">
-                                                  <Name>OpenCheckValve</Name>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="RightShift">
+                                                  <Value>4</Value>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock2</Name>
                                                   <Workflow>
                                                     <Nodes>
                                                       <Expression xsi:type="WorkflowInput">
                                                         <Name>Source1</Name>
                                                       </Expression>
-                                                      <Expression xsi:type="p1:CreateMessage">
-                                                        <harp:MessageType>Write</harp:MessageType>
-                                                        <harp:Payload xsi:type="p1:CreateCheckValveStatePayload">
-                                                          <p1:CheckValveState>None</p1:CheckValveState>
-                                                        </harp:Payload>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
                                                       </Expression>
-                                                      <Expression xsi:type="MulticastSubject">
-                                                        <Name>Olfactometer2Commands</Name>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
                                                       </Expression>
                                                       <Expression xsi:type="WorkflowOutput" />
                                                     </Nodes>
@@ -1286,27 +1461,75 @@ it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-Che
                                                     </Edges>
                                                   </Workflow>
                                                 </Expression>
-                                                <Expression xsi:type="MemberSelector">
-                                                  <Selector>Item3</Selector>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 0 &amp;&amp; it &lt;= 8</scr:Expression>
                                                 </Expression>
-                                                <Expression xsi:type="scr:ExpressionTransform">
-                                                  <scr:Expression>it.Replace("-", ",")</scr:Expression>
-                                                </Expression>
-                                                <Expression xsi:type="rx:SelectMany">
-                                                  <Name>OpenOdorValve</Name>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock1</Name>
                                                   <Workflow>
                                                     <Nodes>
                                                       <Expression xsi:type="WorkflowInput">
                                                         <Name>Source1</Name>
                                                       </Expression>
-                                                      <Expression xsi:type="p1:CreateMessage">
-                                                        <harp:MessageType>Write</harp:MessageType>
-                                                        <harp:Payload xsi:type="p1:CreateOdorValveStatePayload">
-                                                          <p1:OdorValveState>None</p1:OdorValveState>
-                                                        </harp:Payload>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
                                                       </Expression>
-                                                      <Expression xsi:type="MulticastSubject">
-                                                        <Name>Olfactometer2Commands</Name>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
                                                       </Expression>
                                                       <Expression xsi:type="WorkflowOutput" />
                                                     </Nodes>
@@ -1316,6 +1539,9 @@ it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-Che
                                                       <Edge From="2" To="3" Label="Source1" />
                                                     </Edges>
                                                   </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it == 0</scr:Expression>
                                                 </Expression>
                                                 <Expression xsi:type="Combinator">
                                                   <Combinator xsi:type="rx:Merge" />
@@ -1326,17 +1552,845 @@ it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-Che
                                                 <Expression xsi:type="WorkflowOutput" />
                                               </Nodes>
                                               <Edges>
-                                                <Edge From="0" To="1" Label="Source1" />
-                                                <Edge From="0" To="4" Label="Source1" />
-                                                <Edge From="0" To="8" Label="Source1" />
-                                                <Edge From="1" To="2" Label="Source1" />
+                                                <Edge From="0" To="2" Label="Source1" />
+                                                <Edge From="0" To="11" Label="Source1" />
+                                                <Edge From="1" To="2" Label="Source2" />
                                                 <Edge From="2" To="3" Label="Source1" />
+                                                <Edge From="3" To="4" Label="Source1" />
                                                 <Edge From="3" To="7" Label="Source1" />
+                                                <Edge From="3" To="9" Label="Source1" />
                                                 <Edge From="4" To="5" Label="Source1" />
                                                 <Edge From="5" To="6" Label="Source1" />
-                                                <Edge From="6" To="7" Label="Source2" />
-                                                <Edge From="7" To="8" Label="Source2" />
-                                                <Edge From="8" To="9" Label="Source1" />
+                                                <Edge From="6" To="10" Label="Source1" />
+                                                <Edge From="7" To="8" Label="Source1" />
+                                                <Edge From="8" To="10" Label="Source2" />
+                                                <Edge From="9" To="10" Label="Source3" />
+                                                <Edge From="10" To="11" Label="Source2" />
+                                                <Edge From="11" To="12" Label="Source1" />
+                                              </Edges>
+                                            </Workflow>
+                                          </Expression>
+                                          <Expression xsi:type="rx:SelectMany">
+                                            <Workflow>
+                                              <Nodes>
+                                                <Expression xsi:type="WorkflowInput">
+                                                  <Name>Source1</Name>
+                                                </Expression>
+                                                <Expression xsi:type="ExternalizedMapping">
+                                                  <Property Name="Selector" />
+                                                </Expression>
+                                                <Expression xsi:type="MemberSelector">
+                                                  <Selector>Item3</Selector>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionTransform">
+                                                  <scr:Expression>int32(Math.Pow(2,it-1))</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="RightShift">
+                                                  <Value>4</Value>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock2</Name>
+                                                  <Workflow>
+                                                    <Nodes>
+                                                      <Expression xsi:type="WorkflowInput">
+                                                        <Name>Source1</Name>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="WorkflowOutput" />
+                                                    </Nodes>
+                                                    <Edges>
+                                                      <Edge From="0" To="1" Label="Source1" />
+                                                      <Edge From="1" To="2" Label="Source1" />
+                                                      <Edge From="2" To="3" Label="Source1" />
+                                                    </Edges>
+                                                  </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 0 &amp;&amp; it &lt;= 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock1</Name>
+                                                  <Workflow>
+                                                    <Nodes>
+                                                      <Expression xsi:type="WorkflowInput">
+                                                        <Name>Source1</Name>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="WorkflowOutput" />
+                                                    </Nodes>
+                                                    <Edges>
+                                                      <Edge From="0" To="1" Label="Source1" />
+                                                      <Edge From="1" To="2" Label="Source1" />
+                                                      <Edge From="2" To="3" Label="Source1" />
+                                                    </Edges>
+                                                  </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it == 0</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="Combinator">
+                                                  <Combinator xsi:type="rx:Merge" />
+                                                </Expression>
+                                                <Expression xsi:type="Combinator">
+                                                  <Combinator xsi:type="rx:Sample" />
+                                                </Expression>
+                                                <Expression xsi:type="WorkflowOutput" />
+                                              </Nodes>
+                                              <Edges>
+                                                <Edge From="0" To="2" Label="Source1" />
+                                                <Edge From="0" To="11" Label="Source1" />
+                                                <Edge From="1" To="2" Label="Source2" />
+                                                <Edge From="2" To="3" Label="Source1" />
+                                                <Edge From="3" To="4" Label="Source1" />
+                                                <Edge From="3" To="7" Label="Source1" />
+                                                <Edge From="3" To="9" Label="Source1" />
+                                                <Edge From="4" To="5" Label="Source1" />
+                                                <Edge From="5" To="6" Label="Source1" />
+                                                <Edge From="6" To="10" Label="Source1" />
+                                                <Edge From="7" To="8" Label="Source1" />
+                                                <Edge From="8" To="10" Label="Source2" />
+                                                <Edge From="9" To="10" Label="Source3" />
+                                                <Edge From="10" To="11" Label="Source2" />
+                                                <Edge From="11" To="12" Label="Source1" />
+                                              </Edges>
+                                            </Workflow>
+                                          </Expression>
+                                          <Expression xsi:type="rx:SelectMany">
+                                            <Workflow>
+                                              <Nodes>
+                                                <Expression xsi:type="WorkflowInput">
+                                                  <Name>Source1</Name>
+                                                </Expression>
+                                                <Expression xsi:type="ExternalizedMapping">
+                                                  <Property Name="Selector" />
+                                                </Expression>
+                                                <Expression xsi:type="MemberSelector">
+                                                  <Selector>Item4</Selector>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionTransform">
+                                                  <scr:Expression>int32(Math.Pow(2,it-1))</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="RightShift">
+                                                  <Value>4</Value>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock2</Name>
+                                                  <Workflow>
+                                                    <Nodes>
+                                                      <Expression xsi:type="WorkflowInput">
+                                                        <Name>Source1</Name>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="WorkflowOutput" />
+                                                    </Nodes>
+                                                    <Edges>
+                                                      <Edge From="0" To="1" Label="Source1" />
+                                                      <Edge From="1" To="2" Label="Source1" />
+                                                      <Edge From="2" To="3" Label="Source1" />
+                                                    </Edges>
+                                                  </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 0 &amp;&amp; it &lt;= 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock1</Name>
+                                                  <Workflow>
+                                                    <Nodes>
+                                                      <Expression xsi:type="WorkflowInput">
+                                                        <Name>Source1</Name>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="WorkflowOutput" />
+                                                    </Nodes>
+                                                    <Edges>
+                                                      <Edge From="0" To="1" Label="Source1" />
+                                                      <Edge From="1" To="2" Label="Source1" />
+                                                      <Edge From="2" To="3" Label="Source1" />
+                                                    </Edges>
+                                                  </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it == 0</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="Combinator">
+                                                  <Combinator xsi:type="rx:Merge" />
+                                                </Expression>
+                                                <Expression xsi:type="Combinator">
+                                                  <Combinator xsi:type="rx:Sample" />
+                                                </Expression>
+                                                <Expression xsi:type="WorkflowOutput" />
+                                              </Nodes>
+                                              <Edges>
+                                                <Edge From="0" To="2" Label="Source1" />
+                                                <Edge From="0" To="11" Label="Source1" />
+                                                <Edge From="1" To="2" Label="Source2" />
+                                                <Edge From="2" To="3" Label="Source1" />
+                                                <Edge From="3" To="4" Label="Source1" />
+                                                <Edge From="3" To="7" Label="Source1" />
+                                                <Edge From="3" To="9" Label="Source1" />
+                                                <Edge From="4" To="5" Label="Source1" />
+                                                <Edge From="5" To="6" Label="Source1" />
+                                                <Edge From="6" To="10" Label="Source1" />
+                                                <Edge From="7" To="8" Label="Source1" />
+                                                <Edge From="8" To="10" Label="Source2" />
+                                                <Edge From="9" To="10" Label="Source3" />
+                                                <Edge From="10" To="11" Label="Source2" />
+                                                <Edge From="11" To="12" Label="Source1" />
+                                              </Edges>
+                                            </Workflow>
+                                          </Expression>
+                                          <Expression xsi:type="rx:SelectMany">
+                                            <Workflow>
+                                              <Nodes>
+                                                <Expression xsi:type="WorkflowInput">
+                                                  <Name>Source1</Name>
+                                                </Expression>
+                                                <Expression xsi:type="ExternalizedMapping">
+                                                  <Property Name="Selector" />
+                                                </Expression>
+                                                <Expression xsi:type="MemberSelector">
+                                                  <Selector>Item5</Selector>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionTransform">
+                                                  <scr:Expression>int32(Math.Pow(2,it-1))</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="RightShift">
+                                                  <Value>4</Value>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock2</Name>
+                                                  <Workflow>
+                                                    <Nodes>
+                                                      <Expression xsi:type="WorkflowInput">
+                                                        <Name>Source1</Name>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="WorkflowOutput" />
+                                                    </Nodes>
+                                                    <Edges>
+                                                      <Edge From="0" To="1" Label="Source1" />
+                                                      <Edge From="1" To="2" Label="Source1" />
+                                                      <Edge From="2" To="3" Label="Source1" />
+                                                    </Edges>
+                                                  </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 0 &amp;&amp; it &lt;= 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock1</Name>
+                                                  <Workflow>
+                                                    <Nodes>
+                                                      <Expression xsi:type="WorkflowInput">
+                                                        <Name>Source1</Name>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="WorkflowOutput" />
+                                                    </Nodes>
+                                                    <Edges>
+                                                      <Edge From="0" To="1" Label="Source1" />
+                                                      <Edge From="1" To="2" Label="Source1" />
+                                                      <Edge From="2" To="3" Label="Source1" />
+                                                    </Edges>
+                                                  </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it == 0</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="Combinator">
+                                                  <Combinator xsi:type="rx:Merge" />
+                                                </Expression>
+                                                <Expression xsi:type="Combinator">
+                                                  <Combinator xsi:type="rx:Sample" />
+                                                </Expression>
+                                                <Expression xsi:type="WorkflowOutput" />
+                                              </Nodes>
+                                              <Edges>
+                                                <Edge From="0" To="2" Label="Source1" />
+                                                <Edge From="0" To="11" Label="Source1" />
+                                                <Edge From="1" To="2" Label="Source2" />
+                                                <Edge From="2" To="3" Label="Source1" />
+                                                <Edge From="3" To="4" Label="Source1" />
+                                                <Edge From="3" To="7" Label="Source1" />
+                                                <Edge From="3" To="9" Label="Source1" />
+                                                <Edge From="4" To="5" Label="Source1" />
+                                                <Edge From="5" To="6" Label="Source1" />
+                                                <Edge From="6" To="10" Label="Source1" />
+                                                <Edge From="7" To="8" Label="Source1" />
+                                                <Edge From="8" To="10" Label="Source2" />
+                                                <Edge From="9" To="10" Label="Source3" />
+                                                <Edge From="10" To="11" Label="Source2" />
+                                                <Edge From="11" To="12" Label="Source1" />
+                                              </Edges>
+                                            </Workflow>
+                                          </Expression>
+                                          <Expression xsi:type="rx:SelectMany">
+                                            <Workflow>
+                                              <Nodes>
+                                                <Expression xsi:type="WorkflowInput">
+                                                  <Name>Source1</Name>
+                                                </Expression>
+                                                <Expression xsi:type="ExternalizedMapping">
+                                                  <Property Name="Selector" />
+                                                </Expression>
+                                                <Expression xsi:type="MemberSelector">
+                                                  <Selector>Item6</Selector>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionTransform">
+                                                  <scr:Expression>int32(Math.Pow(2,it-1))</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="RightShift">
+                                                  <Value>4</Value>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock2</Name>
+                                                  <Workflow>
+                                                    <Nodes>
+                                                      <Expression xsi:type="WorkflowInput">
+                                                        <Name>Source1</Name>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer2Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="WorkflowOutput" />
+                                                    </Nodes>
+                                                    <Edges>
+                                                      <Edge From="0" To="1" Label="Source1" />
+                                                      <Edge From="1" To="2" Label="Source1" />
+                                                      <Edge From="2" To="3" Label="Source1" />
+                                                    </Edges>
+                                                  </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it &gt; 0 &amp;&amp; it &lt;= 8</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="GroupWorkflow">
+                                                  <Name>StimBlock1</Name>
+                                                  <Workflow>
+                                                    <Nodes>
+                                                      <Expression xsi:type="WorkflowInput">
+                                                        <Name>Source1</Name>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenOdorValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="3" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source2" />
+                                                            <Edge From="3" To="4" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="rx:SelectMany">
+                                                        <Name>OpenCheckValve</Name>
+                                                        <Workflow>
+                                                          <Nodes>
+                                                            <Expression xsi:type="WorkflowInput">
+                                                              <Name>Source1</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="LeftShift">
+                                                              <Value>8</Value>
+                                                            </Expression>
+                                                            <Expression xsi:type="p1:Format">
+                                                              <harp:MessageType>Write</harp:MessageType>
+                                                              <harp:Register xsi:type="p1:ValveSet" />
+                                                            </Expression>
+                                                            <Expression xsi:type="MulticastSubject">
+                                                              <Name>Olfactometer1Commands</Name>
+                                                            </Expression>
+                                                            <Expression xsi:type="Combinator">
+                                                              <Combinator xsi:type="rx:Sample" />
+                                                            </Expression>
+                                                            <Expression xsi:type="WorkflowOutput" />
+                                                          </Nodes>
+                                                          <Edges>
+                                                            <Edge From="0" To="1" Label="Source1" />
+                                                            <Edge From="0" To="4" Label="Source1" />
+                                                            <Edge From="1" To="2" Label="Source1" />
+                                                            <Edge From="2" To="3" Label="Source1" />
+                                                            <Edge From="3" To="4" Label="Source2" />
+                                                            <Edge From="4" To="5" Label="Source1" />
+                                                          </Edges>
+                                                        </Workflow>
+                                                      </Expression>
+                                                      <Expression xsi:type="WorkflowOutput" />
+                                                    </Nodes>
+                                                    <Edges>
+                                                      <Edge From="0" To="1" Label="Source1" />
+                                                      <Edge From="1" To="2" Label="Source1" />
+                                                      <Edge From="2" To="3" Label="Source1" />
+                                                    </Edges>
+                                                  </Workflow>
+                                                </Expression>
+                                                <Expression xsi:type="scr:ExpressionCondition">
+                                                  <scr:Expression>it == 0</scr:Expression>
+                                                </Expression>
+                                                <Expression xsi:type="Combinator">
+                                                  <Combinator xsi:type="rx:Merge" />
+                                                </Expression>
+                                                <Expression xsi:type="Combinator">
+                                                  <Combinator xsi:type="rx:Sample" />
+                                                </Expression>
+                                                <Expression xsi:type="WorkflowOutput" />
+                                              </Nodes>
+                                              <Edges>
+                                                <Edge From="0" To="2" Label="Source1" />
+                                                <Edge From="0" To="11" Label="Source1" />
+                                                <Edge From="1" To="2" Label="Source2" />
+                                                <Edge From="2" To="3" Label="Source1" />
+                                                <Edge From="3" To="4" Label="Source1" />
+                                                <Edge From="3" To="7" Label="Source1" />
+                                                <Edge From="3" To="9" Label="Source1" />
+                                                <Edge From="4" To="5" Label="Source1" />
+                                                <Edge From="5" To="6" Label="Source1" />
+                                                <Edge From="6" To="10" Label="Source1" />
+                                                <Edge From="7" To="8" Label="Source1" />
+                                                <Edge From="8" To="10" Label="Source2" />
+                                                <Edge From="9" To="10" Label="Source3" />
+                                                <Edge From="10" To="11" Label="Source2" />
+                                                <Edge From="11" To="12" Label="Source1" />
                                               </Edges>
                                             </Workflow>
                                           </Expression>
@@ -1346,6 +2400,10 @@ it == 640 ? "Valve1,CheckValve1,Valve0-Valve1-Valve2,CheckValve0-CheckValve1-Che
                                           <Edge From="0" To="1" Label="Source1" />
                                           <Edge From="1" To="2" Label="Source1" />
                                           <Edge From="2" To="3" Label="Source1" />
+                                          <Edge From="3" To="4" Label="Source1" />
+                                          <Edge From="4" To="5" Label="Source1" />
+                                          <Edge From="5" To="6" Label="Source1" />
+                                          <Edge From="6" To="7" Label="Source1" />
                                         </Edges>
                                       </Workflow>
                                     </Expression>
