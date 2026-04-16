@@ -67,10 +67,10 @@ def make_device_strings(states):
         d2_check.append("CheckValve2")
 
     return (
-        nz(",".join(d1_odor)),
-        nz(",".join(d1_check)),
-        nz(",".join(d2_odor)),
-        nz(",".join(d2_check)),
+        nz("-".join(d1_odor)),
+        nz("-".join(d1_check)),
+        nz("-".join(d2_odor)),
+        nz("-".join(d2_check)),
     )
 
 
@@ -84,7 +84,7 @@ def code_to_bonsai_payload(code: int):
     states = code_to_binary_states(code)
     flow = states_to_flow(states)
     d1_odor, d1_check, d2_odor, d2_check = make_device_strings(states)
-    return f"{d1_odor}|{d1_check}|{d2_odor}|{d2_check}|{flow}"
+    return f"{d1_odor},{d1_check},{d2_odor},{d2_check},{flow}"
 
 
 def make_trial_list(block_num: int, seed=None):
@@ -142,7 +142,7 @@ def save_bonsai_and_csv(
             flow
         ])
 
-    txt_lines.append('"None|None|None|None|0"')
+    txt_lines.append('"None, None, None, None, 0"')
 
     Path(txt_file).write_text("\n".join(txt_lines), encoding="utf-8")
 
