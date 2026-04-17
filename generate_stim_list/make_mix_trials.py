@@ -2,33 +2,51 @@ from pathlib import Path
 import random
 import csv
 
+# txt file 里 A~F 开启时对应输出值
+ODOR_VALUES = [1, 2, 3, 5, 6, 7]
 
-def code_to_binary_row(code: int):
+
+def code_to_states(code: int):
     """
-    把 0~63 的 code 转成:
-    A, B, C, D, E, F, flow, type_str
+    0~63 -> A~F 六个 0/1
+    """
+    return [1 if code & (1 << bit) else 0 for bit in range(6)]
 
-    A~F 都是 0/1
-    type_str 是 6 位 0/1 字符串，例如:
+
+def states_to_flow(states):
+    """
+    carrier = 900 - 100 * 开启 odor 数
+    """
+    return 900 - 100 * sum(states)
+
+
+def states_to_txt_row(states):
+    """
+    给 Bonsai txt 用:
+    开启的 odor 输出 1,2,3,5,6,7
+    未开启输出 0
+    """
+    outputs = []
+    for state, odor_val in zip(states, ODOR_VALUES):
+        outputs.append(odor_val if state else 0)
+    return outputs
+
+
+def states_to_type(states):
+    """
+    生成 6 位 0/1 字符串
+    例如:
       000000
-      101010
+      110000
+      001010
       111111
-    code=0 时表示全关，对应 flow=900
     """
-    states = []
-    for bit in range(6):
-        states.append(1 if code & (1 << bit) else 0)
-
-    flow = 900 - 100 * sum(states)
-    type_str = "".join(str(x) for x in states)
-
-    return states + [flow, type_str]
+    return "".join(str(x) for x in states)
 
 
 def make_trial_list(block_num: int, seed=None):
     """
-    生成 trial 顺序。
-    每个 block 都是 0~63，block 内随机打乱。
+    每个 block 都是 0~63，block 内随机打乱
     返回 [(block, code), ...]
     """
     rng = random.Random(seed)
@@ -55,16 +73,22 @@ def save_bonsai_and_csv(
     csv_rows = []
 
     for trial_idx, (block_idx, code) in enumerate(trials, start=1):
-        row = code_to_binary_row(code)
-        a, b, c, d, e, f, flow, type_str = row
+        states = code_to_states(code)              # 0/1 for csv
+        flow = states_to_flow(states)
+        txt_vals = states_to_txt_row(states)       # 1,2,3,5,6,7 for txt
+        type_str = states_to_type(states)
 
-        # txt 里也改成纯 0/1 + flow
+        a_txt, b_txt, c_txt, d_txt, e_txt, f_txt = txt_vals
+        a, b, c, d, e, f = states
+
+        # Bonsai txt: 仍然输出 1,2,3,5,6,7 风格
         if trial_idx < 10:
-            txt_line = f'it == {trial_idx}  ? "{a},{b},{c},{d},{e},{f},{flow}" :'
+            txt_line = f'it == {trial_idx}  ? "{a_txt},{b_txt},{c_txt},{d_txt},{e_txt},{f_txt},{flow}" :'
         else:
-            txt_line = f'it == {trial_idx} ? "{a},{b},{c},{d},{e},{f},{flow}" :'
+            txt_line = f'it == {trial_idx} ? "{a_txt},{b_txt},{c_txt},{d_txt},{e_txt},{f_txt},{flow}" :'
         txt_lines.append(txt_line)
 
+        # CSV: 保存 0/1 trial table
         csv_rows.append([
             trial_idx,
             block_idx,
@@ -74,6 +98,7 @@ def save_bonsai_and_csv(
             type_str
         ])
 
+    # fallback line 给 Bonsai
     txt_lines.append('"0,0,0,0,0,0,0"')
 
     Path(txt_file).write_text("\n".join(txt_lines), encoding="utf-8")
@@ -94,7 +119,7 @@ def save_bonsai_and_csv(
 
 if __name__ == "__main__":
     BLOCK_NUM = 10
-    SEED = None   # 固定数字则可复现；None 则每次都重新随机
+    SEED = None   # None = 每次都重新随机；整数 = 可复现
 
     save_bonsai_and_csv(
         block_num=BLOCK_NUM,
