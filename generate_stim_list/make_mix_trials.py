@@ -2,28 +2,27 @@ from pathlib import Path
 import random
 import csv
 
-# A B C D E F 开启时对应输出值
-ODOR_VALUES = [1, 2, 3, 5, 6, 7]
 
-
-def code_to_row(code: int):
+def code_to_binary_row(code: int):
     """
     把 0~63 的 code 转成:
-    A, B, C, D, E, F, flow
+    A, B, C, D, E, F, flow, type_str
+
+    A~F 都是 0/1
+    type_str 是 6 位 0/1 字符串，例如:
+      000000
+      101010
+      111111
     code=0 时表示全关，对应 flow=900
     """
-    outputs = []
-    on_count = 0
+    states = []
+    for bit in range(6):
+        states.append(1 if code & (1 << bit) else 0)
 
-    for bit, val in enumerate(ODOR_VALUES):
-        if code & (1 << bit):
-            outputs.append(val)
-            on_count += 1
-        else:
-            outputs.append(0)
+    flow = 900 - 100 * sum(states)
+    type_str = "".join(str(x) for x in states)
 
-    flow = 900 - 100 * on_count
-    return outputs + [flow]
+    return states + [flow, type_str]
 
 
 def make_trial_list(block_num: int, seed=None):
@@ -36,7 +35,7 @@ def make_trial_list(block_num: int, seed=None):
     trials = []
 
     for block_idx in range(1, block_num + 1):
-        block_codes = list(range(0, 64))   # 改成包含 0
+        block_codes = list(range(0, 64))
         rng.shuffle(block_codes)
         for code in block_codes:
             trials.append((block_idx, code))
@@ -56,9 +55,10 @@ def save_bonsai_and_csv(
     csv_rows = []
 
     for trial_idx, (block_idx, code) in enumerate(trials, start=1):
-        row = code_to_row(code)
-        a, b, c, d, e, f, flow = row
+        row = code_to_binary_row(code)
+        a, b, c, d, e, f, flow, type_str = row
 
+        # txt 里也改成纯 0/1 + flow
         if trial_idx < 10:
             txt_line = f'it == {trial_idx}  ? "{a},{b},{c},{d},{e},{f},{flow}" :'
         else:
@@ -70,7 +70,8 @@ def save_bonsai_and_csv(
             block_idx,
             code,
             a, b, c, d, e, f,
-            flow
+            flow,
+            type_str
         ])
 
     txt_lines.append('"0,0,0,0,0,0,0"')
@@ -82,7 +83,7 @@ def save_bonsai_and_csv(
         writer.writerow([
             "trial", "block", "code",
             "A", "B", "C", "D", "E", "F",
-            "flow"
+            "flow", "type"
         ])
         writer.writerows(csv_rows)
 
