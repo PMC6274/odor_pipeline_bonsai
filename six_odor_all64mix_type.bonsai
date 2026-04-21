@@ -1146,11 +1146,9 @@ it == 640 ? "0,1,1,0,0,1,600" :
                                           <Expression xsi:type="MemberSelector">
                                             <Selector>Item7</Selector>
                                           </Expression>
-                                          <Expression xsi:type="p1:CreateMessage">
+                                          <Expression xsi:type="p1:Format">
                                             <harp:MessageType>Write</harp:MessageType>
-                                            <harp:Payload xsi:type="p1:CreateChannel4TargetFlowPayload">
-                                              <p1:Channel4TargetFlow>0</p1:Channel4TargetFlow>
-                                            </harp:Payload>
+                                            <harp:Register xsi:type="p1:Channel4TargetFlow" />
                                           </Expression>
                                           <Expression xsi:type="MulticastSubject">
                                             <Name>Olfactometer1Commands</Name>
