@@ -7,8 +7,8 @@ Bonsai workflows to run an **8-odor shuffled-block** odor delivery experiment us
 
 ## Protocol
 
-- **Odors per block:** 8 (IDs 1–8)  
-- **Blocks:** 25  
+- **Odors per block:** 6 (IDs 1–6)  
+- **Blocks:** 64 
 - **Order within each block:** shuffled, no replacement  
 - **Per-trial timing:**
   - Charge: 25 s  
@@ -16,7 +16,7 @@ Bonsai workflows to run an **8-odor shuffled-block** odor delivery experiment us
   - ITI: 25 ~ 45 s (uniform random)  
   - Total: ~50 ~ 70 s per trial  
 
-Total: **200 trials** (8 odors × 25 blocks) with randomized odor order within each block.
+Total: **640 trials** (64 odors × 10 blocks) with randomized odor order within each block.
 
 ## How to generate stim list
 
@@ -25,18 +25,18 @@ Total: **200 trials** (8 odors × 25 blocks) with randomized odor order within e
 
    ```bash
    cd generate_stim_list
-   python gen_trials_d1.py
+   python make_mix_trials_correct_bits.py
    ```
 
    This will use current time as random seed to generate two files in `generate_stim_list/`:
-   - `odor_sequence_numbers.csv`  
-   - `odor_sequence_D1_format.txt`  
+   - `trial_table.csv`  
+   - `bonsai_conditions_shuffled.txt`  
 
 2. **Copy the D1-format sequence into the Bonsai main workflow**  
-   - Open `generate_stim_list/odor_sequence_D1_format.txt` in a text editor.  
-   - Select and copy all lines (from `it == 1  ? "D1:X" :` … to the final `"D1:0"`).  
-   - In Bonsai, open the main workflow (e.g. `8random_25block_dev_endbutton_logging_nocsv_webhook.bonsai`).  
-   - Find the expression/node where the trial counter (`it`) is mapped to `D1:<odor_id>`.  
-   - Paste the copied lines there, replacing the existing `D1` mapping.
+   - Open `bonsai_conditions_shuffled.txt` in a text editor.  
+   - Select and copy all lines.  
+   - In Bonsai, open the main workflow.  
+   - Find the expression/node where the trial counter (`it`) is mapped to `:<odor_id>`.  
+   - Paste the copied lines there, replacing the existing mapping.
 
-Whenever you want a new randomized odor order, rerun `python gen_trials_d1.py` and repeat step 2.
+Whenever you want a new randomized odor order, rerun `make_mix_trials_correct_bits.py` and repeat step 2.
