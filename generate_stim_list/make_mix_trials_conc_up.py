@@ -4,6 +4,7 @@ import csv
 
 # txt file 里 A~F 开启时对应输出值
 ODOR_VALUES = [1, 2, 3, 5, 6, 7]
+ODOR_FLOW = 100
 
 
 def code_to_states(code: int):
@@ -19,13 +20,33 @@ def code_to_states(code: int):
     binary = 111011
     -> A B C D E F = 1 1 1 0 1 1
     """
-    bits = f"{code:06b}"   # standard binary string, MSB -> LSB
+    bits = f"{code:06b}"   # MSB -> LSB
     return [int(b) for b in bits]
 
 
-def states_to_flow(states):
+def states_to_total_odor_flow(states):
     """
-    carrier = 900 - 100 * 开启 odor 数
+    odor 总 flow
+    每个 odor 固定 100
+    全关 -> 0
+    """
+    return ODOR_FLOW * sum(states)
+
+
+def output_flow(states):
+    """
+    你要的 flow 列：
+    - 只要有任何 odor 开启，flow = 100
+    - 如果全部关闭，flow = 0
+    """
+    return ODOR_FLOW if sum(states) > 0 else 0
+
+
+def states_to_carrier_out(states):
+    """
+    carrier_out 保持旧逻辑:
+    900 - 100 * 开启 odor 数
+    全关 -> 900
     """
     return 900 - 100 * sum(states)
 
@@ -76,30 +97,35 @@ def save_bonsai_and_csv(
 
     for trial_idx, (block_idx, code) in enumerate(trials, start=1):
         states = code_to_states(code)
-        flow = states_to_flow(states)
+        total_odor_flow = states_to_total_odor_flow(states)
+        flow = output_flow(states)   # 新的 flow 规则
+        carrier_out = states_to_carrier_out(states)
         txt_vals = states_to_txt_row(states)
         type_str = states_to_type(states)
 
         a_txt, b_txt, c_txt, d_txt, e_txt, f_txt = txt_vals
         a, b, c, d, e, f = states
 
-        # Bonsai txt: it still runs from 1..total_trials
+        # txt 最后一列仍然是 carrier_out
         if trial_idx < 10:
-            txt_line = f'it == {trial_idx}  ? "{a_txt},{b_txt},{c_txt},{d_txt},{e_txt},{f_txt},{flow}" :'
+            txt_line = f'it == {trial_idx}  ? "{a_txt},{b_txt},{c_txt},{d_txt},{e_txt},{f_txt},{carrier_out}" :'
         else:
-            txt_line = f'it == {trial_idx} ? "{a_txt},{b_txt},{c_txt},{d_txt},{e_txt},{f_txt},{flow}" :'
+            txt_line = f'it == {trial_idx} ? "{a_txt},{b_txt},{c_txt},{d_txt},{e_txt},{f_txt},{carrier_out}" :'
         txt_lines.append(txt_line)
 
         csv_rows.append([
             trial_idx,
             block_idx,
-            code,
             a, b, c, d, e, f,
-            flow,
-            type_str
+            type_str,
+            code,
+            sum(states),          # odor_number
+            flow,                 # 0 or 100
+            total_odor_flow,      # 总 odor flow
+            carrier_out,
         ])
 
-    # fallback line
+    # fallback line: txt 最后一列也保持 carrier_out
     txt_lines.append('"0,0,0,0,0,0,900"')
 
     Path(txt_file).write_text("\n".join(txt_lines), encoding="utf-8")
@@ -107,9 +133,10 @@ def save_bonsai_and_csv(
     with open(csv_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "trial", "block", "code",
+            "trial", "block",
             "A", "B", "C", "D", "E", "F",
-            "flow", "type"
+            "type", "code", "odor_number",
+            "flow", "total_odor_flow", "carrier_out"
         ])
         writer.writerows(csv_rows)
 
@@ -125,6 +152,6 @@ if __name__ == "__main__":
     save_bonsai_and_csv(
         block_num=BLOCK_NUM,
         seed=SEED,
-        txt_file="bonsai_conditions_shuffled.txt",
-        csv_file="trial_table.csv"
+        txt_file="bonsai_conditions_add_conc.txt",
+        csv_file="trial_table_add_conc.csv"
     )

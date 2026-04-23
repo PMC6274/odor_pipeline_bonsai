@@ -4,8 +4,9 @@ import csv
 
 # A~F 开启时对应输出值
 ODOR_VALUES = [1, 2, 3, 5, 6, 7]
-ODOR_FLOW=100
-CAR_FLOW=800
+ODOR_FLOW = 100
+CAR_FLOW = 800
+
 
 def code_to_states(code: int):
     """
@@ -57,7 +58,7 @@ def final_carrier_output(states):
     - 如果有任何 odor 开启，输出 800
     - 如果全部关闭，输出 900
     """
-    return CAR_FLOW if sum(states) > 0 else CAR_FLOW+ODOR_FLOW
+    return CAR_FLOW if sum(states) > 0 else CAR_FLOW + ODOR_FLOW
 
 
 def make_trial_list(block_num: int, seed=None):
@@ -114,17 +115,16 @@ def save_bonsai_and_csv(
         txt_lines.append(txt_line)
 
         a, b, c, d, e, f = states
-        a_txt, b_txt, c_txt, d_txt, e_txt, f_txt = txt_vals
 
         csv_rows.append([
             trial_idx,
             block_idx,
-            code,
             a, b, c, d, e, f,
-            flow,
             type_str,
-            a_txt, b_txt, c_txt, d_txt, e_txt, f_txt,
+            code,
             divider,
+            flow,
+            round(divider*flow),
             carrier_out
         ])
 
@@ -136,11 +136,11 @@ def save_bonsai_and_csv(
     with open(csv_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "trial", "block", "code",
+            "trial", "block",
             "A", "B", "C", "D", "E", "F",
-            "flow", "type",
-            "A_txt", "B_txt", "C_txt", "D_txt", "E_txt", "F_txt",
-            "divider",
+            "type", "code",
+            "odor_number",
+            "flow","total_odor_flow",
             "carrier_out"
         ])
         writer.writerows(csv_rows)
@@ -157,6 +157,6 @@ if __name__ == "__main__":
     save_bonsai_and_csv(
         block_num=BLOCK_NUM,
         seed=SEED,
-        txt_file="bonsai_conditions_divider_8out.txt",
-        csv_file="trial_table_divider_8out.csv"
+        txt_file="bonsai_conditions_same_conc.txt",
+        csv_file="trial_table_same_conc.csv"
     )
