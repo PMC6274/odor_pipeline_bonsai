@@ -8,31 +8,51 @@ ODOR_NAMES = ["A", "B", "C", "D", "E", "F"]
 ODOR_FLOW = 100
 
 
+def normalize_odor_sequence(odor_sequence: str):
+    """
+    Allow both:
+    "ABCEDF"
+    "A B C E D F"
+    "A,B,C,E,D,F"
+
+    Return:
+    ["A", "B", "C", "E", "D", "F"]
+    """
+    odor_sequence = odor_sequence.upper()
+    odor_sequence = odor_sequence.replace(",", " ")
+    odor_sequence = odor_sequence.replace(";", " ")
+
+    # Case 1: user writes "A B D E F C"
+    if " " in odor_sequence:
+        odors = [x.strip() for x in odor_sequence.split() if x.strip()]
+    else:
+        # Case 2: user writes "ABDEFC"
+        odors = list(odor_sequence)
+
+    for odor_name in odors:
+        if odor_name not in ODOR_NAMES:
+            raise ValueError(
+                f"Unknown odor in sequence: {odor_name}. "
+                f"Must be one of A B C D E F"
+            )
+
+    return odors
+
+
 def code_to_states(code: int):
     """
     0~63 -> A~F 六个 0/1
 
-    IMPORTANT:
     A B C D E F 对应 binary 从高位到低位:
     A=bit5, B=bit4, C=bit3, D=bit2, E=bit1, F=bit0
-
-    例如:
-    code = 32
-    binary = 100000
-    -> A B C D E F = 1 0 0 0 0 0
     """
-    bits = f"{code:06b}"   # MSB -> LSB
+    bits = f"{code:06b}"
     return [int(b) for b in bits]
 
 
 def states_to_code(states):
     """
     A~F states -> code
-    使用和 code_to_states 完全相反的方法。
-
-    A B C D E F = 1 0 0 0 0 0
-    -> binary 100000
-    -> code 32
     """
     bit_str = "".join(str(x) for x in states)
     return int(bit_str, 2)
@@ -96,36 +116,39 @@ def states_to_type(states):
 
 def make_trial_list(odor_sequence: str, block_num: int):
     """
-    odor_sequence = "ABCEDF"
+    odor_sequence example:
+    "ABCEDF"
+    "A B D E F C"
+    "A,B,D,E,F,C"
+
     block_num = 10
 
-    输出:
+    Example:
     A repeated 10 times
     B repeated 10 times
-    C repeated 10 times
-    E repeated 10 times
     D repeated 10 times
+    E repeated 10 times
     F repeated 10 times
+    C repeated 10 times
 
     所有 block 都是 1
     """
     trials = []
 
-    for odor_name in odor_sequence.upper():
-        if odor_name not in ODOR_NAMES:
-            raise ValueError(f"Unknown odor in sequence: {odor_name}")
+    odors = normalize_odor_sequence(odor_sequence)
 
+    for odor_name in odors:
         for _ in range(block_num):
             block_idx = 1
             states = odor_to_states(odor_name)
             code = states_to_code(states)
-            trials.append((block_idx, code))
+            trials.append((block_idx, code, odor_name))
 
     return trials
 
 
 def save_bonsai_and_csv(
-    odor_sequence="ABCEDF",
+    odor_sequence="ABDEFC",
     block_num=10,
     txt_file="bonsai_conditions_single_odor.txt",
     csv_file="trial_table_single_odor.csv"
@@ -135,7 +158,7 @@ def save_bonsai_and_csv(
     txt_lines = []
     csv_rows = []
 
-    for trial_idx, (block_idx, code) in enumerate(trials, start=1):
+    for trial_idx, (block_idx, code, odor_name) in enumerate(trials, start=1):
         states = code_to_states(code)
 
         total_odor_flow = states_to_total_odor_flow(states)
@@ -164,13 +187,14 @@ def save_bonsai_and_csv(
         csv_rows.append([
             trial_idx,
             block_idx,
+            odor_name,
             a, b, c, d, e, f,
             type_str,
             code,
-            sum(states),          # odor_number
-            flow,                 # 100
-            total_odor_flow,      # 100
-            carrier_out,          # 800
+            sum(states),
+            flow,
+            total_odor_flow,
+            carrier_out,
         ])
 
     # fallback line
@@ -182,7 +206,7 @@ def save_bonsai_and_csv(
         writer = csv.writer(f)
 
         writer.writerow([
-            "trial", "block",
+            "trial", "block", "odor",
             "A", "B", "C", "D", "E", "F",
             "type", "code", "odor_number",
             "flow", "total_odor_flow", "carrier_out"
@@ -193,9 +217,16 @@ def save_bonsai_and_csv(
     print(f"Saved: {txt_file}")
     print(f"Saved: {csv_file}")
     print(f"Total trials: {len(csv_rows)}")
+    print(f"Odor order: {' '.join(normalize_odor_sequence(odor_sequence))}")
+
 
 if __name__ == "__main__":
-    ODOR_SEQUENCE = "ABCEDF"
+    # You can write it either way:
+    # ODOR_SEQUENCE = "ABCEDF"
+    # ODOR_SEQUENCE = "A B C E D F"
+    # ODOR_SEQUENCE = "A,B,C,E,D,F"
+
+    ODOR_SEQUENCE = "A B D E F C"
     BLOCK_NUM = 10
 
     save_bonsai_and_csv(
