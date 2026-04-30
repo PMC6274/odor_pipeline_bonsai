@@ -12,14 +12,14 @@
       </Expression>
       <Expression xsi:type="p1:CreateMessage">
         <harp:MessageType>Write</harp:MessageType>
-        <harp:Payload xsi:type="p1:CreateCheckValveStatePayload">
-          <p1:CheckValveState>None</p1:CheckValveState>
+        <harp:Payload xsi:type="p1:CreateOdorValveStatePayload">
+          <p1:OdorValveState>None</p1:OdorValveState>
         </harp:Payload>
       </Expression>
       <Expression xsi:type="p1:CreateMessage">
         <harp:MessageType>Write</harp:MessageType>
-        <harp:Payload xsi:type="p1:CreateOdorValveStatePayload">
-          <p1:OdorValveState>None</p1:OdorValveState>
+        <harp:Payload xsi:type="p1:CreateCheckValveStatePayload">
+          <p1:CheckValveState>None</p1:CheckValveState>
         </harp:Payload>
       </Expression>
       <Expression xsi:type="Combinator">

@@ -444,6 +444,7 @@
               <Property Name="Expression" />
               <Property Name="EndV0Delay" />
               <Property Name="FlowADJt" />
+              <Property Name="flush_time" />
             </Expression>
             <Expression xsi:type="rx:CreateObservable">
               <Name>6 odor BLOCK</Name>
@@ -457,6 +458,7 @@
                     <Property Name="Expression" />
                     <Property Name="EndV0Delay" />
                     <Property Name="FlowADJt" />
+                    <Property Name="flush_time" />
                   </Expression>
                   <Expression xsi:type="rx:SelectMany">
                     <Name>LOOP</Name>
@@ -471,64 +473,64 @@
                         <Expression xsi:type="scr:ExpressionTransform">
                           <scr:Name>6odor_block</scr:Name>
                           <scr:Expression>it == 1  ? "1,0,0,0,0,0,800" :
-it == 2  ? "1,0,0,0,0,0,800" :
-it == 3  ? "1,0,0,0,0,0,800" :
-it == 4  ? "1,0,0,0,0,0,800" :
-it == 5  ? "1,0,0,0,0,0,800" :
-it == 6  ? "1,0,0,0,0,0,800" :
+it == 2  ? "0,0,0,0,0,7,800" :
+it == 3  ? "0,0,0,5,0,0,800" :
+it == 4  ? "0,0,3,0,0,0,800" :
+it == 5  ? "0,0,0,0,6,0,800" :
+it == 6  ? "0,2,0,0,0,0,800" :
 it == 7  ? "1,0,0,0,0,0,800" :
-it == 8  ? "1,0,0,0,0,0,800" :
-it == 9  ? "1,0,0,0,0,0,800" :
-it == 10 ? "1,0,0,0,0,0,800" :
-it == 11 ? "0,2,0,0,0,0,800" :
-it == 12 ? "0,2,0,0,0,0,800" :
-it == 13 ? "0,2,0,0,0,0,800" :
-it == 14 ? "0,2,0,0,0,0,800" :
-it == 15 ? "0,2,0,0,0,0,800" :
-it == 16 ? "0,2,0,0,0,0,800" :
+it == 8  ? "0,0,0,0,6,0,800" :
+it == 9  ? "0,0,3,0,0,0,800" :
+it == 10 ? "0,2,0,0,0,0,800" :
+it == 11 ? "0,0,0,0,0,7,800" :
+it == 12 ? "0,0,0,5,0,0,800" :
+it == 13 ? "0,0,0,5,0,0,800" :
+it == 14 ? "1,0,0,0,0,0,800" :
+it == 15 ? "0,0,0,0,0,7,800" :
+it == 16 ? "0,0,3,0,0,0,800" :
 it == 17 ? "0,2,0,0,0,0,800" :
-it == 18 ? "0,2,0,0,0,0,800" :
+it == 18 ? "0,0,0,0,6,0,800" :
 it == 19 ? "0,2,0,0,0,0,800" :
-it == 20 ? "0,2,0,0,0,0,800" :
-it == 21 ? "0,0,0,5,0,0,800" :
-it == 22 ? "0,0,0,5,0,0,800" :
-it == 23 ? "0,0,0,5,0,0,800" :
-it == 24 ? "0,0,0,5,0,0,800" :
-it == 25 ? "0,0,0,5,0,0,800" :
-it == 26 ? "0,0,0,5,0,0,800" :
+it == 20 ? "0,0,0,5,0,0,800" :
+it == 21 ? "0,0,0,0,0,7,800" :
+it == 22 ? "0,0,3,0,0,0,800" :
+it == 23 ? "0,0,0,0,6,0,800" :
+it == 24 ? "1,0,0,0,0,0,800" :
+it == 25 ? "0,0,0,0,0,7,800" :
+it == 26 ? "0,2,0,0,0,0,800" :
 it == 27 ? "0,0,0,5,0,0,800" :
-it == 28 ? "0,0,0,5,0,0,800" :
-it == 29 ? "0,0,0,5,0,0,800" :
-it == 30 ? "0,0,0,5,0,0,800" :
-it == 31 ? "0,0,0,0,6,0,800" :
-it == 32 ? "0,0,0,0,6,0,800" :
-it == 33 ? "0,0,0,0,6,0,800" :
-it == 34 ? "0,0,0,0,6,0,800" :
-it == 35 ? "0,0,0,0,6,0,800" :
+it == 28 ? "1,0,0,0,0,0,800" :
+it == 29 ? "0,0,3,0,0,0,800" :
+it == 30 ? "0,0,0,0,6,0,800" :
+it == 31 ? "1,0,0,0,0,0,800" :
+it == 32 ? "0,0,0,0,0,7,800" :
+it == 33 ? "0,0,0,5,0,0,800" :
+it == 34 ? "0,2,0,0,0,0,800" :
+it == 35 ? "0,0,3,0,0,0,800" :
 it == 36 ? "0,0,0,0,6,0,800" :
-it == 37 ? "0,0,0,0,6,0,800" :
-it == 38 ? "0,0,0,0,6,0,800" :
-it == 39 ? "0,0,0,0,6,0,800" :
-it == 40 ? "0,0,0,0,6,0,800" :
-it == 41 ? "0,0,0,0,0,7,800" :
-it == 42 ? "0,0,0,0,0,7,800" :
-it == 43 ? "0,0,0,0,0,7,800" :
-it == 44 ? "0,0,0,0,0,7,800" :
-it == 45 ? "0,0,0,0,0,7,800" :
+it == 37 ? "0,0,0,0,0,7,800" :
+it == 38 ? "0,2,0,0,0,0,800" :
+it == 39 ? "1,0,0,0,0,0,800" :
+it == 40 ? "0,0,0,5,0,0,800" :
+it == 41 ? "0,0,3,0,0,0,800" :
+it == 42 ? "0,0,0,0,6,0,800" :
+it == 43 ? "0,0,3,0,0,0,800" :
+it == 44 ? "0,0,0,0,6,0,800" :
+it == 45 ? "0,2,0,0,0,0,800" :
 it == 46 ? "0,0,0,0,0,7,800" :
-it == 47 ? "0,0,0,0,0,7,800" :
-it == 48 ? "0,0,0,0,0,7,800" :
-it == 49 ? "0,0,0,0,0,7,800" :
-it == 50 ? "0,0,0,0,0,7,800" :
+it == 47 ? "0,0,0,5,0,0,800" :
+it == 48 ? "1,0,0,0,0,0,800" :
+it == 49 ? "0,0,0,5,0,0,800" :
+it == 50 ? "0,0,0,0,6,0,800" :
 it == 51 ? "0,0,3,0,0,0,800" :
-it == 52 ? "0,0,3,0,0,0,800" :
-it == 53 ? "0,0,3,0,0,0,800" :
-it == 54 ? "0,0,3,0,0,0,800" :
-it == 55 ? "0,0,3,0,0,0,800" :
-it == 56 ? "0,0,3,0,0,0,800" :
-it == 57 ? "0,0,3,0,0,0,800" :
-it == 58 ? "0,0,3,0,0,0,800" :
-it == 59 ? "0,0,3,0,0,0,800" :
+it == 52 ? "1,0,0,0,0,0,800" :
+it == 53 ? "0,0,0,0,0,7,800" :
+it == 54 ? "0,2,0,0,0,0,800" :
+it == 55 ? "0,0,0,0,0,7,800" :
+it == 56 ? "1,0,0,0,0,0,800" :
+it == 57 ? "0,2,0,0,0,0,800" :
+it == 58 ? "0,0,0,0,6,0,800" :
+it == 59 ? "0,0,0,5,0,0,800" :
 it == 60 ? "0,0,3,0,0,0,800" :
 "0,0,0,0,0,0,900"</scr:Expression>
                         </Expression>
@@ -540,6 +542,7 @@ it == 60 ? "0,0,3,0,0,0,800" :
                           <Property Name="charge time" />
                           <Property Name="EndV0Delay" />
                           <Property Name="FlowADJt" />
+                          <Property Name="flush_time" />
                         </Expression>
                         <Expression xsi:type="GroupWorkflow">
                           <Name>stim_main_all64mix</Name>
@@ -552,6 +555,7 @@ it == 60 ? "0,0,3,0,0,0,800" :
                                 <Property Name="charge time" />
                                 <Property Name="EndV0Delay" />
                                 <Property Name="FlowADJt" />
+                                <Property Name="flush_time" />
                               </Expression>
                               <Expression xsi:type="rx:SelectMany">
                                 <Name>StimBlockOdor</Name>
@@ -740,7 +744,17 @@ it == 60 ? "0,0,3,0,0,0,800" :
                                         </Edges>
                                       </Workflow>
                                     </Expression>
-                                    <Expression xsi:type="IncludeWorkflow" Path="Extensions\flush_odor.bonsai" />
+                                    <Expression xsi:type="ExternalizedMapping">
+                                      <Property Name="flush_time" />
+                                    </Expression>
+                                    <Expression xsi:type="IncludeWorkflow" Path="Extensions\flush_odor.bonsai">
+                                      <flush_time>PT1S</flush_time>
+                                    </Expression>
+                                    <Expression xsi:type="Combinator">
+                                      <Combinator xsi:type="rx:Delay">
+                                        <rx:DueTime>PT1S</rx:DueTime>
+                                      </Combinator>
+                                    </Expression>
                                     <Expression xsi:type="rx:SelectMany">
                                       <Name>digital0_high</Name>
                                       <Workflow>
@@ -3057,28 +3071,30 @@ it == 60 ? "0,0,3,0,0,0,800" :
                                     <Edge From="3" To="5" Label="Source1" />
                                     <Edge From="4" To="5" Label="Source2" />
                                     <Edge From="5" To="6" Label="Source1" />
-                                    <Edge From="6" To="7" Label="Source1" />
-                                    <Edge From="7" To="8" Label="Source1" />
-                                    <Edge From="8" To="10" Label="Source1" />
-                                    <Edge From="9" To="10" Label="Source2" />
-                                    <Edge From="10" To="11" Label="Source1" />
-                                    <Edge From="11" To="12" Label="Source1" />
+                                    <Edge From="6" To="8" Label="Source1" />
+                                    <Edge From="7" To="8" Label="Source2" />
+                                    <Edge From="8" To="9" Label="Source1" />
+                                    <Edge From="9" To="10" Label="Source1" />
+                                    <Edge From="10" To="12" Label="Source1" />
+                                    <Edge From="11" To="12" Label="Source2" />
                                     <Edge From="12" To="13" Label="Source1" />
+                                    <Edge From="13" To="14" Label="Source1" />
                                     <Edge From="14" To="15" Label="Source1" />
-                                    <Edge From="15" To="16" Label="Source1" />
-                                    <Edge From="15" To="20" Label="Source1" />
-                                    <Edge From="16" To="19" Label="Source1" />
-                                    <Edge From="17" To="19" Label="Source2" />
-                                    <Edge From="17" To="22" Label="Source3" />
-                                    <Edge From="18" To="19" Label="Source3" />
-                                    <Edge From="18" To="22" Label="Source2" />
-                                    <Edge From="19" To="23" Label="Source1" />
-                                    <Edge From="20" To="21" Label="Source1" />
-                                    <Edge From="21" To="22" Label="Source1" />
-                                    <Edge From="22" To="23" Label="Source2" />
-                                    <Edge From="25" To="26" Label="Source1" />
-                                    <Edge From="26" To="27" Label="Source1" />
+                                    <Edge From="16" To="17" Label="Source1" />
+                                    <Edge From="17" To="18" Label="Source1" />
+                                    <Edge From="17" To="22" Label="Source1" />
+                                    <Edge From="18" To="21" Label="Source1" />
+                                    <Edge From="19" To="21" Label="Source2" />
+                                    <Edge From="19" To="24" Label="Source3" />
+                                    <Edge From="20" To="21" Label="Source3" />
+                                    <Edge From="20" To="24" Label="Source2" />
+                                    <Edge From="21" To="25" Label="Source1" />
+                                    <Edge From="22" To="23" Label="Source1" />
+                                    <Edge From="23" To="24" Label="Source1" />
+                                    <Edge From="24" To="25" Label="Source2" />
                                     <Edge From="27" To="28" Label="Source1" />
+                                    <Edge From="28" To="29" Label="Source1" />
+                                    <Edge From="29" To="30" Label="Source1" />
                                   </Edges>
                                 </Workflow>
                               </Expression>
@@ -3130,7 +3146,7 @@ it == 60 ? "0,0,3,0,0,0,800" :
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Timer">
-                            <rx:DueTime>PT2.582S</rx:DueTime>
+                            <rx:DueTime>PT2S</rx:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="WorkflowOutput" />
@@ -3229,8 +3245,8 @@ it == 60 ? "0,0,3,0,0,0,800" :
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p3:CreateContinuousUniform">
-                <p3:Lower>90</p3:Lower>
-                <p3:Upper>90</p3:Upper>
+                <p3:Lower>25</p3:Lower>
+                <p3:Upper>35</p3:Upper>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:AsyncSubject">
@@ -3271,7 +3287,7 @@ it == 60 ? "0,0,3,0,0,0,800" :
             </Expression>
             <Expression xsi:type="PropertySource" TypeArguments="io:GetDirectories,sys:String">
               <MemberName>Path</MemberName>
-              <Value>.</Value>
+              <Value>C:\Users\REC\Downloads</Value>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
               <Name>DataRoot</Name>
@@ -3293,7 +3309,7 @@ it == 60 ? "0,0,3,0,0,0,800" :
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:DeviceDataWriter">
-                <p1:Path>device1_test_dout</p1:Path>
+                <p1:Path>C:\Users\REC\Downloads\device1_test_dout</p1:Path>
                 <p1:Buffered>true</p1:Buffered>
                 <p1:Overwrite>false</p1:Overwrite>
                 <p1:FilterType>Include</p1:FilterType>
@@ -3317,7 +3333,7 @@ it == 60 ? "0,0,3,0,0,0,800" :
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:DeviceDataWriter">
-                <p1:Path>device2_test_dout</p1:Path>
+                <p1:Path>C:\Users\REC\Downloads\device2_test_dout</p1:Path>
                 <p1:Buffered>true</p1:Buffered>
                 <p1:Overwrite>false</p1:Overwrite>
                 <p1:FilterType>Include</p1:FilterType>
@@ -3435,7 +3451,7 @@ it == 60 ? "0,0,3,0,0,0,800" :
       </Expression>
       <Expression xsi:type="gui:ButtonBuilder">
         <gui:Name>LoggingButton</gui:Name>
-        <gui:Enabled>true</gui:Enabled>
+        <gui:Enabled>false</gui:Enabled>
         <gui:Visible>true</gui:Visible>
         <gui:Text>Logging</gui:Text>
       </Expression>
