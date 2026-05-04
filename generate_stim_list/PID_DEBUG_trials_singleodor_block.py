@@ -5,7 +5,8 @@ import random
 ODOR_VALUES = [1, 2, 3, 5, 6, 7]
 ODOR_NAMES = ["A", "B", "C", "D", "E", "F"]
 
-ODOR_FLOW = 100
+ODOR_FLOW = 50
+TOTAL_FLOW=900
 
 
 def normalize_odor_sequence(odor_sequence: str):
@@ -95,7 +96,7 @@ def states_to_carrier_out(states):
     single odor:
     900 - 100 * 1 = 800
     """
-    return 900 - 100 * sum(states)
+    return TOTAL_FLOW - ODOR_FLOW * sum(states)
 
 
 def states_to_txt_row(states):
