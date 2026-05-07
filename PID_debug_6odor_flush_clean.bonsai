@@ -729,7 +729,7 @@ it == 60 ? "0,0,0,0,6,0,850" :
                                           </Expression>
                                           <Expression xsi:type="Combinator">
                                             <Combinator xsi:type="rx:Delay">
-                                              <rx:DueTime>PT2S</rx:DueTime>
+                                              <rx:DueTime>PT40S</rx:DueTime>
                                             </Combinator>
                                           </Expression>
                                           <Expression xsi:type="WorkflowOutput" />
@@ -3305,8 +3305,8 @@ it == 60 ? "0,0,0,0,6,0,850" :
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p3:CreateContinuousUniform">
-                <p3:Lower>2</p3:Lower>
-                <p3:Upper>2</p3:Upper>
+                <p3:Lower>20</p3:Lower>
+                <p3:Upper>20</p3:Upper>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:AsyncSubject">
