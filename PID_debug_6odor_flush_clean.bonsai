@@ -602,6 +602,15 @@ it == 60 ? "0,0,0,0,6,0,850" :
                                           <Expression xsi:type="MulticastSubject">
                                             <Name>Olfactometer1Commands</Name>
                                           </Expression>
+                                          <Expression xsi:type="p1:CreateMessage">
+                                            <harp:MessageType>Write</harp:MessageType>
+                                            <harp:Payload xsi:type="p1:CreateEndValveStatePayload">
+                                              <p1:EndValveState>None</p1:EndValveState>
+                                            </harp:Payload>
+                                          </Expression>
+                                          <Expression xsi:type="MulticastSubject">
+                                            <Name>Olfactometer1Commands</Name>
+                                          </Expression>
                                           <Expression xsi:type="ExternalizedMapping">
                                             <Property Name="DueTime" />
                                           </Expression>
@@ -617,13 +626,15 @@ it == 60 ? "0,0,0,0,6,0,850" :
                                         </Nodes>
                                         <Edges>
                                           <Edge From="0" To="1" Label="Source1" />
-                                          <Edge From="0" To="6" Label="Source1" />
+                                          <Edge From="0" To="8" Label="Source1" />
                                           <Edge From="1" To="2" Label="Source1" />
                                           <Edge From="2" To="3" Label="Source1" />
-                                          <Edge From="3" To="5" Label="Source1" />
-                                          <Edge From="4" To="5" Label="Source2" />
-                                          <Edge From="5" To="6" Label="Source2" />
-                                          <Edge From="6" To="7" Label="Source1" />
+                                          <Edge From="3" To="4" Label="Source1" />
+                                          <Edge From="4" To="5" Label="Source1" />
+                                          <Edge From="5" To="7" Label="Source1" />
+                                          <Edge From="6" To="7" Label="Source2" />
+                                          <Edge From="7" To="8" Label="Source2" />
+                                          <Edge From="8" To="9" Label="Source1" />
                                         </Edges>
                                       </Workflow>
                                     </Expression>
@@ -718,7 +729,7 @@ it == 60 ? "0,0,0,0,6,0,850" :
                                           </Expression>
                                           <Expression xsi:type="Combinator">
                                             <Combinator xsi:type="rx:Delay">
-                                              <rx:DueTime>PT28S</rx:DueTime>
+                                              <rx:DueTime>PT2S</rx:DueTime>
                                             </Combinator>
                                           </Expression>
                                           <Expression xsi:type="WorkflowOutput" />
@@ -808,7 +819,7 @@ it == 60 ? "0,0,0,0,6,0,850" :
                                     <Expression xsi:type="ExternalizedMapping">
                                       <Property Name="EndV0Delay" />
                                     </Expression>
-                                    <Expression xsi:type="IncludeWorkflow" Path="Extensions\Odor Stim.bonsai">
+                                    <Expression xsi:type="IncludeWorkflow" Path="Extensions\Odor Stim_flush1.bonsai">
                                       <EndV0Delay>PT4S</EndV0Delay>
                                     </Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="Extensions\odor&amp;check_off.bonsai" />
@@ -3195,7 +3206,7 @@ it == 60 ? "0,0,0,0,6,0,850" :
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Timer">
-                            <rx:DueTime>PT1S</rx:DueTime>
+                            <rx:DueTime>PT2S</rx:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="WorkflowOutput" />
@@ -3294,8 +3305,8 @@ it == 60 ? "0,0,0,0,6,0,850" :
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p3:CreateContinuousUniform">
-                <p3:Lower>30</p3:Lower>
-                <p3:Upper>30</p3:Upper>
+                <p3:Lower>2</p3:Lower>
+                <p3:Upper>2</p3:Upper>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:AsyncSubject">
