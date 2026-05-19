@@ -303,15 +303,15 @@ if __name__ == "__main__":
     ODOR_SEQUENCE = "ABCDEF"
 
     # each block uses different carrier flow
-    BLOCK_NUM = 10
+    BLOCK_NUM = 5
 
     # repeat each odor inside each block
-    REPEAT_NUM = 6
+    REPEAT_NUM = 10
 
     # carrier flow range
     # block 1 carrier = 800, odor flow = 100
     # block 10 carrier = 890, odor flow = 10
-    FLOW_RANGE = (800, 890)
+    FLOW_RANGE = (860, 890)
 
     # False:
     # block 1 = A A A ... B B B ... C C C ...
@@ -327,6 +327,6 @@ if __name__ == "__main__":
         flow_range=FLOW_RANGE,
         shuffle_within_block=SHUFFLE_WITHIN_BLOCK,
         seed=1,
-        txt_file="DEBUG_bonsai_ABCDEF.txt",
-        csv_file="DEBUG_bonsai_table_ABCDEF.csv",
+        txt_file="DEBUG_bonsai_ABCDEF2.txt",
+        csv_file="DEBUG_bonsai_table_ABCDEF2.csv",
     )
