@@ -785,7 +785,7 @@ it == 12 ? "34,860" :
                                       <Property Name="EndV0Delay" />
                                     </Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="Extensions\Odor Stim_flush1.bonsai">
-                                      <EndV0Delay>PT4S</EndV0Delay>
+                                      <EndV0Delay>PT1S</EndV0Delay>
                                     </Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="Extensions\odor&amp;check_off3.bonsai" />
                                     <Expression xsi:type="rx:SelectMany">
