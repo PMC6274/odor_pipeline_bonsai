@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.9.0"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:glx="clr-namespace:Bonsai.SpikeGLX;assembly=Bonsai.SpikeGLX"
+                 xmlns:dsp="clr-namespace:Bonsai.Dsp;assembly=Bonsai.Dsp"
+                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="glx:Fetch">
+          <glx:Host>129.105.30.122</glx:Host>
+          <glx:Port>4142</glx:Port>
+          <glx:BufferLength>100</glx:BufferLength>
+          <glx:StreamType>Daq</glx:StreamType>
+          <glx:Substream>0</glx:Substream>
+          <glx:Channels>
+            <glx:int>1</glx:int>
+          </glx:Channels>
+          <glx:Downsample>1</glx:Downsample>
+          <glx:ConvertToVoltage>false</glx:ConvertToVoltage>
+          <glx:HighResolutionTimer>true</glx:HighResolutionTimer>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="dsp:FrequencyFilter">
+          <dsp:SampleRate>10000</dsp:SampleRate>
+          <dsp:Cutoff1>1</dsp:Cutoff1>
+          <dsp:Cutoff2>20</dsp:Cutoff2>
+          <dsp:KernelLength>1000</dsp:KernelLength>
+          <dsp:FilterType>BandPass</dsp:FilterType>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="dsp:ConvertScale">
+          <dsp:Depth>F32</dsp:Depth>
+          <dsp:Scale>-1</dsp:Scale>
+          <dsp:Shift>0</dsp:Shift>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="dsp:Threshold">
+          <dsp:ThresholdValue>300</dsp:ThresholdValue>
+          <dsp:MaxValue>1</dsp:MaxValue>
+          <dsp:ThresholdType>Binary</dsp:ThresholdType>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="dsp:CountNonZero" />
+      </Expression>
+      <Expression xsi:type="GreaterThan">
+        <Operand xsi:type="IntProperty">
+          <Value>0</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="rx:Condition">
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="rx:PublishSubject">
+        <Name>SniffDetected</Name>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+      <Edge From="1" To="2" Label="Source1" />
+      <Edge From="2" To="3" Label="Source1" />
+      <Edge From="3" To="4" Label="Source1" />
+      <Edge From="4" To="5" Label="Source1" />
+      <Edge From="5" To="6" Label="Source1" />
+      <Edge From="6" To="7" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>
