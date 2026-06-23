@@ -15,33 +15,28 @@
         <Combinator xsi:type="glx:Fetch">
           <glx:Host>129.105.30.122</glx:Host>
           <glx:Port>4142</glx:Port>
-          <glx:BufferLength>1000</glx:BufferLength>
+          <glx:BufferLength>100</glx:BufferLength>
           <glx:StreamType>Daq</glx:StreamType>
           <glx:Substream>0</glx:Substream>
           <glx:Channels>
-            <glx:int>1</glx:int>
+            <glx:int>0</glx:int>
           </glx:Channels>
-          <glx:Downsample>1</glx:Downsample>
+          <glx:Downsample>10</glx:Downsample>
           <glx:ConvertToVoltage>true</glx:ConvertToVoltage>
           <glx:HighResolutionTimer>true</glx:HighResolutionTimer>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="dsp:FrequencyFilter">
-          <dsp:SampleRate>10000</dsp:SampleRate>
+          <dsp:SampleRate>1000</dsp:SampleRate>
           <dsp:Cutoff1>1</dsp:Cutoff1>
           <dsp:Cutoff2>20</dsp:Cutoff2>
-          <dsp:KernelLength>1000</dsp:KernelLength>
+          <dsp:KernelLength>100</dsp:KernelLength>
           <dsp:FilterType>BandPass</dsp:FilterType>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="dsp:ConvertToMat" />
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="dsp:Difference">
-          <dsp:Order>1</dsp:Order>
-        </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="dsp:ConvertScale">
@@ -51,8 +46,13 @@
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
+        <Combinator xsi:type="dsp:Difference">
+          <dsp:Order>1</dsp:Order>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
         <Combinator xsi:type="dsp:Threshold">
-          <dsp:ThresholdValue>0.1</dsp:ThresholdValue>
+          <dsp:ThresholdValue>2</dsp:ThresholdValue>
           <dsp:MaxValue>1</dsp:MaxValue>
           <dsp:ThresholdType>Binary</dsp:ThresholdType>
         </Combinator>
@@ -62,7 +62,7 @@
       </Expression>
       <Expression xsi:type="GreaterThan">
         <Operand xsi:type="IntProperty">
-          <Value>300</Value>
+          <Value>30</Value>
         </Operand>
       </Expression>
       <Expression xsi:type="Combinator">
@@ -81,12 +81,10 @@
           </Edges>
         </Workflow>
       </Expression>
-      <Expression xsi:type="Disable">
-        <Builder xsi:type="Combinator">
-          <Combinator xsi:type="rx:GateInterval">
-            <rx:Interval>PT0.5S</rx:Interval>
-          </Combinator>
-        </Builder>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:GateInterval">
+          <rx:Interval>PT0.5S</rx:Interval>
+        </Combinator>
       </Expression>
       <Expression xsi:type="rx:PublishSubject">
         <Name>SniffDetected</Name>
@@ -155,11 +153,11 @@
           <Combinator xsi:type="glx:Fetch">
             <glx:Host>129.105.30.122</glx:Host>
             <glx:Port>4142</glx:Port>
-            <glx:BufferLength>100</glx:BufferLength>
+            <glx:BufferLength>300</glx:BufferLength>
             <glx:StreamType>Daq</glx:StreamType>
             <glx:Substream>0</glx:Substream>
             <glx:Channels>
-              <glx:int>1</glx:int>
+              <glx:int>0</glx:int>
             </glx:Channels>
             <glx:Downsample>1</glx:Downsample>
             <glx:ConvertToVoltage>true</glx:ConvertToVoltage>
@@ -185,13 +183,6 @@
       </Expression>
       <Expression xsi:type="Disable">
         <Builder xsi:type="Combinator">
-          <Combinator xsi:type="dsp:Difference">
-            <dsp:Order>1</dsp:Order>
-          </Combinator>
-        </Builder>
-      </Expression>
-      <Expression xsi:type="Disable">
-        <Builder xsi:type="Combinator">
           <Combinator xsi:type="dsp:ConvertScale">
             <dsp:Depth>F32</dsp:Depth>
             <dsp:Scale>-1000</dsp:Scale>
@@ -201,11 +192,27 @@
       </Expression>
       <Expression xsi:type="Disable">
         <Builder xsi:type="Combinator">
+          <Combinator xsi:type="dsp:Difference">
+            <dsp:Order>1</dsp:Order>
+          </Combinator>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="dsp:Threshold">
+            <dsp:ThresholdValue>0.02</dsp:ThresholdValue>
+            <dsp:MaxValue>1</dsp:MaxValue>
+            <dsp:ThresholdType>Binary</dsp:ThresholdType>
+          </Combinator>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
           <Combinator xsi:type="dsp:DetectSpikes">
-            <dsp:Delay>500</dsp:Delay>
+            <dsp:Delay>100</dsp:Delay>
             <dsp:Length>1000</dsp:Length>
             <dsp:Threshold>
-              <dsp:double>0.2</dsp:double>
+              <dsp:double>0</dsp:double>
             </dsp:Threshold>
             <dsp:WaveformRefinement>AlignPeaks</dsp:WaveformRefinement>
           </Combinator>
@@ -285,7 +292,7 @@
                       <harp:VisualIndicators>On</harp:VisualIndicators>
                       <harp:Heartbeat>Disabled</harp:Heartbeat>
                       <harp:IgnoreErrors>false</harp:IgnoreErrors>
-                      <harp:PortName>COM7</harp:PortName>
+                      <harp:PortName>COM4</harp:PortName>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="rx:PublishSubject">
@@ -598,17 +605,18 @@
       <Edge From="27" To="28" Label="Source1" />
       <Edge From="28" To="29" Label="Source1" />
       <Edge From="29" To="30" Label="Source1" />
-      <Edge From="33" To="34" Label="Source1" />
-      <Edge From="33" To="38" Label="Source1" />
+      <Edge From="30" To="31" Label="Source1" />
       <Edge From="34" To="35" Label="Source1" />
+      <Edge From="34" To="39" Label="Source1" />
       <Edge From="35" To="36" Label="Source1" />
       <Edge From="36" To="37" Label="Source1" />
-      <Edge From="38" To="39" Label="Source1" />
-      <Edge From="40" To="41" Label="Source1" />
+      <Edge From="37" To="38" Label="Source1" />
+      <Edge From="39" To="40" Label="Source1" />
       <Edge From="41" To="42" Label="Source1" />
       <Edge From="42" To="43" Label="Source1" />
       <Edge From="43" To="44" Label="Source1" />
       <Edge From="44" To="45" Label="Source1" />
+      <Edge From="45" To="46" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
