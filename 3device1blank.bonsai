@@ -502,7 +502,7 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Range">
                 <rx:Start>1</rx:Start>
-                <rx:Count>12</rx:Count>
+                <rx:Count>9</rx:Count>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -540,19 +540,16 @@
                         </Expression>
                         <Expression xsi:type="scr:ExpressionTransform">
                           <scr:Name>9odor_block</scr:Name>
-                          <scr:Expression>it == 1  ? "11,860" :
-it == 2  ? "12,860" :
-it == 3  ? "13,860" :
-it == 4  ? "14,860" :
-it == 5  ? "21,860" :
-it == 6  ? "22,860" :
-it == 7  ? "23,860" :
-it == 8  ? "24,860" :
-it == 9  ? "31,860" :
-it == 10 ? "32,860" :
-it == 11 ? "33,860" :
-it == 12 ? "34,860" :
-"0,900"</scr:Expression>
+                          <scr:Expression>it == 1  ? "11,960" :
+it == 2  ? "12,960" :
+it == 3  ? "13,960" :
+it == 4  ? "14,960" :
+it == 5  ? "21,960" :
+it == 6  ? "22,960" :
+it == 7  ? "23,960" :
+it == 8  ? "24,960" :
+it == 9  ? "31,960" :
+"0,1000"</scr:Expression>
                         </Expression>
                         <Expression xsi:type="Parse">
                           <Pattern>%i,%i</Pattern>
@@ -694,7 +691,7 @@ it == 12 ? "34,860" :
                                           </Expression>
                                           <Expression xsi:type="Combinator">
                                             <Combinator xsi:type="rx:Delay">
-                                              <rx:DueTime>PT0S</rx:DueTime>
+                                              <rx:DueTime>PT30S</rx:DueTime>
                                             </Combinator>
                                           </Expression>
                                           <Expression xsi:type="WorkflowOutput" />
@@ -713,7 +710,7 @@ it == 12 ? "34,860" :
                                       <Property Name="flush_time" />
                                     </Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="Extensions\flush_odor.bonsai">
-                                      <flush_time>PT2S</flush_time>
+                                      <flush_time>PT1S</flush_time>
                                     </Expression>
                                     <Expression xsi:type="rx:SelectMany">
                                       <Name>digital1_low</Name>
@@ -749,7 +746,7 @@ it == 12 ? "34,860" :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="rx:Delay">
-                                        <rx:DueTime>PT0S</rx:DueTime>
+                                        <rx:DueTime>PT1S</rx:DueTime>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="rx:SelectMany">
@@ -785,7 +782,7 @@ it == 12 ? "34,860" :
                                       <Property Name="EndV0Delay" />
                                     </Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="Extensions\Odor Stim_flush1.bonsai">
-                                      <EndV0Delay>PT1S</EndV0Delay>
+                                      <EndV0Delay>PT4S</EndV0Delay>
                                     </Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="Extensions\odor&amp;check_off3.bonsai" />
                                     <Expression xsi:type="rx:SelectMany">
@@ -986,8 +983,8 @@ it == 12 ? "34,860" :
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p3:CreateContinuousUniform">
-                <p3:Lower>1</p3:Lower>
-                <p3:Upper>1</p3:Upper>
+                <p3:Lower>30</p3:Lower>
+                <p3:Upper>20</p3:Upper>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:AsyncSubject">
