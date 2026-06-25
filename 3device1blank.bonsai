@@ -1005,7 +1005,7 @@ it == 225 ? "23,860" :
                                     <Expression xsi:type="ExternalizedMapping">
                                       <Property Name="EndV0Delay" />
                                     </Expression>
-                                    <Expression xsi:type="IncludeWorkflow" Path="Extensions\Odor Stim_flush1.bonsai">
+                                    <Expression xsi:type="IncludeWorkflow" Path="Extensions\Odor Stim_end0.bonsai">
                                       <EndV0Delay>PT4S</EndV0Delay>
                                     </Expression>
                                     <Expression xsi:type="IncludeWorkflow" Path="Extensions\odor&amp;check_off3.bonsai" />
@@ -1207,8 +1207,8 @@ it == 225 ? "23,860" :
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p3:CreateContinuousUniform">
-                <p3:Lower>30</p3:Lower>
-                <p3:Upper>20</p3:Upper>
+                <p3:Lower>20</p3:Lower>
+                <p3:Upper>30</p3:Upper>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:AsyncSubject">
