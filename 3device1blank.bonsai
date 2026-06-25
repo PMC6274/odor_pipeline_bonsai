@@ -385,7 +385,7 @@
                 <p1:Channel1>0</p1:Channel1>
                 <p1:Channel2>0</p1:Channel2>
                 <p1:Channel3>0</p1:Channel3>
-                <p1:Channel4>895</p1:Channel4>
+                <p1:Channel4>892</p1:Channel4>
               </harp:Payload>
             </Expression>
             <Expression xsi:type="p1:CreateMessage">
