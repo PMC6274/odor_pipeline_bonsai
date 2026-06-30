@@ -271,11 +271,11 @@
             <Expression xsi:type="p1:CreateMessage">
               <harp:MessageType>Write</harp:MessageType>
               <harp:Payload xsi:type="p1:CreateChannelsTargetFlowPayload">
-                <p1:Channel0>40</p1:Channel0>
-                <p1:Channel1>40</p1:Channel1>
-                <p1:Channel2>40</p1:Channel2>
-                <p1:Channel3>40</p1:Channel3>
-                <p1:Channel4>860</p1:Channel4>
+                <p1:Channel0>75</p1:Channel0>
+                <p1:Channel1>75</p1:Channel1>
+                <p1:Channel2>75</p1:Channel2>
+                <p1:Channel3>75</p1:Channel3>
+                <p1:Channel4>925</p1:Channel4>
               </harp:Payload>
             </Expression>
             <Expression xsi:type="p1:CreateMessage">
@@ -326,11 +326,11 @@
             <Expression xsi:type="p1:CreateMessage">
               <harp:MessageType>Write</harp:MessageType>
               <harp:Payload xsi:type="p1:CreateChannelsTargetFlowPayload">
-                <p1:Channel0>40</p1:Channel0>
-                <p1:Channel1>40</p1:Channel1>
-                <p1:Channel2>40</p1:Channel2>
-                <p1:Channel3>40</p1:Channel3>
-                <p1:Channel4>882</p1:Channel4>
+                <p1:Channel0>75</p1:Channel0>
+                <p1:Channel1>75</p1:Channel1>
+                <p1:Channel2>75</p1:Channel2>
+                <p1:Channel3>75</p1:Channel3>
+                <p1:Channel4>958</p1:Channel4>
               </harp:Payload>
             </Expression>
             <Expression xsi:type="p1:CreateMessage">
@@ -381,11 +381,11 @@
             <Expression xsi:type="p1:CreateMessage">
               <harp:MessageType>Write</harp:MessageType>
               <harp:Payload xsi:type="p1:CreateChannelsTargetFlowPayload">
-                <p1:Channel0>40</p1:Channel0>
+                <p1:Channel0>75</p1:Channel0>
                 <p1:Channel1>0</p1:Channel1>
                 <p1:Channel2>0</p1:Channel2>
                 <p1:Channel3>0</p1:Channel3>
-                <p1:Channel4>892</p1:Channel4>
+                <p1:Channel4>986</p1:Channel4>
               </harp:Payload>
             </Expression>
             <Expression xsi:type="p1:CreateMessage">
