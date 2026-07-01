@@ -7,6 +7,34 @@ workflow, `3device1blank.bonsai`, is configured for three devices.
 - Main repo: https://github.com/PMC6274/odor_pipeline_bonsai/tree/main  
 - Harp Olfactometer docs: https://fchampalimaud.github.io/olfactometer-docs/docs/overview  
 
+## Deploy on another Windows PC
+
+Windows may mark every file from a downloaded ZIP as coming from the internet.
+This can block PowerShell scripts, generated C# files, and extension DLLs. After
+copying or extracting the project on a new PC, double-click:
+
+```text
+setup_windows.cmd
+```
+
+This removes the Windows zone marker from files inside this project only. It
+does **not** permanently change the machine or user PowerShell execution policy.
+
+For the cleanest ZIP deployment, unblock before extraction: right-click the ZIP,
+choose **Properties**, check **Unblock**, click **OK**, and then extract it. A Git
+clone normally does not carry these ZIP zone markers.
+
+If local policy still prevents direct `.ps1` execution, use the command wrapper:
+
+```cmd
+run_experiment.cmd experiments\example.yaml -OpenOnly
+```
+
+It runs `run_experiment.ps1` with a process-only execution-policy bypass. You can
+also use `-ValidateOnly`, `-NoEditor`, or no mode flag with this wrapper. Company
+Group Policy can override process-level settings; contact the PC administrator
+if both setup and the wrapper are denied.
+
 ## Protocol
 
 - **Stimulus generator:** 1–9 Harp Olfactometers.
