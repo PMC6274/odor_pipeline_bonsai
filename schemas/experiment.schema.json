@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExperimentConfig",
+  "description": "Metadata and runtime parameters for one odor-delivery experiment.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["Metadata", "Hardware", "Controls", "Protocol", "Output"],
+  "properties": {
+    "Metadata": { "$ref": "#/$defs/ExperimentMetadata" },
+    "Hardware": { "$ref": "#/$defs/HardwareConfig" },
+    "Controls": { "$ref": "#/$defs/ControlConfig" },
+    "Protocol": { "$ref": "#/$defs/ProtocolConfig" },
+    "Output": { "$ref": "#/$defs/OutputConfig" }
+  },
+  "$defs": {
+    "ExperimentMetadata": {
+      "title": "ExperimentMetadata",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ExperimentId", "SubjectId", "Operator", "SessionStart"],
+      "properties": {
+        "ExperimentId": { "type": "string", "minLength": 1 },
+        "SubjectId": { "type": "string", "minLength": 1 },
+        "Operator": { "type": "string", "minLength": 1 },
+        "SessionStart": { "type": "string", "format": "date-time" },
+        "Notes": { "type": "string", "default": "" }
+      }
+    },
+    "HardwareConfig": {
+      "title": "HardwareConfig",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Olfactometer1Port", "Olfactometer2Port", "Olfactometer3Port", "WhiteRabbitPort"],
+      "properties": {
+        "Olfactometer1Port": { "type": "string", "pattern": "^COM[0-9]+$" },
+        "Olfactometer2Port": { "type": "string", "pattern": "^COM[0-9]+$" },
+        "Olfactometer3Port": { "type": "string", "pattern": "^COM[0-9]+$" },
+        "WhiteRabbitPort": { "type": "string", "pattern": "^COM[0-9]+$" }
+      }
+    },
+    "ControlConfig": {
+      "title": "ControlConfig",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["StartFlow", "DisableFlow", "StartPps", "EndPps", "StartExperiment"],
+      "properties": {
+        "StartFlow": { "type": "string", "minLength": 1 },
+        "DisableFlow": { "type": "string", "minLength": 1 },
+        "StartPps": { "type": "string", "minLength": 1 },
+        "EndPps": { "type": "string", "minLength": 1 },
+        "StartExperiment": { "type": "string", "minLength": 1 }
+      }
+    },
+    "ProtocolConfig": {
+      "title": "ProtocolConfig",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["StimulusFile", "TrialCount", "ChargeSeconds", "DeliverySeconds", "FlushSeconds", "RechargeSeconds", "FlowAdjustmentSeconds", "TimeBeforeOdorSeconds", "IsiMinimumSeconds", "IsiMaximumSeconds", "MainFlow", "ControlFlow", "FlushFlow"],
+      "properties": {
+        "StimulusFile": { "type": "string", "minLength": 1 },
+        "TrialCount": { "type": "integer", "minimum": 1 },
+        "ChargeSeconds": { "type": "number", "minimum": 0 },
+        "DeliverySeconds": { "type": "number", "minimum": 0 },
+        "FlushSeconds": { "type": "number", "minimum": 0 },
+        "RechargeSeconds": { "type": "number", "minimum": 0 },
+        "FlowAdjustmentSeconds": { "type": "number", "minimum": 0 },
+        "TimeBeforeOdorSeconds": { "type": "number", "minimum": 0 },
+        "IsiMinimumSeconds": { "type": "number", "minimum": 0 },
+        "IsiMaximumSeconds": { "type": "number", "minimum": 0 },
+        "MainFlow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "ControlFlow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "FlushFlow": { "type": "integer", "minimum": 0, "maximum": 1000 }
+      }
+    },
+    "OutputConfig": {
+      "title": "OutputConfig",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["DataDirectory", "Webhook"],
+      "properties": {
+        "DataDirectory": { "type": "string", "minLength": 1 },
+        "Webhook": { "type": "string", "default": "" }
+      }
+    }
+  }
+}

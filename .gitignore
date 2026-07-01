@@ -1,5 +1,8 @@
 # Python cache files
 __pycache__/
+**/bin/
+**/obj/
+3device1blank.runtime.bonsai
 
 # Bonsai environment files
 **/.bonsai/*

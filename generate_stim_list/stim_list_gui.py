@@ -9,7 +9,6 @@ from tkinter import filedialog, messagebox
 CHANNELS_PER_DEVICE = 4
 CHANNEL_FLOW = 40
 TOTAL_FLOW = 900
-FALLBACK = "0,900"
 
 
 def condition_label(index: int) -> str:
@@ -88,7 +87,7 @@ def write_stim_files(
             ])
             trial_idx += 1
 
-    txt_lines.append(f'"{FALLBACK}"')
+    txt_lines.append(f'"0,{total_flow}"')
     txt_path.write_text("\n".join(txt_lines), encoding="utf-8")
 
     with csv_path.open("w", newline="", encoding="utf-8") as f:

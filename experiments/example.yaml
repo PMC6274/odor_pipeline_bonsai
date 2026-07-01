@@ -1,0 +1,38 @@
+Metadata:
+  ExperimentId: odor-test-001
+  SubjectId: mouse-001
+  Operator: your-name
+  SessionStart: 2026-06-30T09:00:00-05:00
+  Notes: Initial schema example; copy this file for each session.
+
+Hardware:
+  Olfactometer1Port: COM24
+  Olfactometer2Port: COM4
+  Olfactometer3Port: COM3
+  WhiteRabbitPort: COM9
+
+Controls:
+  StartFlow: "Shift+F"
+  DisableFlow: "Shift+D"
+  StartPps: "Shift+W"
+  EndPps: "Shift+Q"
+  StartExperiment: "Shift+Space"
+
+Protocol:
+  StimulusFile: generate_debug_slit/06302026_test_90trials.txt
+  TrialCount: 90
+  ChargeSeconds: 25
+  DeliverySeconds: 4
+  FlushSeconds: 1
+  RechargeSeconds: 1
+  FlowAdjustmentSeconds: 3
+  TimeBeforeOdorSeconds: 0
+  IsiMinimumSeconds: 20
+  IsiMaximumSeconds: 30
+  MainFlow: 925
+  ControlFlow: 958
+  FlushFlow: 986
+
+Output:
+  DataDirectory: D:/data/11
+  Webhook: ""
