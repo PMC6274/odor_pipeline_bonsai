@@ -14,7 +14,7 @@ This can block PowerShell scripts, generated C# files, and extension DLLs. After
 copying or extracting the project on a new PC, double-click:
 
 ```text
-setup_windows.cmd
+scripts\setup_windows.cmd
 ```
 
 This removes the Windows zone marker from files inside this project only. It
@@ -27,13 +27,29 @@ clone normally does not carry these ZIP zone markers.
 If local policy still prevents direct `.ps1` execution, use the command wrapper:
 
 ```cmd
-run_experiment.cmd experiments\example.yaml -OpenOnly
+scripts\run_experiment.cmd experiments\example.yaml -OpenOnly
 ```
 
 It runs `run_experiment.ps1` with a process-only execution-policy bypass. You can
-also use `-ValidateOnly`, `-NoEditor`, or no mode flag with this wrapper. Company
+also use `-ValidateOnly` or no mode flag with this wrapper. Company
 Group Policy can override process-level settings; contact the PC administrator
 if both setup and the wrapper are denied.
+
+For common launch modes, you can also use these batch files. If you double-click
+one, it uses `experiments\example.yaml`. From a terminal, pass a different YAML
+file as the first argument.
+
+| File | What it does |
+| --- | --- |
+| `scripts\validate_experiment.bat` | Checks the YAML and prints the Bonsai properties without opening Bonsai. |
+| `scripts\open_experiment.bat` | Opens Bonsai with the YAML values loaded, but does not start the workflow. |
+| `start_experiment.bat` | Opens Bonsai with the YAML values loaded, but does not start the workflow. |
+
+Example:
+
+```cmd
+scripts\open_experiment.bat experiments\2026-07-01_mouse-001.yaml
+```
 
 ## Protocol
 
@@ -133,7 +149,7 @@ Protocol:
   StimulusFile: generate_stim_list/stim_3device_9x25_06062026.txt
 ```
 
-When `run_experiment.ps1` starts Bonsai, it reads this file and assigns the full
+When `scripts\run_experiment.ps1` starts Bonsai, it reads this file and assigns the full
 contents to `Odor loop.Expression`. To preserve the expression's required double
 quotes, the launcher creates a temporary `3device1blank.runtime.bonsai` beside
 the main workflow, opens that copy, and removes it when Bonsai closes. The source
@@ -153,7 +169,7 @@ To open Bonsai with all YAML parameters and the stimulus expression applied,
 without starting the workflow or sending commands to hardware, run:
 
 ```powershell
-.\run_experiment.ps1 experiments\example.yaml -OpenOnly
+.\scripts\run_experiment.ps1 experiments\example.yaml -OpenOnly
 ```
 
 Use this mode to inspect `Define Device`, `Initialize Device`, `Odor loop`, and
@@ -206,6 +222,29 @@ Protocol:
   IsiMaximumSeconds: 30
 ```
 
+Flow values are integers from `0` to `1000`. `MainFlow`, `ControlFlow`, and
+`FlushFlow` still control the three channel-4 carrier/flush outputs. The per-odor
+channel flow values map directly to the Bonsai externalized properties:
+
+```yaml
+Protocol:
+  MainFlow: 925
+  ControlFlow: 958
+  FlushFlow: 986
+  D1C0Flow: 0
+  D1C1Flow: 0
+  D1C2Flow: 0
+  D1C3Flow: 0
+  D2C0Flow: 0
+  D2C1Flow: 0
+  D2C2Flow: 0
+  D2C3Flow: 0
+  D3C0Flow: 0
+  D3C1Flow: 0
+  D3C2Flow: 0
+  D3C3Flow: 0
+```
+
 Keyboard controls are also configured in YAML:
 
 ```yaml
@@ -229,7 +268,7 @@ by Bonsai command-line properties. Do not write `PT30S` in a Bonsai property.
 Check the file and print every property that will be assigned:
 
 ```powershell
-.\run_experiment.ps1 experiments\2026-07-01_mouse-001.yaml -ValidateOnly
+.\scripts\run_experiment.ps1 experiments\2026-07-01_mouse-001.yaml -ValidateOnly
 ```
 
 Validation rejects missing required values, malformed COM ports, negative
@@ -244,24 +283,18 @@ Open `3device1blank.bonsai` with the YAML values applied, but do not start the
 workflow:
 
 ```powershell
-.\run_experiment.ps1 experiments\2026-07-01_mouse-001.yaml -OpenOnly
+.\scripts\run_experiment.ps1 experiments\2026-07-01_mouse-001.yaml -OpenOnly
 ```
 
 Select `Define Device`, `Initialize Device`, `Odor loop`, and `Logging` in the
 Bonsai editor to inspect their assigned properties.
 
-### Run the experiment
+### Open the experiment
 
-Start the workflow in the Bonsai editor:
-
-```powershell
-.\run_experiment.ps1 experiments\2026-07-01_mouse-001.yaml
-```
-
-To run without the editor, use application mode:
+Open the workflow in the Bonsai editor with the YAML values applied:
 
 ```powershell
-.\run_experiment.ps1 experiments\2026-07-01_mouse-001.yaml -NoEditor
+.\start_experiment.bat experiments\2026-07-01_mouse-001.yaml
 ```
 
 Always stop the workflow before editing YAML. Restart it through the launcher to
@@ -273,10 +306,10 @@ The White Rabbit auxiliary output is placed in PPS mode when the Bonsai workflow
 launches. Use the following order so SpikeGLX is armed while PPS is off and both
 recordings contain the synchronization pulses.
 
-1. Launch the experiment in Bonsai, but do not start the odor trials yet:
+1. Open the experiment in Bonsai, but do not start the odor trials yet:
 
    ```powershell
-   .\run_experiment.ps1 experiments\example.yaml
+   .\start_experiment.bat experiments\example.yaml
    ```
 
 2. Confirm that the White Rabbit device connected at `Hardware.WhiteRabbitPort`

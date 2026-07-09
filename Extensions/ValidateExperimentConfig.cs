@@ -61,6 +61,18 @@ namespace OdorExperiment
             RequireFlow(config.Protocol.MainFlow, "Protocol.MainFlow");
             RequireFlow(config.Protocol.ControlFlow, "Protocol.ControlFlow");
             RequireFlow(config.Protocol.FlushFlow, "Protocol.FlushFlow");
+            RequireFlow(config.Protocol.D1C0Flow, "Protocol.D1C0Flow");
+            RequireFlow(config.Protocol.D1C1Flow, "Protocol.D1C1Flow");
+            RequireFlow(config.Protocol.D1C2Flow, "Protocol.D1C2Flow");
+            RequireFlow(config.Protocol.D1C3Flow, "Protocol.D1C3Flow");
+            RequireFlow(config.Protocol.D2C0Flow, "Protocol.D2C0Flow");
+            RequireFlow(config.Protocol.D2C1Flow, "Protocol.D2C1Flow");
+            RequireFlow(config.Protocol.D2C2Flow, "Protocol.D2C2Flow");
+            RequireFlow(config.Protocol.D2C3Flow, "Protocol.D2C3Flow");
+            RequireFlow(config.Protocol.D3C0Flow, "Protocol.D3C0Flow");
+            RequireFlow(config.Protocol.D3C1Flow, "Protocol.D3C1Flow");
+            RequireFlow(config.Protocol.D3C2Flow, "Protocol.D3C2Flow");
+            RequireFlow(config.Protocol.D3C3Flow, "Protocol.D3C3Flow");
             RequireText(config.Output.DataDirectory, "Output.DataDirectory");
         }
 

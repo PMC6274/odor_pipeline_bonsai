@@ -2,10 +2,10 @@
 setlocal
 
 echo Unblocking project files under:
-echo %~dp0
+echo %~dp0..
 echo.
 
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "Get-ChildItem -LiteralPath '%~dp0' -Recurse -File ^| Unblock-File"
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "Get-ChildItem -LiteralPath '%~dp0..' -Recurse -File ^| Unblock-File"
 if errorlevel 1 (
     echo.
     echo ERROR: Windows could not unblock all project files.
@@ -16,7 +16,7 @@ if errorlevel 1 (
 )
 
 echo Project files were unblocked successfully.
-echo You can now use run_experiment.cmd or run_experiment.ps1.
+echo You can now use start_experiment.bat from the project root.
 pause
 
 endlocal

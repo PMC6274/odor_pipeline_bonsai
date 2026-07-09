@@ -429,6 +429,30 @@ namespace OdorExperiment
     
         private int _flushFlow;
     
+        private int _d1C0Flow;
+    
+        private int _d1C1Flow;
+    
+        private int _d1C2Flow;
+    
+        private int _d1C3Flow;
+    
+        private int _d2C0Flow;
+    
+        private int _d2C1Flow;
+    
+        private int _d2C2Flow;
+    
+        private int _d2C3Flow;
+    
+        private int _d3C0Flow;
+    
+        private int _d3C1Flow;
+    
+        private int _d3C2Flow;
+    
+        private int _d3C3Flow;
+    
         public ProtocolConfig()
         {
         }
@@ -448,6 +472,18 @@ namespace OdorExperiment
             _mainFlow = other._mainFlow;
             _controlFlow = other._controlFlow;
             _flushFlow = other._flushFlow;
+            _d1C0Flow = other._d1C0Flow;
+            _d1C1Flow = other._d1C1Flow;
+            _d1C2Flow = other._d1C2Flow;
+            _d1C3Flow = other._d1C3Flow;
+            _d2C0Flow = other._d2C0Flow;
+            _d2C1Flow = other._d2C1Flow;
+            _d2C2Flow = other._d2C2Flow;
+            _d2C3Flow = other._d2C3Flow;
+            _d3C0Flow = other._d3C0Flow;
+            _d3C1Flow = other._d3C1Flow;
+            _d3C2Flow = other._d3C2Flow;
+            _d3C3Flow = other._d3C3Flow;
         }
     
         [YamlDotNet.Serialization.YamlMemberAttribute(Alias="StimulusFile")]
@@ -619,6 +655,162 @@ namespace OdorExperiment
             }
         }
     
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D1C0Flow")]
+        public int D1C0Flow
+        {
+            get
+            {
+                return _d1C0Flow;
+            }
+            set
+            {
+                _d1C0Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D1C1Flow")]
+        public int D1C1Flow
+        {
+            get
+            {
+                return _d1C1Flow;
+            }
+            set
+            {
+                _d1C1Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D1C2Flow")]
+        public int D1C2Flow
+        {
+            get
+            {
+                return _d1C2Flow;
+            }
+            set
+            {
+                _d1C2Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D1C3Flow")]
+        public int D1C3Flow
+        {
+            get
+            {
+                return _d1C3Flow;
+            }
+            set
+            {
+                _d1C3Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D2C0Flow")]
+        public int D2C0Flow
+        {
+            get
+            {
+                return _d2C0Flow;
+            }
+            set
+            {
+                _d2C0Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D2C1Flow")]
+        public int D2C1Flow
+        {
+            get
+            {
+                return _d2C1Flow;
+            }
+            set
+            {
+                _d2C1Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D2C2Flow")]
+        public int D2C2Flow
+        {
+            get
+            {
+                return _d2C2Flow;
+            }
+            set
+            {
+                _d2C2Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D2C3Flow")]
+        public int D2C3Flow
+        {
+            get
+            {
+                return _d2C3Flow;
+            }
+            set
+            {
+                _d2C3Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D3C0Flow")]
+        public int D3C0Flow
+        {
+            get
+            {
+                return _d3C0Flow;
+            }
+            set
+            {
+                _d3C0Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D3C1Flow")]
+        public int D3C1Flow
+        {
+            get
+            {
+                return _d3C1Flow;
+            }
+            set
+            {
+                _d3C1Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D3C2Flow")]
+        public int D3C2Flow
+        {
+            get
+            {
+                return _d3C2Flow;
+            }
+            set
+            {
+                _d3C2Flow = value;
+            }
+        }
+    
+        [YamlDotNet.Serialization.YamlMemberAttribute(Alias="D3C3Flow")]
+        public int D3C3Flow
+        {
+            get
+            {
+                return _d3C3Flow;
+            }
+            set
+            {
+                _d3C3Flow = value;
+            }
+        }
+    
         public System.IObservable<ProtocolConfig> Generate()
         {
             return System.Reactive.Linq.Observable.Defer(() => System.Reactive.Linq.Observable.Return(new ProtocolConfig(this)));
@@ -643,7 +835,19 @@ namespace OdorExperiment
             stringBuilder.Append("IsiMaximumSeconds = " + _isiMaximumSeconds + ", ");
             stringBuilder.Append("MainFlow = " + _mainFlow + ", ");
             stringBuilder.Append("ControlFlow = " + _controlFlow + ", ");
-            stringBuilder.Append("FlushFlow = " + _flushFlow);
+            stringBuilder.Append("FlushFlow = " + _flushFlow + ", ");
+            stringBuilder.Append("D1C0Flow = " + _d1C0Flow + ", ");
+            stringBuilder.Append("D1C1Flow = " + _d1C1Flow + ", ");
+            stringBuilder.Append("D1C2Flow = " + _d1C2Flow + ", ");
+            stringBuilder.Append("D1C3Flow = " + _d1C3Flow + ", ");
+            stringBuilder.Append("D2C0Flow = " + _d2C0Flow + ", ");
+            stringBuilder.Append("D2C1Flow = " + _d2C1Flow + ", ");
+            stringBuilder.Append("D2C2Flow = " + _d2C2Flow + ", ");
+            stringBuilder.Append("D2C3Flow = " + _d2C3Flow + ", ");
+            stringBuilder.Append("D3C0Flow = " + _d3C0Flow + ", ");
+            stringBuilder.Append("D3C1Flow = " + _d3C1Flow + ", ");
+            stringBuilder.Append("D3C2Flow = " + _d3C2Flow + ", ");
+            stringBuilder.Append("D3C3Flow = " + _d3C3Flow);
             return true;
         }
     

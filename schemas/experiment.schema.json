@@ -55,7 +55,7 @@
       "title": "ProtocolConfig",
       "type": "object",
       "additionalProperties": false,
-      "required": ["StimulusFile", "TrialCount", "ChargeSeconds", "DeliverySeconds", "FlushSeconds", "RechargeSeconds", "FlowAdjustmentSeconds", "TimeBeforeOdorSeconds", "IsiMinimumSeconds", "IsiMaximumSeconds", "MainFlow", "ControlFlow", "FlushFlow"],
+      "required": ["StimulusFile", "TrialCount", "ChargeSeconds", "DeliverySeconds", "FlushSeconds", "RechargeSeconds", "FlowAdjustmentSeconds", "TimeBeforeOdorSeconds", "IsiMinimumSeconds", "IsiMaximumSeconds", "MainFlow", "ControlFlow", "FlushFlow", "D1C0Flow", "D1C1Flow", "D1C2Flow", "D1C3Flow", "D2C0Flow", "D2C1Flow", "D2C2Flow", "D2C3Flow", "D3C0Flow", "D3C1Flow", "D3C2Flow", "D3C3Flow"],
       "properties": {
         "StimulusFile": { "type": "string", "minLength": 1 },
         "TrialCount": { "type": "integer", "minimum": 1 },
@@ -69,7 +69,19 @@
         "IsiMaximumSeconds": { "type": "number", "minimum": 0 },
         "MainFlow": { "type": "integer", "minimum": 0, "maximum": 1000 },
         "ControlFlow": { "type": "integer", "minimum": 0, "maximum": 1000 },
-        "FlushFlow": { "type": "integer", "minimum": 0, "maximum": 1000 }
+        "FlushFlow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D1C0Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D1C1Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D1C2Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D1C3Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D2C0Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D2C1Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D2C2Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D2C3Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D3C0Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D3C1Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D3C2Flow": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "D3C3Flow": { "type": "integer", "minimum": 0, "maximum": 1000 }
       }
     },
     "OutputConfig": {

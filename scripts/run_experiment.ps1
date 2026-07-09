@@ -8,8 +8,12 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$root = $PSScriptRoot
-$configPath = [System.IO.Path]::GetFullPath((Join-Path $root $Config))
+$root = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot ".."))
+$configPath = if ([System.IO.Path]::IsPathRooted($Config)) {
+    [System.IO.Path]::GetFullPath($Config)
+} else {
+    [System.IO.Path]::GetFullPath((Join-Path $root $Config))
+}
 $workflowPath = Join-Path $root "3device1blank.bonsai"
 $bonsaiPath = Join-Path $root ".bonsai/Bonsai.exe"
 $yamlAssembly = Join-Path $root ".bonsai/Packages/YamlDotNet.16.3.0/lib/net47/YamlDotNet.dll"
@@ -113,6 +117,7 @@ $startExperimentKey = Get-Text $controls "StartExperiment"
 
 $charge = Get-Number $protocol "ChargeSeconds"
 $stimulusFile = Get-Text $protocol "StimulusFile"
+$stimulusFile = [Environment]::ExpandEnvironmentVariables($stimulusFile)
 $stimulusPath = if ([System.IO.Path]::IsPathRooted($stimulusFile)) {
     [System.IO.Path]::GetFullPath($stimulusFile)
 } else {
@@ -153,7 +158,20 @@ if ($isiMaximum -lt $isiMinimum) { throw "IsiMaximumSeconds must be greater than
 $mainFlow = Get-Flow $protocol "MainFlow"
 $controlFlow = Get-Flow $protocol "ControlFlow"
 $flushFlow = Get-Flow $protocol "FlushFlow"
+$channelFlows = [ordered]@{}
+foreach ($device in 1..3) {
+    foreach ($channel in 0..3) {
+        $flowName = "D{0}C{1}Flow" -f $device, $channel
+        $channelFlows[$flowName] = Get-Flow $protocol $flowName
+    }
+}
 $dataDirectory = Get-Text $output "DataDirectory"
+$dataDirectory = [Environment]::ExpandEnvironmentVariables($dataDirectory)
+$dataDirectory = if ([System.IO.Path]::IsPathRooted($dataDirectory)) {
+    [System.IO.Path]::GetFullPath($dataDirectory)
+} else {
+    [System.IO.Path]::GetFullPath((Join-Path $root $dataDirectory))
+}
 $webhook = Get-Text $output "Webhook" $true
 
 $properties = [ordered]@{
@@ -164,23 +182,26 @@ $properties = [ordered]@{
     "Initialize Device.main_flow" = $mainFlow
     "Initialize Device.contorl_flow" = $controlFlow
     "Initialize Device.fulsh_flow" = $flushFlow
-    "Initialize Device.StartFlow" = $startFlowKey
-    "Initialize Device.DisableFlow" = $disableFlowKey
-    "Initialize Device.StartPPS" = $startPpsKey
-    "Initialize Device.EndPPS" = $endPpsKey
-    "Odor loop.Count" = $trialCount
-    "Odor loop.Start_experiment" = $startExperimentKey
-    "Odor loop.charge time" = ConvertTo-Duration $charge
-    "Odor loop.EndV0Delay" = ConvertTo-Duration $delivery
-    "Odor loop.flush_time" = ConvertTo-Duration $flush
-    "Odor loop.recharge_t" = ConvertTo-Duration $recharge
-    "Odor loop.FlowADJt" = ConvertTo-Duration $flowAdjustment
-    "Odor loop.time_before_odor" = ConvertTo-Duration $timeBeforeOdor
-    "Odor loop.ISI_low (s)" = $isiMinimum.ToString([Globalization.CultureInfo]::InvariantCulture)
-    "Odor loop.ISI_high (s)" = $isiMaximum.ToString([Globalization.CultureInfo]::InvariantCulture)
-    "Odor loop.webhook" = $webhook
-    "Logging.Path" = $dataDirectory
 }
+foreach ($entry in $channelFlows.GetEnumerator()) {
+    $properties["Initialize Device.$($entry.Key)"] = $entry.Value
+}
+$properties["Initialize Device.StartFlow"] = $startFlowKey
+$properties["Initialize Device.DisableFlow"] = $disableFlowKey
+$properties["Initialize Device.StartPPS"] = $startPpsKey
+$properties["Initialize Device.EndPPS"] = $endPpsKey
+$properties["Odor loop.Count"] = $trialCount
+$properties["Odor loop.Start_experiment"] = $startExperimentKey
+$properties["Odor loop.charge time"] = ConvertTo-Duration $charge
+$properties["Odor loop.EndV0Delay"] = ConvertTo-Duration $delivery
+$properties["Odor loop.flush_time"] = ConvertTo-Duration $flush
+$properties["Odor loop.recharge_t"] = ConvertTo-Duration $recharge
+$properties["Odor loop.FlowADJt"] = ConvertTo-Duration $flowAdjustment
+$properties["Odor loop.time_before_odor"] = ConvertTo-Duration $timeBeforeOdor
+$properties["Odor loop.ISI_low (s)"] = $isiMinimum.ToString([Globalization.CultureInfo]::InvariantCulture)
+$properties["Odor loop.ISI_high (s)"] = $isiMaximum.ToString([Globalization.CultureInfo]::InvariantCulture)
+$properties["Odor loop.webhook"] = $webhook
+$properties["Logging.Path"] = $dataDirectory
 
 Write-Host "Validated experiment '$experimentId' for subject '$subjectId' (operator: $operator)."
 Write-Host "Configuration: $configPath"

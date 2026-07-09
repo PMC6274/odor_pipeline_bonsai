@@ -49,19 +49,21 @@ the copied file. Use forward slashes in paths so the YAML remains portable.
 First validate a configuration without opening Bonsai:
 
 ```powershell
-.\run_experiment.ps1 experiments\example.yaml -ValidateOnly
+.\scripts\run_experiment.ps1 experiments\example.yaml -ValidateOnly
 ```
 
-Then launch the main workflow with the YAML parameters applied before its
-devices and timers initialize:
+Then open the main workflow with the YAML parameters applied, without starting
+the workflow:
 
 ```powershell
-.\run_experiment.ps1 experiments\example.yaml
+.\start_experiment.bat experiments\example.yaml
 ```
 
-To open the editor and inspect the applied properties **without starting the
-workflow or touching hardware**, add `-OpenOnly`. For application mode without
-the editor, add `-NoEditor`.
+You can also use the explicit open-only helper:
+
+```powershell
+.\scripts\open_experiment.bat experiments\example.yaml
+```
 
 The launcher maps the stimulus TXT contents, hardware ports, timing, flow, ISI,
 webhook, and output path onto the externalized properties already present in
