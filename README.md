@@ -35,20 +35,21 @@ also use `-ValidateOnly` or no mode flag with this wrapper. Company
 Group Policy can override process-level settings; contact the PC administrator
 if both setup and the wrapper are denied.
 
-For common launch modes, you can also use these batch files. If you double-click
-one, it uses `experiments\example.yaml`. From a terminal, pass a different YAML
-file as the first argument.
+For common launch modes, use these batch files. The root `start_experiment.bat`
+is the normal day-to-day launcher: double-click it, select a YAML file in the
+file picker, and Bonsai opens with that YAML loaded. From a terminal, you can
+still pass a YAML file as the first argument.
 
 | File | What it does |
 | --- | --- |
 | `scripts\validate_experiment.bat` | Checks the YAML and prints the Bonsai properties without opening Bonsai. |
 | `scripts\open_experiment.bat` | Opens Bonsai with the YAML values loaded, but does not start the workflow. |
-| `start_experiment.bat` | Opens Bonsai with the YAML values loaded, but does not start the workflow. |
+| `start_experiment.bat` | Opens a YAML file picker, then opens Bonsai with the selected YAML loaded. It does not start the workflow. |
 
 Example:
 
 ```cmd
-scripts\open_experiment.bat experiments\2026-07-01_mouse-001.yaml
+start_experiment.bat experiments\2026-07-01_mouse-001.yaml
 ```
 
 ## Protocol
@@ -92,7 +93,9 @@ In the GUI:
    enabled.
 4. Set **Channel flow** and **Total flow**. Total flow must be greater than or
    equal to channel flow.
-5. Enter a descriptive **File prefix** and choose an **Output folder**.
+5. Enter a descriptive **File prefix** and choose an **Output folder**. The
+   default output folder is the Windows Documents folder:
+   `C:\Users\<you>\Documents\odor_stimuli`.
 6. Click **Generate TXT + CSV**.
 
 The GUI creates:
@@ -142,14 +145,15 @@ shuffled generator.
 ### Select the generated stimulus list in YAML
 
 Set `Protocol.StimulusFile` to the generated TXT file. Relative paths are
-resolved from the repository root:
+resolved from the repository root. You can also use a Windows Documents path
+with `%USERPROFILE%`, which the launcher expands before opening Bonsai:
 
 ```yaml
 Protocol:
-  StimulusFile: generate_stim_list/stim_3device_9x25_06062026.txt
+  StimulusFile: "%USERPROFILE%/Documents/odor_stimuli/stim_3device_9x25_06062026.txt"
 ```
 
-When `scripts\run_experiment.ps1` starts Bonsai, it reads this file and assigns the full
+When `scripts\run_experiment.ps1` opens Bonsai, it reads this file and assigns the full
 contents to `Odor loop.Expression`. To preserve the expression's required double
 quotes, the launcher creates a temporary `3device1blank.runtime.bonsai` beside
 the main workflow, opens that copy, and removes it when Bonsai closes. The source
@@ -161,15 +165,20 @@ odors.
 
 Experiment metadata and runtime parameters are stored in YAML files under
 `experiments/`. The launcher validates a YAML file and applies its values to the
-externalized properties in `3device1blank.bonsai` before the workflow starts.
+externalized properties in `3device1blank.bonsai` before Bonsai opens.
 
-### Launch in open-only mode
+### Launch with the YAML file picker
 
-To open Bonsai with all YAML parameters and the stimulus expression applied,
-without starting the workflow or sending commands to hardware, run:
+For normal use, double-click `start_experiment.bat` in the project root. It opens
+a file picker starting in `experiments/`. Select the session YAML, and Bonsai
+will open with all YAML parameters and the stimulus expression applied.
+
+This is open-only/view-only: it does **not** start the workflow.
+
+You can also pass a YAML path from a terminal:
 
 ```powershell
-.\scripts\run_experiment.ps1 experiments\example.yaml -OpenOnly
+.\start_experiment.bat experiments\example.yaml
 ```
 
 Use this mode to inspect `Define Device`, `Initialize Device`, `Odor loop`, and
@@ -206,6 +215,16 @@ Edit the copied file. Its four sections are:
 - `Controls`: keyboard shortcuts for flow, PPS, and experiment start.
 - `Protocol`: stimulus file, trial count, timing in seconds, ISI bounds, and flow values.
 - `Output`: data directory and optional webhook.
+
+Logging output is configured in the `Output` section. The example writes to the
+Windows Documents folder. The launcher expands `%USERPROFILE%` before passing
+the path to Bonsai:
+
+```yaml
+Output:
+  DataDirectory: "%USERPROFILE%/Documents/odor_experiment_logs"
+  Webhook: ""
+```
 
 Timing values in YAML are written as seconds:
 
@@ -291,7 +310,8 @@ Bonsai editor to inspect their assigned properties.
 
 ### Open the experiment
 
-Open the workflow in the Bonsai editor with the YAML values applied:
+Double-click `start_experiment.bat` and choose the session YAML. Or from a
+terminal, open the workflow in the Bonsai editor with the YAML values applied:
 
 ```powershell
 .\start_experiment.bat experiments\2026-07-01_mouse-001.yaml
