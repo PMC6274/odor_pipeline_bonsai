@@ -267,6 +267,10 @@
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="Channel4" DisplayName="main_flow" />
+              <Property Name="Channel0" DisplayName="D1C0Flow" />
+              <Property Name="Channel1" DisplayName="D1C1Flow" />
+              <Property Name="Channel2" DisplayName="D1C2Flow" />
+              <Property Name="Channel3" DisplayName="D1C3Flow" />
             </Expression>
             <Expression xsi:type="p1:CreateMessage">
               <harp:MessageType>Write</harp:MessageType>
@@ -322,6 +326,10 @@
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="Channel4" DisplayName="contorl_flow" />
+              <Property Name="Channel0" DisplayName="D2COFlow" />
+              <Property Name="Channel1" DisplayName="D2C1Flow" />
+              <Property Name="Channel2" DisplayName="D2C2Flow" />
+              <Property Name="Channel3" DisplayName="D2C3Flow" />
             </Expression>
             <Expression xsi:type="p1:CreateMessage">
               <harp:MessageType>Write</harp:MessageType>
@@ -377,6 +385,10 @@
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="Channel4" DisplayName="fulsh_flow" />
+              <Property Name="Channel0" DisplayName="D3COFlow" />
+              <Property Name="Channel1" DisplayName="D3C1Flow" />
+              <Property Name="Channel2" DisplayName="D3C2Flow" />
+              <Property Name="Channel3" DisplayName="D3C3Flow" />
             </Expression>
             <Expression xsi:type="p1:CreateMessage">
               <harp:MessageType>Write</harp:MessageType>
