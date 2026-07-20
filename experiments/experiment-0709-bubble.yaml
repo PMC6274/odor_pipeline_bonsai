@@ -1,0 +1,50 @@
+Metadata:
+  ExperimentId: bubble-test
+  SubjectId: none
+  Operator: pw
+  SessionStart: 2026-07-09
+  Notes: 
+
+Hardware:
+  Olfactometer1Port: COM24
+  Olfactometer2Port: COM4
+  Olfactometer3Port: COM3
+  WhiteRabbitPort: COM9
+
+Controls:
+  StartFlow: "Shift+F"
+  DisableFlow: "Shift+D"
+  StartPps: "Shift+W"
+  EndPps: "Shift+Q"
+  StartExperiment: "Shift+Space"
+
+Protocol:
+  StimulusFile: generate_debug_slit/D1C0x25.txt
+  TrialCount: 25
+  ChargeSeconds: 40
+  DeliverySeconds: 4
+  FlushSeconds: 1
+  RechargeSeconds: 1
+  FlowAdjustmentSeconds: 0
+  TimeBeforeOdorSeconds: 0
+  IsiMinimumSeconds: 15
+  IsiMaximumSeconds: 25
+  MainFlow: 675
+  ControlFlow: 700
+  FlushFlow: 700
+  D1C0Flow: 25
+  D1C1Flow: 0
+  D1C2Flow: 0
+  D1C3Flow: 0
+  D2C0Flow: 0
+  D2C1Flow: 0
+  D2C2Flow: 0
+  D2C3Flow: 0
+  D3C0Flow: 0
+  D3C1Flow: 0
+  D3C2Flow: 0
+  D3C3Flow: 0
+
+Output:
+  DataDirectory: '%USERPROFILE%/Documents/odor_experiment_logs'
+  Webhook: ""
