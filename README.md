@@ -142,6 +142,30 @@ entire sequence inside each block, and **Blocks** repeats that block. Thus,
 trials. Its TXT and CSV files use the same format and YAML workflow as the
 shuffled generator.
 
+### Generate six-odor mixture stimuli
+
+Use the mixture GUI for `six_odor_all64mix_type_conc_up.bonsai`:
+
+```text
+generate_mix_stim_list\run_mix_stim_list_gui.bat
+```
+
+The GUI generates all 64 binary mixtures of six odors for each block, optionally
+shuffled within each block. The TXT payload has eight comma-separated values:
+
+```text
+A,B,C,D,E,F,carrier1_out,carrier2_out
+```
+
+For example, with carrier target flow `549` and odor flow `100`:
+
+```text
+it == 52 ? "1,2,0,0,6,7,349,349" :
+```
+
+The matching CSV includes `A`-`F`, `type`, `code`, `odor_number`, `flow`,
+`total_odor_flow`, `carrier1_out`, `carrier2_out`, and the final `payload`.
+
 ### Select the generated stimulus list in YAML
 
 Set `Protocol.StimulusFile` to the generated TXT file. Relative paths are
