@@ -6,7 +6,7 @@ from tkinter import filedialog, messagebox
 
 
 ODOR_VALUES = [1, 2, 3, 5, 6, 7]
-DEFAULT_CARRIER_TARGET_FLOW = 549
+DEFAULT_NO_ODOR_CARRIER_PER_LINE = 499
 DEFAULT_ODOR_FLOW = 100
 
 
@@ -26,19 +26,23 @@ def states_to_txt_values(states):
     ]
 
 
-def lane_counts(states):
-    # Values 1, 3, 5 share carrier output 1; values 2, 4, 6 share carrier output 2.
-    lane1_count = states[0] + states[2] + states[4]
-    lane2_count = states[1] + states[3] + states[5]
-    return lane1_count, lane2_count
+def side_counts(states):
+    # Physical layout:
+    # A-C are device 1 odors; D-F are device 2 odors.
+    # Channel 4 is not used on either device.
+    side1_count = states[0] + states[1] + states[2]
+    side2_count = states[3] + states[4] + states[5]
+    return side1_count, side2_count
 
 
-def carrier_out(carrier_target_flow: int, odor_flow: int, active_count: int):
-    value = carrier_target_flow - odor_flow * active_count
+def carrier_out(no_odor_carrier_per_line: int, odor_flow: int, side_odor_count: int):
+    # Keep each side total balanced:
+    # side odor flow + side carrier = no_odor_carrier_per_line.
+    value = no_odor_carrier_per_line - odor_flow * side_odor_count
     if value < 0:
         raise ValueError(
-            f"Carrier flow would be negative: target={carrier_target_flow}, "
-            f"odor_flow={odor_flow}, active_count={active_count}."
+            f"Carrier flow would be negative: no_odor_carrier_per_line={no_odor_carrier_per_line}, "
+            f"odor_flow={odor_flow}, side_odor_count={side_odor_count}."
         )
     return value
 
@@ -63,13 +67,13 @@ def save_bonsai_and_csv(
     shuffle: bool,
     txt_path: Path,
     csv_path: Path,
-    carrier_target_flow: int,
+    no_odor_carrier_per_line: int,
     odor_flow: int,
 ):
     if blocks < 1:
         raise ValueError("Blocks must be at least 1.")
-    if carrier_target_flow < 0:
-        raise ValueError("Carrier target flow must be 0 or greater.")
+    if no_odor_carrier_per_line < 0:
+        raise ValueError("No-odor carrier / line must be 0 or greater.")
     if odor_flow < 0:
         raise ValueError("Odor flow must be 0 or greater.")
 
@@ -80,15 +84,15 @@ def save_bonsai_and_csv(
     for trial_idx, (block, code) in enumerate(trials, start=1):
         states = code_to_states(code)
         txt_values = states_to_txt_values(states)
-        lane1_count, lane2_count = lane_counts(states)
-        carrier1_out = carrier_out(carrier_target_flow, odor_flow, lane1_count)
-        carrier2_out = carrier_out(carrier_target_flow, odor_flow, lane2_count)
+        odor_number = sum(states)
+        side1_count, side2_count = side_counts(states)
+        carrier1_out = carrier_out(no_odor_carrier_per_line, odor_flow, side1_count)
+        carrier2_out = carrier_out(no_odor_carrier_per_line, odor_flow, side2_count)
         payload_values = [*txt_values, carrier1_out, carrier2_out]
         payload = ",".join(str(value) for value in payload_values)
         spacing = "  " if trial_idx < 10 else " "
         txt_lines.append(f'it == {trial_idx}{spacing}? "{payload}" :')
 
-        odor_number = sum(states)
         total_odor_flow = odor_number * odor_flow
         flow = odor_flow if odor_number > 0 else 0
         type_str = states_to_type(states)
@@ -113,7 +117,7 @@ def save_bonsai_and_csv(
             payload,
         ])
 
-    fallback = ",".join(["0", "0", "0", "0", "0", "0", str(carrier_target_flow), str(carrier_target_flow)])
+    fallback = ",".join(["0", "0", "0", "0", "0", "0", str(no_odor_carrier_per_line), str(no_odor_carrier_per_line)])
     txt_lines.append(f'"{fallback}"')
     txt_path.write_text("\n".join(txt_lines), encoding="utf-8")
 
@@ -151,7 +155,7 @@ class MixStimListGui(tk.Tk):
 
         output_dir = Path.home() / "Documents" / "odor_stimuli"
         self.blocks_var = tk.IntVar(value=10)
-        self.carrier_target_flow_var = tk.IntVar(value=DEFAULT_CARRIER_TARGET_FLOW)
+        self.no_odor_carrier_per_line_var = tk.IntVar(value=DEFAULT_NO_ODOR_CARRIER_PER_LINE)
         self.odor_flow_var = tk.IntVar(value=DEFAULT_ODOR_FLOW)
         self.shuffle_var = tk.BooleanVar(value=True)
         self.seed_var = tk.StringVar(value="")
@@ -173,13 +177,13 @@ class MixStimListGui(tk.Tk):
             row=0, column=1, sticky="w", padx=(8, 18)
         )
 
-        tk.Label(settings, text="Carrier target flow").grid(row=0, column=2, sticky="w")
+        tk.Label(settings, text="No-odor carrier / line").grid(row=0, column=2, sticky="w")
         tk.Spinbox(
             settings,
             from_=0,
             to=9999,
             width=8,
-            textvariable=self.carrier_target_flow_var,
+            textvariable=self.no_odor_carrier_per_line_var,
         ).grid(row=0, column=3, sticky="w", padx=(8, 0))
 
         tk.Label(settings, text="Odor flow / odor").grid(row=1, column=0, sticky="w", pady=(10, 0))
@@ -213,8 +217,8 @@ class MixStimListGui(tk.Tk):
 
         explanation = (
             "Output TXT payload: A,B,C,D,E,F,carrier1_out,carrier2_out\n"
-            "Example with target=549 and odor_flow=100: "
-            "1,2,0,0,6,7 -> 1,2,0,0,6,7,349,349"
+            "Example with no-odor carrier/line=499 and odor_flow=100: "
+            "1,2,0,0,6,7 -> 1,2,0,0,6,7,299,299"
         )
         tk.Label(frame, text=explanation, justify="left", fg="#555555").grid(
             row=1, column=0, sticky="w", pady=(12, 0)
@@ -235,7 +239,7 @@ class MixStimListGui(tk.Tk):
     def _generate(self):
         try:
             blocks = int(self.blocks_var.get())
-            carrier_target_flow = int(self.carrier_target_flow_var.get())
+            no_odor_carrier_per_line = int(self.no_odor_carrier_per_line_var.get())
             odor_flow = int(self.odor_flow_var.get())
             seed_text = self.seed_var.get().strip()
             seed = None if seed_text == "" else int(seed_text)
@@ -254,7 +258,7 @@ class MixStimListGui(tk.Tk):
                 shuffle=self.shuffle_var.get(),
                 txt_path=txt_path,
                 csv_path=csv_path,
-                carrier_target_flow=carrier_target_flow,
+                no_odor_carrier_per_line=no_odor_carrier_per_line,
                 odor_flow=odor_flow,
             )
 

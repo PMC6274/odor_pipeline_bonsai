@@ -158,10 +158,20 @@ shuffled within each block. The TXT payload has eight comma-separated values:
 A,B,C,D,E,F,carrier1_out,carrier2_out
 ```
 
-For example, with carrier target flow `549` and odor flow `100`:
+Carrier flow is balanced per side. With no-odor carrier flow `499` per line and
+odor flow `100`, each side is kept at:
 
 ```text
-it == 52 ? "1,2,0,0,6,7,349,349" :
+side odor flow + side carrier flow = 499
+```
+
+The six odor slots are grouped by device: `A`-`C` are device 1 odors and `D`-`F`
+are device 2 odors. Channel 4 is not used.
+
+For example:
+
+```text
+it == 52 ? "1,2,0,0,6,7,299,299" :
 ```
 
 The matching CSV includes `A`-`F`, `type`, `code`, `odor_number`, `flow`,
