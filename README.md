@@ -45,6 +45,7 @@ still pass a YAML file as the first argument.
 | `scripts\validate_experiment.bat` | Checks the YAML and prints the Bonsai properties without opening Bonsai. |
 | `scripts\open_experiment.bat` | Opens Bonsai with the YAML values loaded, but does not start the workflow. |
 | `start_experiment.bat` | Opens a YAML file picker, then opens Bonsai with the selected YAML loaded. It does not start the workflow. |
+| `start_3device_parallel_64mix.bat` | Opens a YAML file picker, then opens `3device_parallel_64mix.bonsai` with the selected YAML loaded. It does not start the workflow. |
 
 Example:
 
@@ -144,7 +145,7 @@ shuffled generator.
 
 ### Generate six-odor mixture stimuli
 
-Use the mixture GUI for `six_odor_all64mix_type_conc_up.bonsai`:
+Use the mixture GUI for `3device_parallel_64mix.bonsai`:
 
 ```text
 generate_mix_stim_list\run_mix_stim_list_gui.bat
@@ -165,6 +166,12 @@ it == 52 ? "1,2,0,0,6,7,349,349" :
 
 The matching CSV includes `A`-`F`, `type`, `code`, `odor_number`, `flow`,
 `total_odor_flow`, `carrier1_out`, `carrier2_out`, and the final `payload`.
+
+To inspect the 64-mix Bonsai workflow with a YAML file loaded, double-click:
+
+```text
+start_3device_parallel_64mix.bat
+```
 
 ### Select the generated stimulus list in YAML
 
