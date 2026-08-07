@@ -8,6 +8,8 @@ from tkinter import filedialog, messagebox
 ODOR_VALUES = [1, 2, 3, 5, 6, 7]
 DEFAULT_NO_ODOR_CARRIER_PER_LINE = 499
 DEFAULT_ODOR_FLOW = 100
+MODE_MIXTURE = "Mixture all 64"
+MODE_SINGLE_ODOR = "Single odor only"
 
 
 def code_to_states(code: int):
@@ -47,12 +49,20 @@ def carrier_out(no_odor_carrier_per_line: int, odor_flow: int, side_odor_count: 
     return value
 
 
-def make_trial_list(blocks: int, seed=None, shuffle=True):
+def mode_codes(mode: str):
+    if mode == MODE_MIXTURE:
+        return list(range(64))
+    if mode == MODE_SINGLE_ODOR:
+        return [32, 16, 8, 4, 2, 1]
+    raise ValueError(f"Unknown mode: {mode}")
+
+
+def make_trial_list(blocks: int, seed=None, shuffle=True, mode=MODE_MIXTURE):
     rng = random.Random(seed)
     trials = []
 
     for block in range(1, blocks + 1):
-        codes = list(range(64))
+        codes = mode_codes(mode)
         if shuffle:
             rng.shuffle(codes)
         for code in codes:
@@ -69,6 +79,7 @@ def save_bonsai_and_csv(
     csv_path: Path,
     no_odor_carrier_per_line: int,
     odor_flow: int,
+    mode: str = MODE_MIXTURE,
 ):
     if blocks < 1:
         raise ValueError("Blocks must be at least 1.")
@@ -77,7 +88,7 @@ def save_bonsai_and_csv(
     if odor_flow < 0:
         raise ValueError("Odor flow must be 0 or greater.")
 
-    trials = make_trial_list(blocks, seed=seed, shuffle=shuffle)
+    trials = make_trial_list(blocks, seed=seed, shuffle=shuffle, mode=mode)
     txt_lines = []
     csv_rows = []
 
@@ -114,6 +125,8 @@ def save_bonsai_and_csv(
             total_odor_flow,
             carrier1_out,
             carrier2_out,
+            carrier1_out + side1_count * odor_flow,
+            carrier2_out + side2_count * odor_flow,
             payload,
         ])
 
@@ -139,6 +152,8 @@ def save_bonsai_and_csv(
             "total_odor_flow",
             "carrier1_out",
             "carrier2_out",
+            "side1_total_flow",
+            "side2_total_flow",
             "payload",
         ])
         writer.writerows(csv_rows)
@@ -150,13 +165,14 @@ class MixStimListGui(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        self.title("Six Odor All-64 Mixture Generator")
+        self.title("Six Odor Stim List Generator")
         self.resizable(False, False)
 
         output_dir = Path.home() / "Documents" / "odor_stimuli"
         self.blocks_var = tk.IntVar(value=10)
         self.no_odor_carrier_per_line_var = tk.IntVar(value=DEFAULT_NO_ODOR_CARRIER_PER_LINE)
         self.odor_flow_var = tk.IntVar(value=DEFAULT_ODOR_FLOW)
+        self.mode_var = tk.StringVar(value=MODE_MIXTURE)
         self.shuffle_var = tk.BooleanVar(value=True)
         self.seed_var = tk.StringVar(value="")
         self.prefix_var = tk.StringVar(value="six_odor_all64mix_type_conc_up")
@@ -186,39 +202,45 @@ class MixStimListGui(tk.Tk):
             textvariable=self.no_odor_carrier_per_line_var,
         ).grid(row=0, column=3, sticky="w", padx=(8, 0))
 
-        tk.Label(settings, text="Odor flow / odor").grid(row=1, column=0, sticky="w", pady=(10, 0))
-        tk.Spinbox(settings, from_=0, to=9999, width=8, textvariable=self.odor_flow_var).grid(
-            row=1, column=1, sticky="w", padx=(8, 18), pady=(10, 0)
+        tk.Label(settings, text="Mode").grid(row=1, column=0, sticky="w", pady=(10, 0))
+        tk.OptionMenu(settings, self.mode_var, MODE_MIXTURE, MODE_SINGLE_ODOR).grid(
+            row=1, column=1, sticky="ew", padx=(8, 18), pady=(10, 0)
         )
 
-        tk.Label(settings, text="Seed (blank=random)").grid(row=1, column=2, sticky="w", pady=(10, 0))
+        tk.Label(settings, text="Odor flow / odor").grid(row=2, column=0, sticky="w", pady=(10, 0))
+        tk.Spinbox(settings, from_=0, to=9999, width=8, textvariable=self.odor_flow_var).grid(
+            row=2, column=1, sticky="w", padx=(8, 18), pady=(10, 0)
+        )
+
+        tk.Label(settings, text="Seed (blank=random)").grid(row=2, column=2, sticky="w", pady=(10, 0))
         tk.Entry(settings, width=10, textvariable=self.seed_var).grid(
-            row=1, column=3, sticky="w", padx=(8, 0), pady=(10, 0)
+            row=2, column=3, sticky="w", padx=(8, 0), pady=(10, 0)
         )
 
         tk.Checkbutton(
             settings,
-            text="Shuffle all 64 mixtures inside each block",
+            text="Shuffle conditions inside each block",
             variable=self.shuffle_var,
-        ).grid(row=2, column=0, columnspan=4, sticky="w", pady=(10, 0))
+        ).grid(row=3, column=0, columnspan=4, sticky="w", pady=(10, 0))
 
-        tk.Label(settings, text="File prefix").grid(row=3, column=0, sticky="w", pady=(10, 0))
+        tk.Label(settings, text="File prefix").grid(row=4, column=0, sticky="w", pady=(10, 0))
         tk.Entry(settings, width=48, textvariable=self.prefix_var).grid(
-            row=3, column=1, columnspan=3, sticky="ew", padx=(8, 0), pady=(10, 0)
+            row=4, column=1, columnspan=3, sticky="ew", padx=(8, 0), pady=(10, 0)
         )
 
-        tk.Label(settings, text="Output folder").grid(row=4, column=0, sticky="w", pady=(10, 0))
+        tk.Label(settings, text="Output folder").grid(row=5, column=0, sticky="w", pady=(10, 0))
         tk.Entry(settings, width=48, textvariable=self.output_dir_var).grid(
-            row=4, column=1, columnspan=2, sticky="ew", padx=(8, 8), pady=(10, 0)
+            row=5, column=1, columnspan=2, sticky="ew", padx=(8, 8), pady=(10, 0)
         )
         tk.Button(settings, text="Browse", command=self._choose_output_dir).grid(
-            row=4, column=3, sticky="ew", pady=(10, 0)
+            row=5, column=3, sticky="ew", pady=(10, 0)
         )
 
         explanation = (
             "Output TXT payload: A,B,C,D,E,F,carrier1_out,carrier2_out\n"
-            "Example with no-odor carrier/line=499 and odor_flow=100: "
-            "1,2,0,0,6,7 -> 1,2,0,0,6,7,299,299"
+            "Each side stays balanced: side odor flow + side carrier = no-odor carrier / line.\n"
+            "Single odor example with no-odor carrier/line=499 and odor_flow=100: "
+            "A -> 1,0,0,0,0,0,399,499"
         )
         tk.Label(frame, text=explanation, justify="left", fg="#555555").grid(
             row=1, column=0, sticky="w", pady=(12, 0)
@@ -241,6 +263,7 @@ class MixStimListGui(tk.Tk):
             blocks = int(self.blocks_var.get())
             no_odor_carrier_per_line = int(self.no_odor_carrier_per_line_var.get())
             odor_flow = int(self.odor_flow_var.get())
+            mode = self.mode_var.get()
             seed_text = self.seed_var.get().strip()
             seed = None if seed_text == "" else int(seed_text)
             prefix = self.prefix_var.get().strip()
@@ -260,9 +283,10 @@ class MixStimListGui(tk.Tk):
                 csv_path=csv_path,
                 no_odor_carrier_per_line=no_odor_carrier_per_line,
                 odor_flow=odor_flow,
+                mode=mode,
             )
 
-            self.status_var.set(f"Saved {trial_count} trials")
+            self.status_var.set(f"Saved {trial_count} trials ({mode})")
         except Exception as exc:
             messagebox.showerror("Could not generate files", str(exc))
 
