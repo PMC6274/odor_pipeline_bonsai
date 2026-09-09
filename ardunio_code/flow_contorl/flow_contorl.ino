@@ -15,7 +15,7 @@ constexpr uint16_t DAC_MAX_MV = 5000;
 constexpr uint16_t MAX_FLOW_ML_MIN = 5000;
 
 // Default flow after power-up / reset
-constexpr uint16_t DEFAULT_FLOW_ML_MIN = 3000;
+constexpr uint16_t DEFAULT_FLOW_ML_MIN = 2500;
 
 // Serial
 constexpr uint32_t SERIAL_BAUD = 115200;
