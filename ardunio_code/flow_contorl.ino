@@ -72,6 +72,7 @@ bool setFlow(uint16_t flow_mL_min)
 // Ultra-lightweight serial parser
 //
 // Accepted Bonsai commands:
+//   !3500\r\n  (recommended: ! discards any partial previous command)
 //   1200\n
 //   1600\r
 //   3000\r\n
@@ -115,7 +116,13 @@ void readSerialFast()
   {
     const char c = (char)Serial.read();
 
-    if (c >= '0' && c <= '9')
+    if (c == '!')
+    {
+      // Explicit start-of-command marker. Discard a partial/invalid previous
+      // line without accidentally executing any leftover numeric digits.
+      resetParser();
+    }
+    else if (c >= '0' && c <= '9')
     {
       if (!rxInvalid)
       {

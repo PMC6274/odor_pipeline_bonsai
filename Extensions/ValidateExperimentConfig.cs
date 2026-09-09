@@ -40,7 +40,12 @@ namespace OdorExperiment
             if (config.Hardware.VacuumPort != null)
                 RequireComPort(config.Hardware.VacuumPort, "Hardware.VacuumPort");
             if (config.Protocol.VacuumRateMlPerMinute.HasValue)
+            {
                 RequireNonNegative(config.Protocol.VacuumRateMlPerMinute.Value, "Protocol.VacuumRateMlPerMinute");
+                var vacuumRate = config.Protocol.VacuumRateMlPerMinute.Value;
+                if (vacuumRate != Math.Floor(vacuumRate) || vacuumRate > 5000)
+                    throw new ArgumentException("Protocol.VacuumRateMlPerMinute must be an integer between 0 and 5000.");
+            }
 
             RequireText(config.Controls.StartFlow, "Controls.StartFlow");
             RequireText(config.Controls.DisableFlow, "Controls.DisableFlow");

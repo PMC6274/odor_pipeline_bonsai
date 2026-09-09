@@ -4,6 +4,8 @@ param(
 
     [string]$Workflow = "3device_parallel_64mix.bonsai",
 
+    [string]$BonsaiExe,
+
     [switch]$ValidateOnly,
     [switch]$OpenOnly,
     [switch]$NoEditor
@@ -21,8 +23,17 @@ $workflowPath = if ([System.IO.Path]::IsPathRooted($Workflow)) {
 } else {
     [System.IO.Path]::GetFullPath((Join-Path $root $Workflow))
 }
-$bonsaiPath = Join-Path $root ".bonsai/Bonsai.exe"
-$yamlAssembly = Join-Path $root ".bonsai/Packages/YamlDotNet.16.3.0/lib/net47/YamlDotNet.dll"
+. (Join-Path $PSScriptRoot 'resolve_bonsai.ps1')
+$bonsaiPath = Resolve-BonsaiExecutable -ProjectRoot $root -BonsaiExe $BonsaiExe
+$bonsaiDirectory = [IO.Path]::GetDirectoryName($bonsaiPath)
+$yamlRelativePath = 'Packages/YamlDotNet.16.3.0/lib/net47/YamlDotNet.dll'
+$yamlAssembly = Join-Path $bonsaiDirectory $yamlRelativePath
+if (-not (Test-Path -LiteralPath $yamlAssembly -PathType Leaf)) {
+    $yamlAssembly = Join-Path (Join-Path $root '.bonsai') $yamlRelativePath
+}
+if (-not (Test-Path -LiteralPath $yamlAssembly -PathType Leaf)) {
+    throw "YamlDotNet 16.3.0 is missing. Copy the complete .bonsai folder, including Packages, from the working PC. See docs/DEPLOYMENT.md."
+}
 
 foreach ($path in @($configPath, $workflowPath, $bonsaiPath, $yamlAssembly)) {
     if (-not (Test-Path -LiteralPath $path)) {
@@ -127,6 +138,9 @@ if ($hasVacuum -or $hardware.Children.ContainsKey($vacuumPortKey)) {
 }
 if ($hasVacuum -or $protocol.Children.ContainsKey($vacuumRateKey)) {
     $vacuumRate = Get-Number $protocol "VacuumRateMlPerMinute"
+    if ($vacuumRate -ne [math]::Floor($vacuumRate) -or $vacuumRate -gt 5000) {
+        throw "VacuumRateMlPerMinute must be an integer between 0 and 5000, as required by the Arduino controller."
+    }
 }
 
 $startFlowKey = Get-Text $controls "StartFlow"
@@ -230,6 +244,7 @@ if ($hasVacuum) {
 Write-Host "Validated experiment '$experimentId' for subject '$subjectId' (operator: $operator)."
 Write-Host "Configuration: $configPath"
 Write-Host "Workflow: $workflowPath"
+Write-Host "Bonsai: $bonsaiPath"
 Write-Host ("  Odor loop.Expression = {0} ({1} characters)" -f $stimulusPath, $stimulusExpression.Length)
 $properties.GetEnumerator() | ForEach-Object {
     Write-Host ("  {0} = {1}" -f $_.Key, $_.Value)

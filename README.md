@@ -100,7 +100,7 @@ Protocol:
 
 These map to `Define Device.vaccum port` and
 `Initialize Device.Vacuum (ml/min)`. Press **V** with the workflow running to send
-the rate over serial at 115200 baud. The rate must be finite and non-negative;
+the rate over serial at 115200 baud. The rate must be an integer from 0 to 5000;
 it is not subject to the olfactometer's 0–1000 limit.
 Bonsai shutdown does not currently send a vacuum-off command; use the controller
 to stop vacuum when finished.
@@ -114,7 +114,11 @@ The sketch in `ardunio_code/flow_contorl.ino` now reports `READY`, `OK <flow>`,
 `ERR COMMAND`, or DAC errors. Upload this sketch with Arduino IDE to enable the
 replies, then inspect `Initialize Device > VacuumStatus` in Bonsai while running.
 `OK` means the DAC acknowledged the write, not that airflow was measured.
-The existing firmware also works with the startup buffer, but will not send status.
+Both workflows now send `!<rate>\r\n`. The `!` marker resets a partial Arduino
+command before reading the new rate, preventing leftover bytes from rejecting
+the first press. Upload the latest sketch together with this workflow update;
+older firmware does not accept the marker. Plain numeric commands remain accepted
+by the updated sketch for manual Serial Monitor testing.
 Close Bonsai before uploading so Arduino IDE can use the port. The sketch retains
 its existing 3000 ml/min power-up setpoint and accepts integer commands from 0 to 5000.
 
@@ -145,6 +149,9 @@ stops logging, and disables olfactometer flow.
 ## Setup and development
 
 On a new Windows PC, run `scripts/setup_windows.cmd` to unblock downloaded files.
+First copy the complete `.bonsai` installation from the working PC: Git excludes
+the executable and packages. See `docs/DEPLOYMENT.md` for the folder layout and
+how to select an existing Bonsai installation.
 See `docs/SCHEMA_SETUP.md` for C# configuration generation and build instructions.
 The archive is historical reference and is excluded from the normal launch path;
 see its README before attempting to reuse an old workflow.

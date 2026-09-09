@@ -12,12 +12,23 @@ foreach ($reference in $references) { [Reflection.Assembly]::LoadFrom($reference
 Add-Type -ReferencedAssemblies $references -TypeDefinition @'
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Reactive.Linq;
 using System.Reactive.Subjects;
 
 public static class VacuumStartupTest
 {
     public static void Run()
     {
+        var format = new Bonsai.Expressions.FormatBuilder { Format = "!{0}" };
+        var formatted = format.Build(new Expression[] {
+            Expression.Constant(Observable.Return("3500"), typeof(IObservable<string>))
+        });
+        var frame = Expression.Lambda<Func<IObservable<string>>>(formatted).Compile()();
+        string command = null;
+        frame.Subscribe(value => command = value + "\r\n");
+        if (command != "!3500\r\n") throw new Exception("Incorrect serial command framing.");
+
         using (var commands = new Subject<string>())
         using (var startup = new Subject<long>())
         {
@@ -56,3 +67,4 @@ public static class VacuumStartupTest
 '@
 [VacuumStartupTest]::Run()
 Write-Output 'PASS: startup buffers the latest command; later presses send immediately; no automatic flow command.'
+Write-Output 'PASS: Bonsai Format emits the command-start marker before the rate.'
