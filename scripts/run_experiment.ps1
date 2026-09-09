@@ -2,6 +2,8 @@ param(
     [Parameter(Position = 0)]
     [string]$Config = "experiments/example.yaml",
 
+    [string]$Workflow = "3device_parallel_64mix.bonsai",
+
     [switch]$ValidateOnly,
     [switch]$OpenOnly,
     [switch]$NoEditor
@@ -14,7 +16,11 @@ $configPath = if ([System.IO.Path]::IsPathRooted($Config)) {
 } else {
     [System.IO.Path]::GetFullPath((Join-Path $root $Config))
 }
-$workflowPath = Join-Path $root "3device1blank.bonsai"
+$workflowPath = if ([System.IO.Path]::IsPathRooted($Workflow)) {
+    [System.IO.Path]::GetFullPath($Workflow)
+} else {
+    [System.IO.Path]::GetFullPath((Join-Path $root $Workflow))
+}
 $bonsaiPath = Join-Path $root ".bonsai/Bonsai.exe"
 $yamlAssembly = Join-Path $root ".bonsai/Packages/YamlDotNet.16.3.0/lib/net47/YamlDotNet.dll"
 
@@ -25,6 +31,10 @@ foreach ($path in @($configPath, $workflowPath, $bonsaiPath, $yamlAssembly)) {
 }
 
 Add-Type -Path $yamlAssembly
+$workflowXml = [System.Xml.XmlDocument]::new()
+$workflowXml.PreserveWhitespace = $true
+$workflowXml.Load($workflowPath)
+$hasVacuum = $null -ne $workflowXml.SelectSingleNode('//*[local-name()="Property"][@DisplayName="vaccum port"]')
 $yaml = [YamlDotNet.RepresentationModel.YamlStream]::new()
 $reader = [System.IO.StreamReader]::new($configPath)
 try { $yaml.Load($reader) } finally { $reader.Dispose() }
@@ -107,6 +117,16 @@ $olfactometer3 = Get-Text $hardware "Olfactometer3Port"
 $whiteRabbit = Get-Text $hardware "WhiteRabbitPort"
 foreach ($port in @($olfactometer1, $olfactometer2, $olfactometer3, $whiteRabbit)) {
     if ($port -notmatch '^COM[0-9]+$') { throw "Invalid COM port: $port" }
+}
+
+$vacuumPortKey = [YamlDotNet.RepresentationModel.YamlScalarNode]::new("VacuumPort")
+$vacuumRateKey = [YamlDotNet.RepresentationModel.YamlScalarNode]::new("VacuumRateMlPerMinute")
+if ($hasVacuum -or $hardware.Children.ContainsKey($vacuumPortKey)) {
+    $vacuumPort = Get-Text $hardware "VacuumPort"
+    if ($vacuumPort -notmatch '^COM[0-9]+$') { throw "Invalid vacuum COM port: $vacuumPort" }
+}
+if ($hasVacuum -or $protocol.Children.ContainsKey($vacuumRateKey)) {
+    $vacuumRate = Get-Number $protocol "VacuumRateMlPerMinute"
 }
 
 $startFlowKey = Get-Text $controls "StartFlow"
@@ -202,9 +222,14 @@ $properties["Odor loop.ISI_low (s)"] = $isiMinimum.ToString([Globalization.Cultu
 $properties["Odor loop.ISI_high (s)"] = $isiMaximum.ToString([Globalization.CultureInfo]::InvariantCulture)
 $properties["Odor loop.webhook"] = $webhook
 $properties["Logging.Path"] = $dataDirectory
+if ($hasVacuum) {
+    $properties["Define Device.vaccum port"] = $vacuumPort
+    $properties["Initialize Device.Vacuum (ml/min)"] = $vacuumRate.ToString([Globalization.CultureInfo]::InvariantCulture)
+}
 
 Write-Host "Validated experiment '$experimentId' for subject '$subjectId' (operator: $operator)."
 Write-Host "Configuration: $configPath"
+Write-Host "Workflow: $workflowPath"
 Write-Host ("  Odor loop.Expression = {0} ({1} characters)" -f $stimulusPath, $stimulusExpression.Length)
 $properties.GetEnumerator() | ForEach-Object {
     Write-Host ("  {0} = {1}" -f $_.Key, $_.Value)
@@ -215,10 +240,7 @@ if ($ValidateOnly) {
     exit 0
 }
 
-$runtimeWorkflowPath = Join-Path $root "3device1blank.runtime.bonsai"
-$workflowXml = [System.Xml.XmlDocument]::new()
-$workflowXml.PreserveWhitespace = $true
-$workflowXml.Load($workflowPath)
+$runtimeWorkflowPath = Join-Path ([System.IO.Path]::GetDirectoryName($workflowPath)) ([System.IO.Path]::GetFileNameWithoutExtension($workflowPath) + ".runtime.bonsai")
 $namespaceManager = [System.Xml.XmlNamespaceManager]::new($workflowXml.NameTable)
 $namespaceManager.AddNamespace("scr", "clr-namespace:Bonsai.Scripting.Expressions;assembly=Bonsai.Scripting.Expressions")
 $namespaceManager.AddNamespace("xsi", "http://www.w3.org/2001/XMLSchema-instance")
@@ -227,7 +249,7 @@ $expressionNode = $workflowXml.SelectSingleNode(
     $namespaceManager
 )
 if ($null -eq $expressionNode) {
-    throw "Could not find the 9odor_block expression in 3device1blank.bonsai."
+    throw "Could not find the 9odor_block expression in $workflowPath."
 }
 $expressionNode.InnerText = $stimulusExpression
 $workflowXml.Save($runtimeWorkflowPath)

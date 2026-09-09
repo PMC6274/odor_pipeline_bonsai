@@ -5,6 +5,7 @@
                  xmlns:harp="clr-namespace:Bonsai.Harp;assembly=Bonsai.Harp"
                  xmlns:p1="clr-namespace:Harp.Olfactometer;assembly=Harp.Olfactometer"
                  xmlns:p2="clr-namespace:AllenNeuralDynamics.WhiteRabbit;assembly=AllenNeuralDynamics.WhiteRabbit"
+                 xmlns:port="clr-namespace:Bonsai.IO.Ports;assembly=Bonsai.System"
                  xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
                  xmlns:scr="clr-namespace:Bonsai.Scripting.Expressions;assembly=Bonsai.Scripting.Expressions"
                  xmlns:p3="clr-namespace:Bonsai.Numerics.Distributions;assembly=Bonsai.Numerics"
@@ -222,12 +223,35 @@
                 </Edges>
               </Workflow>
             </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="PortName" DisplayName="vaccum port" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="port:CreateSerialPort">
+                <port:Name>due</port:Name>
+                <port:PortName>COM5</port:PortName>
+                <port:BaudRate>115200</port:BaudRate>
+                <port:NewLine>\r</port:NewLine>
+                <port:Parity>None</port:Parity>
+                <port:ParityReplace>63</port:ParityReplace>
+                <port:DataBits>8</port:DataBits>
+                <port:StopBits>One</port:StopBits>
+                <port:Handshake>None</port:Handshake>
+                <port:DiscardNull>false</port:DiscardNull>
+                <port:DtrEnable>false</port:DtrEnable>
+                <port:RtsEnable>false</port:RtsEnable>
+                <port:ReadBufferSize>4096</port:ReadBufferSize>
+                <port:WriteBufferSize>2048</port:WriteBufferSize>
+                <port:ReceivedBytesThreshold>1</port:ReceivedBytesThreshold>
+              </Combinator>
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
             <Edge From="2" To="3" Label="Source1" />
             <Edge From="4" To="5" Label="Source1" />
             <Edge From="6" To="7" Label="Source1" />
+            <Edge From="8" To="9" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -463,6 +487,47 @@
             <Expression xsi:type="MulticastSubject">
               <Name>HarpWhiteRabbitCommands</Name>
             </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="wie:KeyDown">
+                <wie:Filter>V</wie:Filter>
+                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="Vacuum (ml/min)" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="StringProperty">
+                <Value>4500</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="port:SerialWriteLine">
+                <port:PortName>due</port:PortName>
+                <port:NewLine>\r\n</port:NewLine>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Timer">
+                <rx:DueTime>PT2S</rx:DueTime>
+                <rx:Period xsi:nil="true" />
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:CombineLatest" />
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item1</Selector>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="port:SerialReadLine">
+                <port:PortName>due</port:PortName>
+                <port:NewLine>\r\n</port:NewLine>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>VacuumStatus</Name>
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
@@ -508,6 +573,13 @@
             <Edge From="40" To="41" Label="Source1" />
             <Edge From="41" To="42" Label="Source1" />
             <Edge From="43" To="44" Label="Source1" />
+            <Edge From="45" To="47" Label="Source1" />
+            <Edge From="46" To="47" Label="Source2" />
+            <Edge From="47" To="50" Label="Source1" />
+            <Edge From="49" To="50" Label="Source2" />
+            <Edge From="50" To="51" Label="Source1" />
+            <Edge From="51" To="48" Label="Source1" />
+            <Edge From="52" To="53" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>

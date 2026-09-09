@@ -1,9 +1,9 @@
 Metadata:
-  ExperimentId: odor-test-001
+  ExperimentId: 64mix-launch-test
   SubjectId: mouse-001
   Operator: your-name
   SessionStart: 2026-06-30T09:00:00-05:00
-  Notes: Initial schema example; copy this file for each session.
+  Notes: Editor launch test for 3device_parallel_64mix; verify hardware settings before running.
 
 Hardware:
   Olfactometer1Port: COM24
@@ -20,7 +20,7 @@ Controls:
   StartExperiment: "Shift+Space"
 
 Protocol:
-  VacuumRateMlPerMinute: 4500
+  VacuumRateMlPerMinute: 3500
   StimulusFile: stimuli/launch_test.txt
   TrialCount: 1
   ChargeSeconds: 25
@@ -39,7 +39,7 @@ Protocol:
   D1C2Flow: 0
   D1C3Flow: 0
   D2C0Flow: 0
-  D2C1Flow: 0
+  D2C1Flow: 45
   D2C2Flow: 0
   D2C3Flow: 0
   D3C0Flow: 0

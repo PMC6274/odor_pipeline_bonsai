@@ -37,6 +37,10 @@ namespace OdorExperiment
             RequireComPort(config.Hardware.Olfactometer2Port, "Hardware.Olfactometer2Port");
             RequireComPort(config.Hardware.Olfactometer3Port, "Hardware.Olfactometer3Port");
             RequireComPort(config.Hardware.WhiteRabbitPort, "Hardware.WhiteRabbitPort");
+            if (config.Hardware.VacuumPort != null)
+                RequireComPort(config.Hardware.VacuumPort, "Hardware.VacuumPort");
+            if (config.Protocol.VacuumRateMlPerMinute.HasValue)
+                RequireNonNegative(config.Protocol.VacuumRateMlPerMinute.Value, "Protocol.VacuumRateMlPerMinute");
 
             RequireText(config.Controls.StartFlow, "Controls.StartFlow");
             RequireText(config.Controls.DisableFlow, "Controls.DisableFlow");

@@ -35,7 +35,8 @@
         "Olfactometer1Port": { "type": "string", "pattern": "^COM[0-9]+$" },
         "Olfactometer2Port": { "type": "string", "pattern": "^COM[0-9]+$" },
         "Olfactometer3Port": { "type": "string", "pattern": "^COM[0-9]+$" },
-        "WhiteRabbitPort": { "type": "string", "pattern": "^COM[0-9]+$" }
+        "WhiteRabbitPort": { "type": "string", "pattern": "^COM[0-9]+$" },
+        "VacuumPort": { "type": "string", "pattern": "^COM[0-9]+$", "description": "Required by workflows with vacuum control." }
       }
     },
     "ControlConfig": {
@@ -58,6 +59,7 @@
       "required": ["StimulusFile", "TrialCount", "ChargeSeconds", "DeliverySeconds", "FlushSeconds", "RechargeSeconds", "FlowAdjustmentSeconds", "TimeBeforeOdorSeconds", "IsiMinimumSeconds", "IsiMaximumSeconds", "MainFlow", "ControlFlow", "FlushFlow", "D1C0Flow", "D1C1Flow", "D1C2Flow", "D1C3Flow", "D2C0Flow", "D2C1Flow", "D2C2Flow", "D2C3Flow", "D3C0Flow", "D3C1Flow", "D3C2Flow", "D3C3Flow"],
       "properties": {
         "StimulusFile": { "type": "string", "minLength": 1 },
+        "VacuumRateMlPerMinute": { "type": "number", "minimum": 0, "description": "Vacuum rate in ml/min; required by workflows with vacuum control." },
         "TrialCount": { "type": "integer", "minimum": 1 },
         "ChargeSeconds": { "type": "number", "minimum": 0 },
         "DeliverySeconds": { "type": "number", "minimum": 0 },
